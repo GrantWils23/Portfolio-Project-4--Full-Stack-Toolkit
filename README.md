@@ -1,108 +1,230 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome USER_NAME,
+<h1>Portfolio_Project_4 --- FullStack_Toolkit</h1>
+<h1>......</h1>
+<p>breif description of the website and what it is about.... 
+The aim of the website is to.....</p>
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+click here to go to the deployed website: <a href="#" target="_blank">"WEBSITE</a>
+<br><br>
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+![image](...)
 
-## Gitpod Reminders
+# Contents
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+* [**User Experience UX**](<#User-Experience>)
+    * [User Stories](<#User-Stories>)
+    * [Wireframes](<#Wireframes>)
+    * [Site Structure](<#Site-Structure>)
+* [**Design Stylings**](<#Design-Stylings>)
+    * [ColourScheme](<#Colour-Scheme>)
+    * [Fonts](<#Fonts>)
+* [**Features**](<#Features>)
+    * [Existing Features](<#Existing-Features>)
+    * [Future Features](<#Future-features>)
+* [**Data Model**](<#Data-Model>)
+* [**Testing**](<#testing>)
+    * [Bugs](<#bugs>)
+    * [Solved Bugs](<#solved-bugs>)
+    * [Validation Testing](<#validation-testing>)
+* [**Technologies Used**](<#technologies-used>)
+* [**Deployment**](<#deployment>)
+    * [Deployment of the project](<#deployment-of-the-project>)
+    * [Cloning of the project](<#cloning-of-the-project>)
+* [**Credits**](<#Credits>)
+* [**Acknowledgements**](<#acknowledgements>)
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+# User Experience UX
+<hr>
 
-Another blue button should appear to click: _Open Browser_.
+## User Stories
+Provide a user stories table here or list of the general user stories
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+[Back to Top](<#contents>)
+<br>
 
-A blue button should appear to click: _Make Public_,
+## Wire Frames
+Provide some images of wireframe models for the website display and a brief description
 
-Another blue button should appear to click: _Open Browser_.
+[Back to Top](<#contents>)
+<br>
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+# Features
+<hr>
 
-To log into the Heroku toolbelt CLI:
+## Existing Features
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+feature 1:
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+![image]("link")
 
-------
+feature 2:
 
-## Release History
+![image]("link")
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+<ul>
+    <li>...</li>
+    <li>...</li>
+    <li>...</li>
+</ul>
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+![image]()
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+<ul>
+    <li>...</li>
+</ul>
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+<li>Input Validation and checking</li>
+<ul>
+    <li>...</li>
+</ul>
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+![image]()
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+<li>...</li>
+<ul>
+    <li>...</li>
+    <li>...</li>
+</ul>
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+<li>...</li>
+<br>
+    
+[Back to Top](<#contents>)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+## Data Model
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+Here you can find the logical flow chart that I made to help me create the data model... <a href="link" target="_blank">link tag</a>. This was really useful in helping me understand the flow and direction on how to create the app and models, views and templates... etc... something along these lines
+<br>
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+[Back to Top](<#contents>)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### Features left to implement
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+This can be a list of unfinished or future new user stories on how to improve the website
+<li>...</li>
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+<br>
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+[Back to Top](<#contents>)
+<br>
 
-------
+# Testing
 
-## FAQ about the uptime script
+To test my project, I have manually tested the project by doing the following:
+<ul>
+    <li>
+        Testing the programs code in <a href="http://pep8online.com/" target="_blank">pep8online</a> and confirmed that there were no errors with the code.
+    </li>
+    <li>
+        Tested the validations to prove the program is working correctly by entering invalid inputs and checking that all error types are accounted for (outside size of board parameters, same input cannot be inputted twice and strings are not excepted).
+    </li>
+    <li>
+        Tested in the local terminal and the Code institute Heroku Terminal.
+    </li>
+</ul>
 
-**Why have you added this script?**
+![image]()
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+[Back to Top](<#contents>)
+<br>
 
-**How will this affect me?**
+## Bugs
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+### Solved Bugs
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+<ul>
+    <li>I created a validation for checking if the guess made ca be found in the guesses but I didnt pass this validation into the code for the computers turn. This showed up that the
+    computer was hitting targets it has already shot and missed. resulting in an unbalanced and unfair game experience wereby the user can have a greater chance at winning then the computer.</li>
+</ul>
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+[Back to Top](<#contents>)
+<br>
 
-**So….?**
+### Unsolved Bugs
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+<p>There are no unfixed bugs found on the project.</p>
+<br>
 
-**Can I opt out?**
+[Back to Top](<#contents>)
+<br>
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+## Technologies Used
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+<li><a href="https://github.com/" target="_blank">GitHub</a> - The site was used to edit and host the website.</li>
+<li><a href="https://gitpod.io/projects" target="_blank">GitPod</a> - Used in the deployment and creating the website.</li>
+<li><a href="https://www.python.org/" target="_blank">Python</a> - This was used in the production to get the game running as it is required for the app to run.</li>
+<li><a href="https://nodejs.org/en/" target="_blank">Node.js</a> - This was used in the production to get the game running as it is required for app to run.</li>
+<li><a href="http://pep8online.com/" target="_blank">pep8online</a> - This site was used to validate the python code to check for any errors within my writing.</li>
+<li><a href="https://www.heroku.com/" target="_blank">Heroku</a> - This was used to deploy the game in a mock terminal that allows anyone to play the game online.</li>
+<li><a href="https://docs.python.org/3/library/random.html" target="_blank">Python Libary Random</a> - This was used to generate random numbers within the games code for deployment of the ships or the computers random guesses.</li>
 
-**Anything more?**
+LIST A BUNCH OF NEW TECHNOLOGIES AND PYTHON PACKAGES USED... DJANGO AND etc...
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+<br>
 
----
+[Back to Top](<#contents>)
+<br>
 
-Happy coding!
+## Deployment
+
+### Deployment of the project
+
+<p> I deployed this site using Heroku which is a container based cloud platform where you can deploy, manage and scale applications. To deploy this project I used the following steps in Heroku:</p>
+<li>Fork or clone a copy of this repository.</li>
+<li>Log in or create an account in heroku.</li>
+
+![image]("")
+
+<li>click on the button in the right corner to create a new app.</li>
+
+![image]()
+
+<li>inside the app page, go to setting page (underlined in green) and set the buildpacks to "Python" and "Nodejs" in that order (like in the picture below).</li>
+
+![image]()
+
+<li>Link the heroku app to the repository.</li>
+<li>Go back to the deploy page (underlined in yellow) and you can either choose to manually deploy the site or automatically.</li>
+<li>Once it has deployed, it may take a fww minutes to load and you can play the game.</li>
+
+<br>
+<p>The link to the site can be found here - <a href=" link here " target="_blank">LINK HERE!!!!</a></p>
+
+<br>
+
+!!!! REMOVE DEBUG FROM TRUE TO FALSE BEFORE SUBMISSION !!!
+
+[Back to Top](<#contents>)
+
+<br>
+
+### Cloning of the Project
+<hr>
+<p>To create a local clone of the project, follow the steps below:</p>
+<ol>
+    <li>In the GitHub repository, under the repository name there is a code tab., click on the <b>code</b> tab.</li>
+    <li>In the clone tab, click the HTTPS tab. Within this section, click on the clipboard icon and copy the URL supplied for the repository.</li>
+    <li>Open an IDE of your choosing and run Git Bash.</li>
+    <li>Change the current working directory to the location of which you wish to place the cloned repository.</li>
+    <li>In the terminal, write <b>Git Clone</b> and then paste in the URL supplied via GitHub from step 2.</li>
+    <li>Press enter and your new cloned repository will be created within the desired location.</li>
+</ol>
+<br>
+
+[Back to Top](<#contents>)
+
+## Credits
+
+<p>I would like to say a small thanks to the Code institute for the first bit of help on how to setup the game and create objects models that have real value and functionality from their introduction video as it gave a good starting point on how to logically approach designing the game.</p>
+<br>
+
+[Back to Top](<#contents>)
+
+## Acknowledgements
+
+<p>This project is my 4t Portfolio Project for the Full Stack Software Developer (e-Commerce) Diploma course provided by the <a href="https://codeinstitute.net/" target="_blank">Code Institute</a>. </p>
+
+[Back to Top](<#contents>)
