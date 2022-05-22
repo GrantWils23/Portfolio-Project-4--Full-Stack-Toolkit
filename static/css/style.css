@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Zilla+Slab:ital,wght@0,300;1,300&display=swap');
+
+body {
+    background-color: aliceblue;
+    color: #2b1f21;
+    font-family: 'Zilla Slab', serif;
+    font-size: 2.5vmin;
+
+  }
+
+.title-font {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+}
+
+.main-title {
+  font-size: 10vw;
+}
+
+.nav-title {
+  font-size: 4vmin;
+}
+
+nav {
+  background-color: rgb(250, 214, 219);
+  font-family: 'Zilla Slab', serif;
+}
+
+.box-wrap {
+  margin: 10px;
+  border-bottom: 5px #2b1f21 solid;
+  border-radius: 5px;
+}
+
+.custom-btn {
+  background-color: rgb(250, 214, 219);
+  font-weight: 600;
+  border-radius: 45px;
+  font-size: 4.5vmin;
+}
+
+footer {
+  padding: 3em;
+}
+
+footer .fab {
+  font-size: 6vmin;
+  color: rgb(250, 214,219)
+}
+
+
+/* styles for index.html */
+
+.bodywork {
+  max-height: min-content;
+}
