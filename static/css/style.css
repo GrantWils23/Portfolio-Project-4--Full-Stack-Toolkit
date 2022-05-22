@@ -22,21 +22,29 @@ body {
 }
 
 nav {
-  background-color: rgb(250, 214, 219);
+  background-color:mistyrose;
   font-family: 'Zilla Slab', serif;
 }
 
 .box-wrap {
   margin: 10px;
+  background-color: ;
   border-bottom: 5px #2b1f21 solid;
   border-radius: 5px;
 }
 
 .custom-btn {
-  background-color: rgb(250, 214, 219);
+  background-color: mistyrose;
   font-weight: 600;
-  border-radius: 45px;
+  border-radius: 40px;
   font-size: 4.5vmin;
+  border: 4px mistyrose solid;
+  text-shadow: 2px 2px pink;
+}
+
+.custom-btn:hover {
+  /* box-shadow: 2px 2px 2px 2px pink; */
+  border: 4px pink solid;
 }
 
 footer {
@@ -45,7 +53,8 @@ footer {
 
 footer .fab {
   font-size: 6vmin;
-  color: rgb(250, 214,219)
+  color: mistyrose;
+  text-shadow: 2px 2px pink;
 }
 
 

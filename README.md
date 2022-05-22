@@ -38,6 +38,26 @@ click here to go to the deployed website: <a href="#" target="_blank">"WEBSITE</
 # User Experience UX
 <hr>
 
+## Colour Scheme
+the colour scheme chosen for this website is sutble and chicque, requested by the client that it will have light tones to exert a professional look that is not overpowering to the views and that it is to be inviting to anyone who visits the site.
+  - The blue tone colour settled upon is aliceblue which is a nice colour that gives some personaliry to website other than a standard white background.
+  - The pink tone colour settled upon is mistyrose which is a beautiful light pink that really compliments the background colour.
+  - The pink tones also come with some shadowing to give a bit more flair and dynamics to the buttons and icons.
+
+[Back to Top](<#contents>)
+<br>
+
+## Fonts
+The fonts applied are really important to the websites appeal. The main font for the website's title was requested by the client to be eye-catching and refined, but at the sametime be strong and elegant. The font settled up was "Playfair Display" an it really ticks all the boxes.
+
+The second font for the general font for the website which was settled on which complements the title font was "Zilla Slab". It works well as it doesn't draw away from the attention of the main font and is easy to read but still is attractive to the users. 
+
+[Back to Top](<#contents>)
+<br>
+
+# Design Stylings
+<hr>
+
 ## User Stories
 Provide a user stories table here or list of the general user stories
 
