@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Zilla+Slab:ital,wght@0,300;1,300&display=swap');
 
 body {
-    background-color: aliceblue;
+    background-color: rgb(239, 255, 255);
     color: #2b1f21;
     font-family: 'Zilla Slab', serif;
     font-size: 2.5vmin;
@@ -28,7 +28,6 @@ nav {
 
 .box-wrap {
   margin: 10px;
-  background-color: ;
   border-bottom: 5px #2b1f21 solid;
   border-radius: 5px;
 }
