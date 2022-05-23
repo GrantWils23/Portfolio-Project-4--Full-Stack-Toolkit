@@ -32,6 +32,12 @@ nav {
   border-radius: 5px;
 }
 
+.text-center img {
+  width: 100%;
+  border: 10px mistyrose solid;
+  border-radius: 10px;
+}
+
 .custom-btn {
   background-color: mistyrose;
   font-weight: 600;
@@ -61,4 +67,20 @@ footer .fab {
 
 .bodywork {
   max-height: min-content;
+}
+
+
+/* Gallery CSS files */
+
+#photos {
+  clear: both;
+  line-height: 0;
+  column-count: 1;
+  column-gap: 0;
+}
+
+#photos img {
+  width: 100%;
+  border: 10px mistyrose solid;
+  border-radius: 10px;
 }
