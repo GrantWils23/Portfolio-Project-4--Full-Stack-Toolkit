@@ -5,7 +5,6 @@ body {
     color: #2b1f21;
     font-family: 'Zilla Slab', serif;
     font-size: 2.5vmin;
-
   }
 
 .title-font {
@@ -47,6 +46,28 @@ nav {
   text-shadow: 2px 2px pink;
 }
 
+/* main photo tag */
+
+.relative-tag {
+  position: relative;
+}
+
+.bottomright {
+  background-color: rgba(247, 184, 215, 0.459);
+  position: absolute;
+  padding: 0px 3px;
+  right: 16px;
+  bottom: 16px;
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.bottomright span {
+  font-size:0.9vmax;
+  font-weight: 400;
+}
+
+
 .custom-btn:hover {
   /* box-shadow: 2px 2px 2px 2px pink; */
   border: 4px pink solid;
@@ -83,4 +104,19 @@ footer .fab {
   width: 100%;
   border: 10px mistyrose solid;
   border-radius: 10px;
+}
+
+.bottomright-gal {
+  background-color: rgba(247, 184, 215, 0.459);
+  position: absolute;
+  padding: 3px;
+  right: 20px;
+  bottom: 20px;
+  border-radius: 10px;
+  line-height: 1;
+}
+
+.bottomright span {
+  font-size:0.9vmax;
+  font-weight: 400;
 }
