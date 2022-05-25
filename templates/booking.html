@@ -2,11 +2,18 @@
 
 {% block content %}
 
+{% load crispy_forms_tags %}
+
 <div class="container">
     <div class="row">
         <div class="col-2"></div>
         <div class="col-sm-8">
-            hello
+            <form method="POST">
+                {% crispy | form %}
+
+                <input type="submit" value="submit booking">
+
+            </form>
         </div>
         <div class="col-2"></div>
     </div>

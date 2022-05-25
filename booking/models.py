@@ -11,7 +11,7 @@ TIMESLOTS = ((0, "9am-11am"), (1, "12pm-2pm"), (2, "3pm-5pm"), (3, "6pm-8pm"))
 class Booking(models.Model):
     booking_id = models.BigAutoField(primary_key=True, unique=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="User")
-    contact_no = PhoneNumberField(region="GB")
+    contact_no = PhoneNumberField(region="GB", null=False, blank=False)
     email = models.EmailField()
     treatment = models.IntegerField(choices=TREATMENTS)
     booking_time = models.DateField(auto_now=True)
@@ -25,7 +25,7 @@ class Booking(models.Model):
     addition_info = models.TextField(max_length=300, null=True, )
 
     class meta:
-        ordering = ['appointment_date', 'appointment time']
+        ordering = ['appointment_date', 'appointment_slot']
 
     def __str__(self):
         return f"Booking No. #{self.booking_id}"
