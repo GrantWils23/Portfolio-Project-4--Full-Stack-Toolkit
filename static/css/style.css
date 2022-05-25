@@ -136,6 +136,16 @@ footer .fab {
   border: 2px mistyrose solid;
 }
 
+.custom-site-btn a {
+  -webkit-tap-highlight-color: transparent;
+  color:#2b1f21;
+  text-decoration: none;
+}
+
+.custom-site-btn:hover {
+border: 4px pink solid;
+}
+
 .text-wrap {
   font-size: 1.4vmax;
   word-break: normal;
