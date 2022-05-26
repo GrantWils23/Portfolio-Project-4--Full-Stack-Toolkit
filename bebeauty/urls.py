@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from booking import views
-from booking.views import Home, Gallery, BookingPage, ListBookings
+from booking.views import Home, Gallery, ListBookings
 from booking.forms import BookingForm
 
 
@@ -24,6 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Home.as_view(), name='home'),
     path('gallery', Gallery.as_view(), name='gallery'),
-    path('booking', BookingPage.as_view(), name="booking"),
     path('bookings', ListBookings.as_view(), name='bookings'),
+    path('add_booking', views.AddBookingView.as_view(), name='booking-add'),
 ]

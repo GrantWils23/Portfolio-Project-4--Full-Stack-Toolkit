@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from phonenumber_field.modelfields import PhoneNumberField
+from django.urls import reverse
 
 
 TREATMENTS = ((0, "Facial"), (1, "Make-Up"), (2, "Pedicure"), (3, "Manicure"), (4, "EyeBrow Plucking"))
@@ -24,9 +25,14 @@ class Booking(models.Model):
     post_code = models.CharField(max_length=10)
     addition_info = models.TextField(max_length=300, null=True, )
 
-    class meta:
+    class _Meta:
         ordering = ['appointment_date', 'appointment_slot']
 
     def __str__(self):
         return f"Booking No. #{self.booking_id}"
 
+    def get_absolute_url(self):
+        return reverse('booking-detail', kwargs={'pk': self.pk})
+
+    def __name__(self):
+        return f"Booking No. {self.booking_id}"
