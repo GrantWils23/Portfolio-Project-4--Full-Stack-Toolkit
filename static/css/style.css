@@ -13,7 +13,11 @@ body {
 }
 
 .main-title {
-  font-size: 10vw;
+  font-size: 7vw;
+}
+
+.sub-title {
+  font-size: 5vw;
 }
 
 .nav-title {
@@ -52,6 +56,27 @@ nav {
   text-decoration: none;
 }
 
+.sub-custom-btn {
+  background-color: mistyrose;
+  font-weight: 600;
+  border-radius: 40px;
+  font-size: 2.5vmin;
+  border: 4px mistyrose solid;
+  text-shadow: 2px 2px pink;
+  border: 4px mistyrose solid;    
+}
+
+.sub-custom-btn:hover {
+  border: 4px pink solid;
+  }
+  
+
+.sub-custom-btn a {
+  -webkit-tap-highlight-color: transparent;
+  color:#2b1f21;
+  text-decoration: none;
+}
+
 /* main photo tag */
 
 .relative-tag {
@@ -75,7 +100,6 @@ nav {
 
 
 .custom-btn:hover {
-  /* box-shadow: 2px 2px 2px 2px pink; */
   border: 4px pink solid;
 }
 
@@ -128,18 +152,26 @@ footer .fab {
 }
 
 .custom-site-btn {
-  background-color: rgb(224, 255, 239);
   font-weight: 600;
   border-radius: 5px;
   font-size: 1.4vmax;
   line-height: 1;
-  border: 2px mistyrose solid;
 }
 
 .custom-site-btn a {
   -webkit-tap-highlight-color: transparent;
   color:#2b1f21;
   text-decoration: none;
+}
+
+.edit-but {
+  background-color:darkseagreen;
+  border: 4px darkseagreen solid;
+}
+
+.del-but {
+  background-color:palevioletred;
+  border: 4px palevioletred solid;
 }
 
 .custom-site-btn:hover {

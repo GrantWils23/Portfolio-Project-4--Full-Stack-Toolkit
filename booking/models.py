@@ -31,8 +31,9 @@ class Booking(models.Model):
     def __str__(self):
         return f"Booking No. #{self.booking_id}"
 
-    def get_absolute_url(self):
-        return reverse('booking-detail', kwargs={'pk': self.pk})
-
     def __name__(self):
         return f"Booking No. {self.booking_id}"
+
+    def get_absolute_url(self):
+        return reverse('booking', kwargs={'pk': self.pk})
+

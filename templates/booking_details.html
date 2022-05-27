@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="box-wrap">
+            <h1 class="col center-text title-font sub-title">Booking Details</h1>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container booking-box">
+    <br>
+
+    <section>
+        <section class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-2">
+                Booking ID:
+            </div>
+            <div class="col-md-4">
+                {{ booking.booking_id }}
+            </div>
+            <div class="col-md-2"></div>
+        </section>
+        <!-- <section class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-2 text-center">
+            User:
+        </div>
+        <div class="col-md-4">
+            {{ booking.user }}
+        </div>
+        <div class="col-md-2"></div>
+    </section>     -->
+        <section class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-2">
+                Telephone No:
+            </div>
+            <div class="col-md-4">
+                {{ booking.contact_no }}
+            </div>
+            <div class="col-md-2"></div>
+        </section>
+        <section class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-2">
+                Email Address:
+            </div>
+            <div class="col-md-4">
+                {{ booking.email }}
+            </div>
+            <div class="col-md-2"></div>
+        </section>
+        <section class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-2">
+                Treatment:
+            </div>
+            <div class="col-md-4">
+                {{ booking.get_treatment_display }}
+            </div>
+            <div class="col-md-2"></div>
+        </section>
+        <section class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-2">
+                Appointment Date:
+            </div>
+            <div class="col-md-4">
+                {{ booking.appointment_date }}
+            </div>
+            <div class="col-md-2"></div>
+        </section>
+        <section class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-2">
+                Appointment Time:
+            </div>
+            <div class="col-md-4">
+                {{ booking.get_appointment_slot_display }}
+            </div>
+            <div class="col-md-2"></div>
+        </section>
+        <section class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-2">
+                Address:
+            </div>
+            <div class="col-md-4">
+                {{ booking.address_line_one }},<br> {{ booking.address_line_two }},<br>
+                {{ booking.address_line_three }},<br> {{ booking.city }},<br> {{ booking.post_code }}
+            </div>
+            <div class="col-md-2"></div>
+        </section>
+        <section class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-2">
+                Additional Information:
+            </div>
+            <div class="col-md-4">
+                {{ booking.addition_info }}
+            </div>
+            <div class="col-md-2"></div>
+        </section>
+        <br>
+        <section class="row">
+            <div class="col-sm-5"></div>
+            <div class="col-sm-2">
+                <button class="btn custom-site-btn edit-but hvr"><a href="{}">Edit</a></button>
+            <!-- % url 'edit_booking' booking.pk % -->
+                <button class="btn custom-site-btn del-but hvr"><a href="">Delete</a></button>
+            <div class="col-sm-2"></div>
+        </section>
+        <br>
+    </section>
+</div>
+<br>
+<div class="container_fluid text-center">
+    <div class="row">
+        <div class="col-5"></div>
+        <div class="col-2">
+            <button class="btn-lg light sub-custom-btn hvr-pulse"><a href="{% url 'bookings' %}">Back to Bookings</a></button>
+        </div>
+        <div class="col-5"></div>
+    </div>
+</div>
+<br>
+<br>
+    {% endblock %}

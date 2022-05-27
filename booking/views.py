@@ -19,11 +19,20 @@ class ListBookings(ListView):
     model = Booking()
     queryset = Booking.objects.all().order_by('-booking_id')
     template_name = 'bookings.html'
-    paginate_by = 6
-    
+
+    def get_queryset(self):
+        return Booking.objects.all()
+
+
+class ViewBooking(DetailView):
+    template_name = 'booking_details.html'
+    model = Booking
+    context_object_name = 'booking'
+
 
 class AddBookingView(CreateView):
-    model = Booking()
+    template_name = 'booking_form.html'
+    model = Booking
     fields = ['user', 'contact_no', 'email', 'treatment',
               'appointment_date', 'appointment_slot', 'address_line_one',
               'address_line_two', 'address_line_three', 'city',
