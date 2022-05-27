@@ -17,8 +17,9 @@ class Gallery(TemplateView):
 
 class ListBookings(ListView):
     model = Booking()
-    queryset = Booking.objects.all().order_by('-booking_id')
+    queryset = Booking.objects.all().order_by('booking_id')
     template_name = 'bookings.html'
+    paginate_by = 6
 
     def get_queryset(self):
         return Booking.objects.all()

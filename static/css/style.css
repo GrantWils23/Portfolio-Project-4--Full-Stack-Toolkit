@@ -191,3 +191,12 @@ border: 4px pink solid;
   border: 3px mistyrose solid;
   border-radius: 5px;
 }
+
+.pag-page-btn {
+  background-color: mistyrose;
+  border-radius: 4px;
+  border: 4px mistyrose solid;
+  color: #2b1f21;
+  font-family: 'Zilla Slab', serif;
+  font-size: 2.5vmin;
+}

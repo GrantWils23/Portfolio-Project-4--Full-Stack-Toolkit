@@ -20,10 +20,10 @@ class Booking(models.Model):
     appointment_slot = models.IntegerField(choices=TIMESLOTS)
     address_line_one = models.CharField(max_length=60)
     address_line_two = models.CharField(max_length=60)
-    address_line_three = models.CharField(max_length=60)
+    address_line_three = models.CharField(max_length=60, blank=True)
     city = models.CharField(max_length=20)
     post_code = models.CharField(max_length=10)
-    addition_info = models.TextField(max_length=300, null=True, )
+    addition_info = models.TextField(max_length=300, blank=True)
 
     class _Meta:
         ordering = ['appointment_date', 'appointment_slot']
