@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.views.generic import TemplateView, FormView, CreateView, DeleteView, UpdateView, DetailView, ListView
+from django.contrib.messages.views import SuccessMessageMixin
 from django.http import HttpResponseRedirect, HttpResponse
 from .models import Booking
 from .forms import BookingForm
@@ -31,13 +32,14 @@ class ViewBooking(DetailView):
     context_object_name = 'booking'
 
 
-class AddBookingView(CreateView):
+class AddBookingView(SuccessMessageMixin, CreateView):
     template_name = 'booking_form.html'
     model = Booking
     fields = ['user', 'contact_no', 'email', 'treatment',
               'appointment_date', 'appointment_slot', 'address_line_one',
               'address_line_two', 'address_line_three', 'city',
               'post_code', 'addition_info', ]
+    success_message = 'Thank you for your booking, We will send you a confirmation email shortly'
 
 
 class EditBookingView(UpdateView):
@@ -55,7 +57,6 @@ class DeleteBookingView(DeleteView):
 #     return render(request, "create_booking.html", {'form': BookingForm()})
 
 
-
 # # GET:
     # Form
 # POST:
@@ -63,5 +64,4 @@ class DeleteBookingView(DeleteView):
     # validate
     # save
     # redirect to success page (to Booking details page)
-        # read the get_absolute_url from the object
-
+    # read the get_absolute_url from the object
