@@ -58,7 +58,7 @@ nav {
 
 .sub-custom-btn {
   background-color: mistyrose;
-  font-weight: 600;
+  font-weight: 500;
   border-radius: 40px;
   font-size: 2.5vmin;
   border: 4px mistyrose solid;
@@ -152,7 +152,7 @@ footer .fab {
 }
 
 .custom-site-btn {
-  font-weight: 600;
+  font-weight: 500;
   border-radius: 5px;
   font-size: 1.4vmax;
   line-height: 1;
@@ -198,5 +198,12 @@ border: 4px pink solid;
   border: 4px mistyrose solid;
   color: #2b1f21;
   font-family: 'Zilla Slab', serif;
+  font-weight: 300;
   font-size: 2.5vmin;
 }
+
+.pag-page-btn:hover {
+  background-color:  mistyrose;
+  border: 4px pink solid;
+}
+
