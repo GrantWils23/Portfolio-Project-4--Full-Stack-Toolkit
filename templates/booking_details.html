@@ -2,26 +2,10 @@
 
 {% block content %}
 
-<!-- 
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 offset-md-2">
-            {% for message in messages %}
-            <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-                {{ message | safe }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                </button>
-            </div>
-            {% endfor%}
-        </div>
-    </div>
-</div> -->
 
 <div class="container">
-    <div class="row">
-        <div class="box-wrap">
-            <h1 class="col center-text title-font sub-title">Booking Details</h1>
-        </div>
+    <div class="box-wrap">
+        <h1 class="center-text title-font sub-title">Booking Details</h1>
     </div>
 </div>
 <br>
@@ -30,127 +14,117 @@
 
     <section>
         <section class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-2">
+            <!-- <div class="col-md-2 col-sm-4"></div> -->
+            <div class="col-sm-6 spacer-1">
                 Booking ID:
             </div>
-            <div class="col-md-4">
+            <div class="col-sm-6 spacer-2">
                 {{ booking.booking_id }}
             </div>
-            <div class="col-md-2"></div>
+            <!-- <div class="col-2"></div> -->
         </section>
-        <!-- <section class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-2 text-center">
-            User:
-        </div>
-        <div class="col-md-4">
-            {{ booking.user }}
-        </div>
-        <div class="col-md-2"></div>
-    </section>     -->
         <section class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-2">
+            <!-- <div class="col-4"></div> -->
+            <div class="col-sm-6 spacer-1">
                 Telephone No:
             </div>
-            <div class="col-md-4">
+            <div class="col-sm-6 spacer-2">
                 {{ booking.contact_no }}
             </div>
-            <div class="col-md-2"></div>
+            <!-- <div class="col-sm-2"></div> -->
         </section>
         <section class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-2">
+            <!-- <div class="col-4"></div> -->
+            <div class="col-sm-6 spacer-1">
                 Email Address:
             </div>
-            <div class="col-md-4">
+            <div class="col-sm-6 spacer-2">
                 {{ booking.email }}
             </div>
-            <div class="col-md-2"></div>
+            <!-- <div class="col-2"></div> -->
         </section>
         <section class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-2">
+            <!-- <div class="col-4"></div> -->
+            <div class="col-sm-6 spacer-1">
                 Treatment:
             </div>
-            <div class="col-md-4">
+            <div class="col-sm-6 spacer-2">
                 {{ booking.get_treatment_display }}
             </div>
-            <div class="col-md-2"></div>
+            <!-- <div class="col-2"></div> -->
         </section>
         <section class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-2">
+            <!-- <div class="col-4"></div> -->
+            <div class="col-sm-6 spacer-1">
                 Appointment Date:
             </div>
-            <div class="col-md-4">
+            <div class="col-sm-6 spacer-2">
                 {{ booking.appointment_date }}
             </div>
-            <div class="col-md-2"></div>
+            <!-- <div class="col-2"></div> -->
         </section>
         <section class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-2">
+            <!-- <div class="col-4"></div> -->
+            <div class="col-sm-6 spacer-1">
                 Appointment Time:
             </div>
-            <div class="col-md-4">
+            <div class="col-sm-6 spacer-2">
                 {{ booking.get_appointment_slot_display }}
             </div>
-            <div class="col-md-2"></div>
+            <!-- <div class="col-2"></div> -->
         </section>
         <section class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-2">
+            <!-- <div class="col-4"></div> -->
+            <div class="col-sm-6 spacer-1">
                 Address:
             </div>
-            <div class="col-md-4">
+            <div class="col-sm-6 spacer-2">
                 {{ booking.address_line_one }},<br> {{ booking.address_line_two }},<br>
                 {{ booking.address_line_three }},<br> {{ booking.city }},<br> {{ booking.post_code }}
             </div>
-            <div class="col-md-2"></div>
+            <!-- <div class="col-2"></div> -->
         </section>
         <section class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-2">
+            <!-- <div class="col-4"></div> -->
+            <div class="col-sm-6 spacer-1">
                 Additional Information:
             </div>
-            <div class="col-md-4">
+            <div class="col-sm-6 spacer-2">
                 {{ booking.addition_info }}
             </div>
-            <div class="col-md-2"></div>
+            <!-- <div class="col-2"></div> -->
         </section>
         <br>
-        <section class="row">
-            <div class="col-sm-5"></div>
-            <div class="col-sm-2">
-                <button class="btn custom-site-btn edit-but hvr"><a href="{}">Edit</a></button>
-            <!-- % url 'edit_booking' booking.pk % -->
-                <button class="btn custom-site-btn del-but hvr"><a href="">Delete</a></button>
-            <div class="col-sm-2"></div>
+        <section class="row g-0">
+            <div class="col-5"></div>
+            <div class="col-sm-2 text-center justify-center-content">
+                <button class="custom-site-btn edit-but hvr"><a href="{}">Edit</a></button>
+                <!-- % url 'edit_booking' booking.pk % -->
+                <button class="custom-site-btn del-but hvr"><a href="">Delete</a></button>
+                <div class="col-2"></div>
         </section>
         <br>
     </section>
 </div>
 <br>
-<div class="container_fluid text-center">
-    <div class="row">
-        <div class="col-5"></div>
-        <div class="col-2">
-            <button class="btn-lg light sub-custom-btn hvr-pulse"><a href="{% url 'bookings' %}">Back to Bookings</a></button>
+<div class="container_fluid justify-center-content">
+    <div class="row g-0">
+        <div class="container text-center">
+            <button class="btn-lg light sub-custom-btn hvr-pulse"><a href="{% url 'bookings' %}">Back to
+                Bookings</a>
+            </button>
         </div>
-        <div class="col-5"></div>
     </div>
 </div>
 <br>
 <br>
 
 <script>
-    setTimeout(function() {
+    setTimeout(function () {
         let messages = document.getElementById("msg");
         let alert = new bootstrap.Alert(messages);
         alert.close();
     }, 3000);
-</script> 
+</script>
 
-    {% endblock content %}
+{% endblock content %}

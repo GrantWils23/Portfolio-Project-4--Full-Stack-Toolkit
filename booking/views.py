@@ -34,20 +34,24 @@ class ViewBooking(DetailView):
 
 class AddBookingView(SuccessMessageMixin, CreateView):
     template_name = 'booking_form.html'
+    form_class = BookingForm
+    # model = Booking
+    # fields = ['user', 'contact_no', 'email', 'treatment',
+    #           'appointment_date', 'appointment_slot', 'address_line_one',
+    #           'address_line_two', 'address_line_three', 'city',
+    #           'post_code', 'addition_info', ]
+    success_message = 'Thank you for your booking, We will send you a confirmation email shortly'
+
+
+class EditBookingView(SuccessMessageMixin, UpdateView):
+    template_name = 'booking_form.html'
+    form_class = BookingForm
     model = Booking
     fields = ['user', 'contact_no', 'email', 'treatment',
               'appointment_date', 'appointment_slot', 'address_line_one',
               'address_line_two', 'address_line_three', 'city',
               'post_code', 'addition_info', ]
     success_message = 'Thank you for your booking, We will send you a confirmation email shortly'
-
-
-class EditBookingView(UpdateView):
-    model = Booking()
-    fields = ['user', 'contact_no', 'email', 'treatment',
-              'appointment_date', 'appointment_slot', 'address_line_one',
-              'address_line_two', 'address_line_three', 'city',
-              'post_code', 'addition_info', ]
 
 
 class DeleteBookingView(DeleteView):
