@@ -6,6 +6,7 @@
   border: 0;
 }
 
+/* Base Content */
 body {
     background-color: rgb(239, 255, 255);
     color: #2b1f21;
@@ -18,96 +19,13 @@ body {
   text-align: center;
 }
 
-.main-title {
-  font-size: 8vw;
-}
-
-.sub-title {
-  font-size: 7vw;
-}
-
 .nav-title {
   font-size: 4.5vmin;
 }
 
-
 nav {
   background-color:mistyrose;
   font-family: 'Zilla Slab', serif;
-}
-
-.box-wrap {
-  margin: 10px;
-  border-bottom: 4px #2b1f21 solid;
-  border-radius: 4px;
-}
-
-.text-center img {
-  width: 100%;
-  border: 10px mistyrose solid;
-  border-radius: 10px;
-}
-
-.custom-btn {
-  background-color: mistyrose;
-  font-weight: 600;
-  border-radius: 40px;
-  font-size: 4.5vmin;
-  border: 4px mistyrose solid;
-  text-shadow: 2px 2px pink;
-}
-
-.custom-btn a {
-  -webkit-tap-highlight-color: transparent;
-  color:#2b1f21;
-  text-decoration: none;
-}
-
-.sub-custom-btn {
-  background-color: mistyrose;
-  font-weight: 500;
-  border-radius: 40px;
-  /* font-size: 2.5vmin; */
-  border: 4px mistyrose solid;
-  text-shadow: 2px 2px pink;
-  border: 4px mistyrose solid;    
-}
-
-.sub-custom-btn:hover {
-  border: 4px pink solid;
-  }
-  
-
-.sub-custom-btn a {
-  -webkit-tap-highlight-color: transparent;
-  color:#2b1f21;
-  text-decoration: none;
-}
-
-/* main photo tag */
-
-.relative-tag {
-  position: relative;
-}
-
-.bottomright {
-  background-color: rgba(247, 184, 215, 0.459);
-  position: absolute;
-  padding: 0px 3px;
-  right: 16px;
-  bottom: 16px;
-  border-radius: 4px;
-  line-height: 1;
-}
-
-.bottomright span {
-  /* font-size:0.9vmax; */
-  font-weight: 400;
-}
-
-
-.custom-btn:hover {
-  border: 4px pink solid;
 }
 
 footer {
@@ -120,49 +38,64 @@ footer .fab {
   text-shadow: 2px 2px pink;
 }
 
-
-/* styles for index.html */
-
-.bodywork {
-  max-height: min-content;
+/* Template content */
+.main-title {
+  font-size: 8vw;
 }
 
-
-/* Gallery CSS files */
-
-#photos {
-  clear: both;
-  line-height: 0;
-  column-count: 1;
-  column-gap: 0;
+.sub-title {
+  font-size: 7vw;
 }
 
-#photos img {
-  width: 100%;
-  border: 10px mistyrose solid;
-  border-radius: 10px;
+.box-wrap {
+  margin: 10px;
+  border-bottom: 4px #2b1f21 solid;
+  border-radius: 4px;
 }
 
-.bottomright-gal {
-  background-color: rgba(247, 184, 215, 0.459);
-  position: absolute;
-  padding: 3px;
-  right: 20px;
-  bottom: 20px;
-  border-radius: 10px;
-  line-height: 1;
+/* button styles */
+.custom-btn {
+  background-color: mistyrose;
+  font-weight: 600;
+  border-radius: 40px;
+  font-size: 4.5vmin;
+  border: 4px mistyrose solid;
+  text-shadow: 2px 2px pink;
 }
 
-.bottomright span {
-  /* font-size:0.9vmax; */
-  font-weight: 400;
+.custom-btn:hover {
+  border: 4px pink solid;
+}
+
+.custom-btn a {
+  -webkit-tap-highlight-color: transparent;
+  color:#2b1f21;
+  text-decoration: none;
+}
+
+.sub-custom-btn {
+  background-color: mistyrose;
+  font-weight: 500;
+  border-radius: 40px;
+  border: 4px mistyrose solid;
+  text-shadow: 2px 2px pink;
+  border: 4px mistyrose solid;    
+}
+
+.sub-custom-btn:hover {
+  border: 4px pink solid;
+  }
+
+.sub-custom-btn a {
+  -webkit-tap-highlight-color: transparent;
+  color:#2b1f21;
+  text-decoration: none;
 }
 
 .custom-site-btn {
-  font-weight: 500;
   border-radius: 5px;
-  /* font-size: 1.4vmax; */
   line-height: 1;
+  border: 4px pink solid;
 }
 
 .custom-site-btn a {
@@ -177,28 +110,18 @@ footer .fab {
   padding: 3px 8px;
 }
 
+.edit-but:hover {
+  border: 4px pink solid;
+}
+
 .del-but {
   background-color:lightcoral;
   border: 4px lightcoral solid;
   padding: 3px 8px;
 }
 
-.custom-site-btn:hover {
-border: 4px pink solid;
-}
-
-.text-wrap {
-  font-size: 1.4vmax;
-  word-break: normal;
-}
-
-.no-padding {
-  padding: 0;
-}
-
-.booking-box {
-  border: 3px mistyrose solid;
-  border-radius: 5px;
+.del-but:hover {
+  border: 4px pink solid;
 }
 
 .pag-page-btn {
@@ -211,8 +134,62 @@ border: 4px pink solid;
 }
 
 .pag-page-btn:hover {
-  background-color:  mistyrose;
+  background-color: mistyrose;
   border: 4px pink solid;
+}
+
+/* index Photo tag styles */
+.text-center img {
+  width: 100%;
+  border: 8px mistyrose solid;
+  border-radius: 8px;
+}
+.relative-tag {
+  position: relative;
+}
+
+.bottomright {
+  background-color: rgba(247, 184, 215, 0.459);
+  position: absolute;
+  padding: 0px 3px;
+  right: 16px;
+  bottom: 16px;
+  border-radius: 4px;
+  line-height: 1;
+  font-size: 1.7vh;
+}
+
+/* styles for index.html */
+.bodywork {
+  max-height: min-content;
+}
+
+/* Gallery CSS files */
+#photos {
+  clear: both;
+  line-height: 0;
+  column-count: 1;
+  column-gap: 0;
+}
+
+#photos img {
+  width: 100%;
+  border: 8px mistyrose solid;
+  border-radius: 8px;
+}
+
+/* tidying css styles */
+.text-wrap {
+  word-break: normal;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.booking-box {
+  border: 3px mistyrose solid;
+  border-radius: 5px;
 }
 
 .spacer-1 {
@@ -233,7 +210,7 @@ border: 4px pink solid;
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 575px) {
   body {
-    font-size: 1vm;
+    font-size: 1.1em;
   }
   .nav-title {
     font-size: 7.5vmin;
@@ -247,4 +224,17 @@ border: 4px pink solid;
   .spacer-2 {
     text-align: center;
   }
+  .bottomright {
+  word-wrap: break-word;
+  width: max-content;
+  font-size: 2vh;
+  }
+ }
+
+ @media (max-width: 368px) {
+   .bottomright {
+     width: 200px;
+     text-align: center;
+     font-size: small;
+   }
  }

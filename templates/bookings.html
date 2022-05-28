@@ -8,7 +8,6 @@
     </div>
 </div>
 <br>
-<br>
 <div class="container booking-box">
     <br>
     {% for booking in booking_list %}
@@ -24,9 +23,9 @@
                         {{ booking.appointment_date }} | Time: {{ booking.get_appointment_slot_display }}
                     </div>
                     <div class="col-sm-3">
-                        <button class="custom-site-btn edit-but hvr"><a href="{}">Edit</a></button>
+                        <button class="custom-site-btn edit-but"><a href="{}">Edit</a></button>
                         <!-- % url 'edit_booking' booking.pk % -->
-                        <button class="custom-site-btn del-but hvr"><a href="">Delete</a></button>
+                        <button class="custom-site-btn del-but"><a href="">Delete</a></button>
                         </a>
                     </div>
                 </div>
