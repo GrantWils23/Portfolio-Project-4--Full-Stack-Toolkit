@@ -4,7 +4,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 from django.urls import reverse
 
 
-TREATMENTS = ((0, "Facial"), (1, "Make-Up"), (2, "Pedicure"), (3, "Manicure"), (4, "EyeBrow Plucking"))
+TREATMENTS = ((0, "Facial"), (1, "Make-Up"), (2, "Pedicure"), (3, "Manicure"), (4, "Hair Styling"))
 
 TIMESLOTS = ((0, "9am-11am"), (1, "12pm-2pm"), (2, "3pm-5pm"), (3, "6pm-8pm"))
 
