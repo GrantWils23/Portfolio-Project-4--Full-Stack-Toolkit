@@ -7,7 +7,8 @@ urlpatterns = [
     path('services', views.Services.as_view(), name='services'),
     path('bookings', views.ListBookings.as_view(), name='bookings'),
     path('add_booking', views.AddBookingView.as_view(), name='add-booking'),
-    path('<int:pk>', views.ViewBooking.as_view(), name='booking')
+    path('<int:pk>', views.ViewBooking.as_view(), name='booking'),
+    # path('_edit_booking/<int:pk>', views.EditBookingView.as_view(), name='edit-booking'),
     # path('author/<int:pk>/', AuthorUpdateView.as_view(), name='author-update'),
     # path('author/<int:pk>/delete/', AuthorDeleteView.as_view(), name='author-delete'),
 ]

@@ -18,7 +18,7 @@
             <div class="col-sm-11">
                 <div class="row text-wrap">
                     <div class="col-sm-9">
-                        <a class="" href="{% url 'booking' booking.pk %}">View Booking</a> | Booking No:
+                        <a class="" href="{% url 'view-booking' booking.pk %}">View Booking</a> | Booking No:
                         {{ booking.booking_id }} | Treatment: {{ booking.get_treatment_display }} | Date:
                         {{ booking.appointment_date }} | Time: {{ booking.get_appointment_slot_display }}
                     </div>
@@ -55,7 +55,7 @@
 <br>
 <div class="container_fluid">
     <div class="justify-content-center text-center ">
-        <button type="button" class="btn-lg light sub-custom-btn hvr-pulse" on><a href="{% url 'add-booking' %}">Create
+        <button type="button" class="btn-lg light sub-custom-btn hvr-pulse" on><a href="{% url 'booking' %}">Create
                 a new booking</a></button>
     </div>
 </div>

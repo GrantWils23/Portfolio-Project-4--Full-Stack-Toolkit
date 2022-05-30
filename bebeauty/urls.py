@@ -26,7 +26,7 @@ urlpatterns = [
     path('gallery', Gallery.as_view(), name='gallery'),
     path('services', Services.as_view(), name='services'),
     path('bookings', ListBookings.as_view(), name='bookings'),
-    path('add_booking', AddBookingView.as_view(), name='add-booking'),
+    path('booking', AddBookingView.as_view(), name='booking'),
     path('booking/<int:pk>', ViewBooking.as_view(), name='view-booking'),
-    path('<int:pk>', views.ViewBooking.as_view(), name='booking'),
+    # path('_edit_booking/<int:pk>', views.EditBookingView.as_view(), name='edit-booking'),
 ]

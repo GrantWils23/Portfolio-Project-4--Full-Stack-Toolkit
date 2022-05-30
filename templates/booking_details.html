@@ -107,18 +107,20 @@
     </section>
 </div>
 <br>
-<div class="container_fluid justify-center-content">
+<div class="container">
     <div class="row g-0">
-        <button class="btn-lg text-center light sub-custom-btn hvr-pulse"><a href="{% url 'bookings' %}">Back to
-                Bookings</a>
-        </button>
+        <div class="col-sm-12 text-center">
+            <button class="btn-lg text-center light sub-custom-btn hvr-pulse"><a href="{% url 'bookings' %}">Back to
+                    Bookings</a>
+            </button>
+        </div>
     </div>
 </div>
 <br>
 <br>
 
 <script>
-    setTimeout(function () {
+    setTimeout(function() {
         let messages = document.getElementById("msg");
         let alert = new bootstrap.Alert(messages);
         alert.close();
