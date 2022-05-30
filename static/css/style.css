@@ -136,7 +136,17 @@ footer .fab {
 .pag-page-btn:hover {
   background-color: mistyrose;
   border: 4px pink solid;
+  color: #2b1f21;
 }
+
+.center-button {
+  font-size: 1.1em;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+  }
 
 /* index Photo tag styles */
 .text-center img {
@@ -165,14 +175,14 @@ footer .fab {
 }
 
 /* Gallery CSS files */
-#photos {
+.photos {
   clear: both;
   line-height: 0;
   column-count: 1;
   column-gap: 0;
 }
 
-#photos img {
+.photos img {
   width: 100%;
   border: 8px mistyrose solid;
   border-radius: 8px;

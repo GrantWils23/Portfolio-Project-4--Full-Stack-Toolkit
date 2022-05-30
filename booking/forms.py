@@ -10,7 +10,7 @@ class DateInput(forms.DateInput):
     input_type = 'date'
 
 class BookingForm(ModelForm):
-    addition_info = forms.CharField(widget=forms.Textarea(attrs={'rows': 4}))
+    addition_info = forms.CharField(required=False, widget=forms.Textarea(attrs={'rows': 4}))
     # appointment_date = forms.DateField(widget=DateInput)
     appointment_date = forms.DateField(widget=DateInput(attrs={"class": "form-control datepicker validate"}))
 
@@ -26,26 +26,18 @@ class BookingForm(ModelForm):
     @property
     def helper(self):
         helper = FormHelper()
-        helper.layout = Layout(
-            # Field('User'),
-            # Field('contact_no'),
-            # Field('email'),
-            # Field('treatment'),
-            # Field('appointment_date'),
-            # Field('appointment_slot'),
-            # Field('address_line_one'),
-            # Field('address_line_two'),
-            # Field('address_line_three'),
-            # Field('city'),
-            # Field('post_code'),
-            # Field('addition_info'),
-            # Submit('submit', 'Submit your Booking', css_class='pag-page-btn')
-        )
+        helper.layout = Layout()
         for field in self.Meta().fields:
             helper.layout.append(
                 Field(field, wrapper_class='row')
             )
-        # helper.layout.append(Submit('submit', 'Submit your Booking', css_class='pag-page-btn'))
         helper.field_class = 'col-sm-9'
         helper.label_class = 'col-sm-3'
+        helper.layout.append(HTML('<br>'))
+        helper.layout.append(HTML('<div class="col-sm-12 form-group">'))
+        helper.layout.append(HTML('<div class="text-center">'))
+        helper.layout.append(Submit('submit', 'Submit Booking', css_class='pag-page-btn center-button'))
+        helper.layout.append(HTML('</div>'))
+        helper.layout.append(HTML('</div>'))
+
         return helper

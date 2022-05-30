@@ -15,8 +15,10 @@ class Home(TemplateView):
 class Gallery(TemplateView):
     template_name = 'gallery.html'
 
+
 class Services(TemplateView):
-    template_name ='services.html'
+    template_name = 'services.html'
+
 
 class ListBookings(ListView):
     model = Booking()
