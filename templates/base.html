@@ -17,7 +17,7 @@
 </head>
 
 <body class="d-flex flex-column h-100 main-bg">
-    <!-- Modal -->
+    <!-- Modal
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -30,11 +30,14 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn custom-site-btn edit-but" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn custom-site-btn del-but">Delete Booking</button>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <input type="submit" value="Delete Booking" class="btn custom-site-btn del-but">
+                    </form>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <!-- Navigation-->

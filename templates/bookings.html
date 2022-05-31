@@ -24,7 +24,8 @@
                     </div>
                     <div class="col-sm-3">
                         <button class="custom-site-btn edit-but" type="button"><a href="{% url 'edit-booking' booking.pk %}">Edit</a></button>
-                        <button class="custom-site-btn del-but" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</button>
+                        <button class="custom-site-btn del-but" type="button"><a href="{% url 'delete-booking' booking.pk %}">Delete</a></button>
+                        <!-- <button class="custom-site-btn del-but" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</button> -->
                         </a>
                     </div>
                 </div>

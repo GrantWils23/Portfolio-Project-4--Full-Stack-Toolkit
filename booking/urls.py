@@ -9,5 +9,5 @@ urlpatterns = [
     path('booking', views.AddBookingView.as_view(), name='booking'),
     path('booking/<int:pk>', views.ViewBooking.as_view(), name='view-booking'),
     path('booking/<int:pk>/edit', views.EditBookingView.as_view(), name='edit-booking'),
-    # path('booking/<int:pk>/edit', views.EditBookingView.as_view(), name='edit-booking')
+    path('booking/<int:pk>/delete', views.DeleteBookingView.as_view(), name='delete-booking')
 ]

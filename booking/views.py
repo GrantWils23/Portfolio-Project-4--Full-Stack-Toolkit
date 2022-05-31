@@ -49,9 +49,10 @@ class EditBookingView(SuccessMessageMixin, UpdateView):
     success_message = 'Thank you for your booking, We will send you a confirmation email shortly'
 
 
-# class DeleteBookingView(,DeleteView):
-#     model = Booking
-#     success_url = reverse_lazy('bookings')
+class DeleteBookingView(DeleteView):
+    template_name = 'delete_booking.html'
+    model = Booking
+    success_url = reverse_lazy('bookings')
 
 # def add_booking(request):
 #     return render(request, "create_booking.html", {'form': BookingForm()})

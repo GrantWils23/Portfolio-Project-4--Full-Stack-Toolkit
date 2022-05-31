@@ -15,8 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.utils.translation import gettext_lazy as _
-from booking.views import Home, Gallery, Services, ListBookings, AddBookingView, ViewBooking, EditBookingView
+from booking.views import Home, Gallery, Services, ListBookings, AddBookingView, ViewBooking, EditBookingView, DeleteBookingView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,5 +26,6 @@ urlpatterns = [
     path('booking', AddBookingView.as_view(), name='booking'),
     path('booking/<int:pk>', ViewBooking.as_view(), name='view-booking'),
     path('booking/<int:pk>/edit', EditBookingView.as_view(), name='edit-booking'),
-    # path('_edit_booking/<int:pk>', views.EditBookingView.as_view(), name='edit-booking'),
+    path('booking/<int:pk>/delete', DeleteBookingView.as_view(), name='delete-booking')
+
 ]

@@ -229,6 +229,31 @@ footer .fab {
     border: 6px pink solid;
 }
 
+.delete-booking-form {
+    line-height: 1.3;
+}
+
+.delete-box {
+    height: fit-content;
+}
+
+.delete-box-top-margin {
+    margin-top: 20px;
+}
+
+.delete-box-bottom-margin {
+    margin-bottom: 20px;
+}
+
+.line-height-setter {
+    line-height: 1.3;
+    margin: 0 4px;
+}
+
+.screen-container {
+    min-height: 75vh;
+}
+
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 575px) {
     body {
