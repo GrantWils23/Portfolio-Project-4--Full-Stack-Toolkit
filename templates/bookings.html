@@ -23,9 +23,8 @@
                         {{ booking.appointment_date }} | Time: {{ booking.get_appointment_slot_display }}
                     </div>
                     <div class="col-sm-3">
-                        <button class="custom-site-btn edit-but"><a href="{}">Edit</a></button>
-                        <!-- % url 'edit_booking' booking.pk % -->
-                        <button class="custom-site-btn del-but"><a href="">Delete</a></button>
+                        <button class="custom-site-btn edit-but" type="button"><a href="{% url 'edit-booking' booking.pk %}">Edit</a></button>
+                        <button class="custom-site-btn del-but" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</button>
                         </a>
                     </div>
                 </div>

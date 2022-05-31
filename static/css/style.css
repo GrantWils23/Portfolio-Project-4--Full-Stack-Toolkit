@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Zilla+Slab:ital,wght@0,300;1,300&display=swap');
 
 * {
-  margin: 0;
-  padding: 0;
-  border: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 /* Base Content */
@@ -12,239 +12,256 @@ body {
     color: #2b1f21;
     font-family: 'Zilla Slab', serif;
     font-size: 1.3em;
-  }
+}
 
 .title-font {
-  font-family: 'Playfair Display', serif;
-  text-align: center;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
 }
 
 .nav-title {
-  font-size: 4.5vmin;
+    font-size: 4.5vmin;
 }
 
 nav {
-  background-color:mistyrose;
-  font-family: 'Zilla Slab', serif;
+    background-color: mistyrose;
+    font-family: 'Zilla Slab', serif;
 }
 
 footer {
-  padding: 3em;
+    padding: 3em;
 }
 
 footer .fab {
-  font-size: 8vmin;
-  color: mistyrose;
-  text-shadow: 2px 2px pink;
+    font-size: 8vmin;
+    color: mistyrose;
+    text-shadow: 2px 2px pink;
 }
 
 /* Template content */
 .main-title {
-  font-size: 8vw;
+    font-size: 8vw;
 }
 
 .sub-title {
-  font-size: 7vw;
+    font-size: 7vw;
 }
 
 .box-wrap {
-  margin: 10px;
-  border-bottom: 4px #2b1f21 solid;
-  border-radius: 4px;
+    margin: 10px;
+    border-bottom: 4px #2b1f21 solid;
+    border-radius: 4px;
 }
 
 /* button styles */
 .custom-btn {
-  background-color: mistyrose;
-  font-weight: 600;
-  border-radius: 40px;
-  font-size: 4.5vmin;
-  border: 4px mistyrose solid;
-  text-shadow: 2px 2px pink;
+    background-color: mistyrose;
+    font-weight: 600;
+    border-radius: 40px;
+    font-size: 4.5vmin;
+    border: 4px mistyrose solid;
+    text-shadow: 2px 2px pink;
 }
 
 .custom-btn:hover {
-  border: 4px pink solid;
+    border: 4px pink solid;
 }
 
 .custom-btn a {
-  -webkit-tap-highlight-color: transparent;
-  color:#2b1f21;
-  text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    color: #2b1f21;
+    text-decoration: none;
 }
 
 .sub-custom-btn {
-  background-color: mistyrose;
-  font-weight: 500;
-  border-radius: 40px;
-  border: 4px mistyrose solid;
-  text-shadow: 2px 2px pink;
-  border: 4px mistyrose solid;    
+    background-color: mistyrose;
+    font-weight: 500;
+    border-radius: 40px;
+    border: 4px mistyrose solid;
+    text-shadow: 2px 2px pink;
+    border: 4px mistyrose solid;
 }
 
 .sub-custom-btn:hover {
-  border: 4px pink solid;
-  }
+    border: 4px pink solid;
+}
 
 .sub-custom-btn a {
-  -webkit-tap-highlight-color: transparent;
-  color:#2b1f21;
-  text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    color: #2b1f21;
+    text-decoration: none;
 }
 
 .custom-site-btn {
-  border-radius: 5px;
-  line-height: 1;
-  border: 4px pink solid;
+    border-radius: 5px;
+    line-height: 1;
+    border: 4px pink solid;
 }
 
 .custom-site-btn a {
-  -webkit-tap-highlight-color: transparent;
-  color:#2b1f21;
-  text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    color: #2b1f21;
+    text-decoration: none;
 }
 
 .edit-but {
-  background-color:lightblue;
-  border: 4px lightblue solid;
-  padding: 3px 8px;
+    background-color: lightblue;
+    border: 4px lightblue solid;
+    padding: 3px 8px;
 }
 
 .edit-but:hover {
-  border: 4px pink solid;
+    border: 4px pink solid;
 }
 
 .del-but {
-  background-color:lightcoral;
-  border: 4px lightcoral solid;
-  padding: 3px 8px;
+    background-color: lightcoral;
+    border: 4px lightcoral solid;
+    padding: 3px 8px;
 }
 
 .del-but:hover {
-  border: 4px pink solid;
+    border: 4px pink solid;
 }
 
 .pag-page-btn {
-  background-color: mistyrose;
-  border-radius: 4px;
-  border: 4px mistyrose solid;
-  color: #2b1f21;
-  font-family: 'Zilla Slab', serif;
-  font-weight: 300;
+    background-color: mistyrose;
+    border-radius: 4px;
+    border: 4px mistyrose solid;
+    color: #2b1f21;
+    font-family: 'Zilla Slab', serif;
+    font-weight: 300;
 }
 
 .pag-page-btn:hover {
-  background-color: mistyrose;
-  border: 4px pink solid;
-  color: #2b1f21;
+    background-color: mistyrose;
+    border: 4px pink solid;
+    color: #2b1f21;
 }
 
 .center-button {
-  font-size: 1.1em;
+    font-size: 1.1em;
 }
 
 .btn:focus {
-  outline: none;
-  box-shadow: none;
-  }
+    outline: none;
+    box-shadow: none;
+}
 
 /* index Photo tag styles */
 .text-center img {
-  width: 100%;
-  border: 8px mistyrose solid;
-  border-radius: 8px;
+    width: 100%;
+    border: 8px mistyrose solid;
+    border-radius: 8px;
 }
+
 .relative-tag {
-  position: relative;
+    position: relative;
 }
 
 .bottomright {
-  background-color: rgba(247, 184, 215, 0.459);
-  position: absolute;
-  padding: 0px 3px;
-  right: 16px;
-  bottom: 16px;
-  border-radius: 4px;
-  line-height: 1;
-  font-size: 1.7vh;
+    background-color: rgba(247, 184, 215, 0.459);
+    position: absolute;
+    padding: 0px 3px;
+    right: 16px;
+    bottom: 16px;
+    border-radius: 4px;
+    line-height: 1;
+    font-size: 1.7vh;
 }
 
 /* styles for index.html */
 .bodywork {
-  max-height: min-content;
+    max-height: min-content;
 }
 
 /* Gallery CSS files */
 .photos {
-  clear: both;
-  line-height: 0;
-  column-count: 1;
-  column-gap: 0;
+    clear: both;
+    line-height: 0;
+    column-count: 1;
+    column-gap: 0;
 }
 
 .photos img {
-  width: 100%;
-  border: 8px mistyrose solid;
-  border-radius: 8px;
+    width: 100%;
+    border: 8px mistyrose solid;
+    border-radius: 8px;
 }
 
 /* tidying css styles */
 .text-wrap {
-  word-break: normal;
+    word-break: normal;
 }
 
 .no-padding {
-  padding: 0;
+    padding: 0;
 }
 
 .booking-box {
-  border: 3px mistyrose solid;
-  border-radius: 5px;
+    border: 3px mistyrose solid;
+    border-radius: 5px;
 }
 
 .spacer-1 {
-  font-style: oblique;
-  font-weight: 600;
-  margin-bottom: 6px;
-  text-align: end;
+    font-style: oblique;
+    font-weight: 600;
+    margin-bottom: 6px;
+    text-align: end;
 }
+
 .spacer-2 {
-  font-style: italic;
-  margin-bottom: 6px;
+    font-style: italic;
+    margin-bottom: 6px;
 }
 
 .row {
-  margin-bottom: 3px;
+    margin-bottom: 3px;
+}
+
+/* Modal Custom styles */
+.modal-dialog {
+    top: 35%;
+}
+
+.modal-content {
+    background-color: aliceblue;
+    border: 6px pink solid;
 }
 
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 575px) {
-  body {
-    font-size: 1.1em;
-  }
-  .nav-title {
-    font-size: 7.5vmin;
-  }
-  .sub-title {
-    font-size: 8vm;
-  }
-  .spacer-1 {
-    text-align: center;
-  }
-  .spacer-2 {
-    text-align: center;
-  }
-  .bottomright {
-  word-wrap: break-word;
-  width: max-content;
-  font-size: 2vh;
-  }
- }
+    body {
+        font-size: 1.1em;
+    }
 
- @media (max-width: 368px) {
-   .bottomright {
-     width: 200px;
-     text-align: center;
-     font-size: small;
-   }
- }
+    .nav-title {
+        font-size: 7.5vmin;
+    }
+
+    .sub-title {
+        font-size: 8vm;
+    }
+
+    .spacer-1 {
+        text-align: center;
+    }
+
+    .spacer-2 {
+        text-align: center;
+    }
+
+    .bottomright {
+        word-wrap: break-word;
+        width: max-content;
+        font-size: 2vh;
+    }
+}
+
+@media (max-width: 368px) {
+    .bottomright {
+        width: 200px;
+        text-align: center;
+        font-size: small;
+    }
+}

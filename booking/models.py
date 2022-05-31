@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse, reverse_lazy
 from phonenumber_field.modelfields import PhoneNumberField
-from django.urls import reverse
 
 
 TREATMENTS = ((0, "Facial"), (1, "Make-Up"), (2, "Pedicure"), (3, "Manicure"), (4, "Hair Styling"))
@@ -35,5 +35,5 @@ class Booking(models.Model):
         return f"Booking No. {self.booking_id}"
 
     def get_absolute_url(self):
-        return reverse('booking', kwargs={'pk': self.pk})
+        return reverse("view-booking", kwargs={'pk': self.pk})
 

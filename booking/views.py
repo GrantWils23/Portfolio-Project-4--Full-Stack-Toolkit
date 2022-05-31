@@ -1,11 +1,11 @@
 from django.shortcuts import render, get_object_or_404, reverse
+from django.urls import reverse_lazy
 from django.views import generic, View
-from django.views.generic import TemplateView, FormView, CreateView, DeleteView, UpdateView, DetailView, ListView
+from django.views.generic import TemplateView, CreateView, DeleteView, UpdateView, DetailView, ListView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.http import HttpResponseRedirect, HttpResponse
 from .models import Booking
 from .forms import BookingForm
-from django.urls import reverse_lazy
 
 
 class Home(TemplateView):
@@ -33,7 +33,7 @@ class ListBookings(ListView):
 class ViewBooking(DetailView):
     template_name = 'booking_details.html'
     model = Booking
-    context_object_name = 'booking/<int:pk>'
+    template_name_suffix = '<int:pk>'
 
 
 class AddBookingView(SuccessMessageMixin, CreateView):
@@ -45,11 +45,13 @@ class AddBookingView(SuccessMessageMixin, CreateView):
 class EditBookingView(SuccessMessageMixin, UpdateView):
     template_name = 'booking_form.html'
     form_class = BookingForm
+    model = Booking
     success_message = 'Thank you for your booking, We will send you a confirmation email shortly'
 
 
-class DeleteBookingView(DeleteView):
-    model = Booking
+# class DeleteBookingView(,DeleteView):
+#     model = Booking
+#     success_url = reverse_lazy('bookings')
 
 # def add_booking(request):
 #     return render(request, "create_booking.html", {'form': BookingForm()})
