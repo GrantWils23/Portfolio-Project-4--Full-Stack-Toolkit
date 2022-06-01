@@ -53,16 +53,3 @@ class DeleteBookingView(DeleteView):
     template_name = 'delete_booking.html'
     model = Booking
     success_url = reverse_lazy('bookings')
-
-# def add_booking(request):
-#     return render(request, "create_booking.html", {'form': BookingForm()})
-
-
-# # GET:
-    # Form
-# POST:
-    # csrf
-    # validate
-    # save
-    # redirect to success page (to Booking details page)
-    # read the get_absolute_url from the object

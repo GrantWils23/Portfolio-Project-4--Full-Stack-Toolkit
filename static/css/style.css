@@ -47,6 +47,10 @@ footer .fab {
     font-size: 7vw;
 }
 
+.smaller-sub-title {
+    font-size: 5vw;
+}
+
 .box-wrap {
     margin: 10px;
     border-bottom: 4px #2b1f21 solid;
@@ -167,7 +171,11 @@ footer .fab {
     bottom: 16px;
     border-radius: 4px;
     line-height: 1;
-    font-size: 1.7vh;
+}
+
+.bottomright span {
+    font-size: 1.4vh;
+    height: auto;
 }
 
 /* styles for index.html */
