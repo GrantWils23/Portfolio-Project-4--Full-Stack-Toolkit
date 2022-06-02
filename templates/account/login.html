@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+
+
+
+
+{% block content %}
+
+<div class="screen-container">
+    <div class="container">
+        <div class="box-wrap">
+            <h3 class="center-text title-font sub-title">{% trans "Sign In" %}</h3>
+        </div>
+    </div>
+    <br>
+    <div class="col-sm-3"></div>
+    <div class="container col-6 booking-box">
+        <div class="row g-0">
+            <div class="text-center">
+                <div class=" text-center delete-box-top-margin">
+                    <h3>{% trans "Sign In" %}</h3>
+                </div>
+                <hr>
+                <div class="row">
+                    <p>{% blocktrans %}If you have not created an account yet, then please
+                        <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+
+                </div>
+                <div class="container d-inline-flex justify-content-center delete-box-bottom-margin">
+                    <form class="login" method="POST" action="{% url 'account_login' %}">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                        {% endif %}
+                        <button class="primaryAction btn btn-primary pag-page-btn" type="submit">{% trans "Sign In" %}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+
+
+{% endblock %}
