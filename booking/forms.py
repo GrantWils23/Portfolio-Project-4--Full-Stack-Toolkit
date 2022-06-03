@@ -16,7 +16,7 @@ class BookingForm(ModelForm):
 
     class Meta:
         model = Booking
-        fields = ['user', 'contact_no', 'email', 'treatment',
+        fields = ['contact_no', 'treatment',
                   'appointment_date', 'appointment_slot', 'address_line_one',
                   'address_line_two', 'address_line_three', 'city',
                   'post_code', 'addition_info',

@@ -3,8 +3,9 @@ from django.urls import reverse_lazy
 from django.views import generic, View
 from django.views.generic import TemplateView, CreateView, DeleteView, UpdateView, DetailView, ListView
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
-from django.http import HttpResponseRedirect, HttpResponse, request
+from django.http import request
 from .models import Booking
 from .forms import BookingForm
 
@@ -34,11 +35,15 @@ class ViewBooking(DetailView):
     template_name_suffix = '<int:pk>'
 
 
-class AddBookingView(SuccessMessageMixin, CreateView):
+class AddBookingView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
     template_name = 'booking_form.html'
     form_class = BookingForm
     success_message = 'Thank you for your booking, We will send you a confirmation email shortly.'
-
+    
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        form.instance.email = self.request.user.email
+        return super().form_valid(form)
 
 class EditBookingView(SuccessMessageMixin, UpdateView):
     template_name = 'booking_form.html'

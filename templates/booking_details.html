@@ -9,10 +9,18 @@
     </div>
 </div>
 <br>
-<div class="container booking-box">
+<div class="col-sm-3 d-inline-block"></div>
+<div class="container col-6 booking-box d-inline-block">
     <br>
-
     <section>
+        <section class="row">
+            <div class="col-sm-6 spacer-1">
+                Booking made by:
+            </div>
+            <div class="col-sm-6 spacer-2">
+                {{ booking.user }}
+            </div>
+        </section>
         <section class="row">
             <div class="col-sm-6 spacer-1">
                 Booking ID:
@@ -90,6 +98,8 @@
         <br>
     </section>
 </div>
+<div class="col-sm-2 d-inline-block"></div>
+<br>
 <br>
 <div class="container">
     <div class="row g-0">
