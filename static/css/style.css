@@ -20,10 +20,15 @@ body {
 }
 
 .nav-title {
-    font-size: 4.5vmin;
+    font-size: 5vmin;
 }
 
 nav {
+    background-color: mistyrose;
+    font-family: 'Zilla Slab', serif;
+}
+
+.above-nav {
     background-color: mistyrose;
     font-family: 'Zilla Slab', serif;
 }
@@ -36,6 +41,22 @@ footer .fab {
     font-size: 8vmin;
     color: mistyrose;
     text-shadow: 2px 2px pink;
+}
+
+.font-small {
+    font-size: 1.1rem;
+}
+
+.extra-padding {
+    padding: 0px 20px;
+}
+
+.padding-top {
+    padding-top: 7px;
+}
+
+nav li a {
+    font-size: 1.5rem;
 }
 
 /* Template content */
@@ -57,6 +78,17 @@ footer .fab {
     border-radius: 4px;
 }
 
+.opps-text {
+    font-size: 5vw;
+}
+
+.slogon {
+    font-family: 'Playfair Display';
+    font-style: italic;
+    font-size: 1.6rem;
+    color: black;
+}
+
 /* button styles */
 .custom-btn {
     background-color: mistyrose;
@@ -71,10 +103,17 @@ footer .fab {
     border: 4px pink solid;
 }
 
-.custom-btn a {
+.btn-remove-blue {
     -webkit-tap-highlight-color: transparent;
     color: #2b1f21;
     text-decoration: none;
+}
+
+.btn-remove-blue:hover,
+.btn-remove-blue:focus,
+.btn-remove-blue:active {
+    text-decoration: none;
+    color: inherit;
 }
 
 .sub-custom-btn {
@@ -84,28 +123,17 @@ footer .fab {
     border: 4px mistyrose solid;
     text-shadow: 2px 2px pink;
     border: 4px mistyrose solid;
+    font-size: 1.3rem;
 }
 
 .sub-custom-btn:hover {
     border: 4px pink solid;
 }
 
-.sub-custom-btn a {
-    -webkit-tap-highlight-color: transparent;
-    color: #2b1f21;
-    text-decoration: none;
-}
-
 .custom-site-btn {
     border-radius: 5px;
     line-height: 1;
     border: 4px pink solid;
-}
-
-.custom-site-btn a {
-    -webkit-tap-highlight-color: transparent;
-    color: #2b1f21;
-    text-decoration: none;
 }
 
 .edit-but {
@@ -135,6 +163,7 @@ footer .fab {
     color: #2b1f21;
     font-family: 'Zilla Slab', serif;
     font-size: 1.3rem;
+    margin: 3px 3px;
 }
 
 .pag-page-btn:hover {
@@ -262,6 +291,17 @@ footer .fab {
     min-height: 75vh;
 }
 
+/* large devices (landscape phones, 1100px and up) */
+@media (max-width: 1166px) {
+    nav li a {
+        font-size: 1.3rem;
+    }
+
+    .slogon {
+        font-size: 1.4rem;
+    }
+}
+
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 575px) {
     body {
@@ -269,11 +309,15 @@ footer .fab {
     }
 
     .nav-title {
-        font-size: 7.5vmin;
+        font-size: 9vmin;
     }
 
     .sub-title {
         font-size: 8vm;
+    }
+
+    .slogon {
+        font-size: 1.4rem;
     }
 
     .spacer-1 {
@@ -289,6 +333,14 @@ footer .fab {
         width: max-content;
         font-size: 2vh;
     }
+
+    .opps-text {
+        font-size: 2rem;
+    }
+
+    .relative-tag img {
+        border: 5px mistyrose solid;
+    }
 }
 
 @media (max-width: 368px) {
@@ -296,5 +348,9 @@ footer .fab {
         width: 200px;
         text-align: center;
         font-size: small;
+    }
+
+    .opps-text {
+        font-size: 2rem;
     }
 }

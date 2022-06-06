@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<div class="text-center">
+    <div class="box-wrap">
+        <br>
+        <h1 class="center-text title-font opps-text">Oops</h1>
+    </div>
+</div>
+<br>
+</div>
+<div class="text-center">
+    <p>
+        Sorry, an error has occured, you don't have permission.
+    </p>
+    <br>
+    <p>
+        Please click <a href="{% url 'home' %}">here</a> to return to the site.
+    </p>
+</div>
+<br>
+
+{% endblock content %}

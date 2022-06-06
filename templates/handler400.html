@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<div class="text-center">
+    <div class="box-wrap">
+        <br>
+        <h1 class="center-text title-font opps-text">Oops</h1>
+    </div>
+</div>
+<br>
+</div>
+<div class="text-center">
+    <p>
+        Sorry, an error has occured, that was a bad request.
+    </p>
+    <br>
+    <p>
+        The view page you are looking for does not exist. Please click <a href="{% url 'home' %}">here</a> to return to the site.
+    </p>
+</div>
+<br>
+
+{% endblock content %}

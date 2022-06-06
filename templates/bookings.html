@@ -2,6 +2,8 @@
 
 {% block content %}
 
+{% if user.is_authenticated %}
+
 <div class="container">
     <div class="box-wrap">
         <h1 class="col center-text title-font sub-title">My Bookings</h1>
@@ -10,7 +12,8 @@
 <br>
 <div class="container booking-box">
     <br>
-    {% for booking in booking_list %}
+
+    {% for booking in object_list %}
 
     <div class="container">
         <div class="row">
@@ -23,9 +26,8 @@
                         {{ booking.appointment_date }} | Time: {{ booking.get_appointment_slot_display }}
                     </div>
                     <div class="col-sm-3">
-                        <button class="custom-site-btn edit-but" type="button"><a href="{% url 'edit-booking' booking.pk %}">Edit</a></button>
-                        <button class="custom-site-btn del-but" type="button"><a href="{% url 'delete-booking' booking.pk %}">Delete</a></button>
-                        <!-- <button class="custom-site-btn del-but" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</button> -->
+                        <a class="custom-site-btn btn-remove-blue edit-but" type="button" href="{% url 'edit-booking' booking.pk %}">Edit</a>
+                        <a class="custom-site-btn btn-remove-blue del-but" type="button" href="{% url 'delete-booking' booking.pk %}">Delete</a>
                         </a>
                     </div>
                 </div>
@@ -55,18 +57,13 @@
 <br>
 <div class="container_fluid">
     <div class="justify-content-center text-center ">
-        <button type="button" class="btn-lg light sub-custom-btn hvr-pulse" on><a href="{% url 'booking' %}">Create
-                a new booking</a></button>
+        <a type="button" class="btn-lg light sub-custom-btn btn-remove-blue hvr-pulse" href="{% url 'booking' %}">Create
+            a new booking</a>
     </div>
 </div>
 <br>
 <br>
-<script>
-    setTimeout(function() {
-        let messages = document.getElementById("msg");
-        let alert = new bootstrap.Alert(messages);
-        alert.close();
-    }, 6000);
-</script>
+
+{% endif %}
 
 {% endblock %}

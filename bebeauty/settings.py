@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'fontawesomefree',
     'cloudinary_storage',
     'cloudinary',
     'phonenumber_field',
@@ -59,6 +60,9 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
+# # The user is required to hand over an e-mail address when signing up.
+ACCOUNT_EMAIL_REQUIRED = (True)
+ACCOUNT_EMAIL_VERIFICATION = ("none")
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',

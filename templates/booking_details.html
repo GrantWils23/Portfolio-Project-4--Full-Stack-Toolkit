@@ -2,6 +2,7 @@
 
 {% block content %}
 
+{% if user.is_authenticated %}
 
 <div class="container">
     <div class="box-wrap">
@@ -10,7 +11,7 @@
 </div>
 <br>
 <div class="col-sm-3 d-inline-block"></div>
-<div class="container col-6 booking-box d-inline-block">
+<div class="container col-sm-6 booking-box d-inline-block">
     <br>
     <section>
         <section class="row">
@@ -90,9 +91,8 @@
         <section class="row g-0">
             <div class="col-5"></div>
             <div class="col-sm-2 text-center justify-center-content">
-                <button type="button" class="custom-site-btn edit-but hvr"><a href="{% url 'edit-booking' booking.pk %}">Edit</a></button>
-                <button type="button" class="custom-site-btn del-but hvr"><a href="{% url 'delete-booking' booking.pk %}">Delete</a></button>
-                <!-- <button class="custom-site-btn del-but hvr" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</button> -->
+                <a type="button" class="custom-site-btn btn-remove-blue edit-but hvr" href="{% url 'edit-booking' booking.pk %}">Edit</a>
+                <a type="button" class="custom-site-btn btn-remove-blue del-but hvr" href="{% url 'delete-booking' booking.pk %}">Delete</a>
                 <div class="col-2"></div>
         </section>
         <br>
@@ -104,21 +104,13 @@
 <div class="container">
     <div class="row g-0">
         <div class="col-sm-12 text-center">
-            <button class="btn-lg text-center light sub-custom-btn hvr-pulse"><a href="{% url 'bookings' %}">Back to
-                    Bookings</a>
-            </button>
+            <a class="btn-lg text-center light sub-custom-btn btn-remove-blue hvr-pulse" href="{% url 'bookings' %}">Back to Bookings</a>
         </div>
     </div>
 </div>
 <br>
 <br>
 
-<script>
-    setTimeout(function() {
-        let messages = document.getElementById("msg");
-        let alert = new bootstrap.Alert(messages);
-        alert.close();
-    }, 6000);
-</script>
+{% endif %}
 
 {% endblock content %}

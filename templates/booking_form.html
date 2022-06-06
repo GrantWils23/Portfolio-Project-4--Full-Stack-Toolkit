@@ -4,17 +4,16 @@
 
 {% block content %}
 
+{% if user.is_authenticated %}
+
 <br>
 <div class="container">
     <div class="box-wrap">
-        <h1 class="center-text title-font smaller-sub-title">Book your Appointment</h1>
+        <h1 class="center-text title-font smaller-sub-title">Book an Appointment</h1>
     </div>
 </div>
 </div>
 <br>
-
-{% if user.is_authenticated %}
-
 <div class="container booking-box">
     <br>
     <div class="container booking-form-font-size">
@@ -29,8 +28,12 @@
                     </div>
                     <br>
                     {% csrf_token %}
-
-
+                    <div class="text-center">
+                        <h4><i>{{ user.username }}</i></h4>
+                    </div>
+                    <div class="text-center">
+                        <h4><i> {{ user.email }}</i></h4>
+                    </div>
                     {% crispy form %}
 
                     <!---------------------------------------------------------------------------------------------------------------->
@@ -57,11 +60,6 @@
 
                     <!-------------------------------------------------------------------------------------------------------------->
                     <!-- <p>{{ form.as_p }}</p> -->
-
-                    {{ user.username }}
-                    {{ user.email }}
-
-                    <input type="submit" value="Submit Session" />
                     <br>
                 </form>
             </div>
@@ -71,23 +69,6 @@
 </div>
 <br>
 <br>
-
-{% else %}
-<!-- IF NOT A MEMBER, display a tag to sign up or register-->
-<div class="container booking-box">
-    <br>
-    <div class="container booking-form-font-size">
-        <div class="row">
-            <br>
-            <div class="text-center">
-                <p>
-                    To view your bookings you need to register or sign in. please select one of the following:
-                </p>
-            </div>
-            <br>
-        </div>
-    </div>
-</div>
 
 {% endif %}
 

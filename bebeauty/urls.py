@@ -15,13 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from booking.views import Home, Gallery, Services, ListBookings, AddBookingView, ViewBooking, EditBookingView, DeleteBookingView
+from booking.views import Home, Gallery, Services, Contact, ListBookings, AddBookingView, ViewBooking, EditBookingView, DeleteBookingView
+
+handler400 = 'booking.views.handler400'
+handler403 = 'booking.views.handler403'
+handler404 = 'booking.views.handler404'
+handler500 = 'booking.views.handler500'
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Home.as_view(), name='home'),
     path('gallery', Gallery.as_view(), name='gallery'),
     path('services', Services.as_view(), name='services'),
+    path('contact', Contact.as_view(), name='contact'),
     path('bookings', ListBookings.as_view(), name='bookings'),
     path('booking', AddBookingView.as_view(), name='booking'),
     path('booking/<int:pk>', ViewBooking.as_view(), name='view-booking'),
@@ -29,3 +36,4 @@ urlpatterns = [
     path('booking/<int:pk>/delete', DeleteBookingView.as_view(), name='delete-booking'),
     path('accounts/', include('allauth.urls')),
 ]
+
