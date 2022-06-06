@@ -14,7 +14,10 @@
     <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" />
     <link rel="stylesheet" href="{% static '../static/css/style.css' %}" type="text/css">
-
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static '../static/favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static '../static/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static '../static/favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static '../static/favicon/site.webmanifest' %}">
 </head>
 
 <body class="d-flex flex-column h-100 main-bg">
@@ -57,7 +60,8 @@
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'bookings' %}">My Bookings ({{ user.username }})</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'bookings' %}">My Bookings
+                            ({{ user.username }})</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
