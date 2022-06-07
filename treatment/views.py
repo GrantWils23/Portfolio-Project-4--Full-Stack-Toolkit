@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
-from django.urls import reverse_lazy
 from django.views import generic, View
-from django.views.generic import TemplateView, DetailView, ListView
+from django.views.generic import ListView
 from django.http import request
 from .models import Treatment
 
@@ -15,4 +14,4 @@ class TreatmentListView(ListView):
 class ServicesListView(ListView):
     template_name = 'services.html'
     queryset = Treatment.objects.all()
-    coontext_object_name = 'treatments'
+    context_object_name = "treatments"

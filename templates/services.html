@@ -36,7 +36,7 @@
                     on eyelash extentions. With our 5 years in the industry and ever growing experience, we promise that
                     you will come away looking fantastic!</p>
                 <ul class="service-lists">
-                    {% for treatment in object_list %}
+                    {% for treatment in treatments %}
                     {% if treatment.treatment_type == 1 %}
                     <li>{{ treatment.treatment_name }}</li>
                     {% endif %}
@@ -76,7 +76,7 @@
                     them and leaving them tighten and youthful. It is the ultimate stress realise after staring at a
                     screen all day to really lift your spirit.</p>
                 <ul class="service-lists list-right">
-                    {% for treatment in object_list %}
+                    {% for treatment in treatments %}
                     {% if treatment.treatment_type == 0 %}
                     <li class="item-right">{{ treatment.treatment_name }}</li>
                     {% endif %}
@@ -99,7 +99,7 @@
                     feet in the perfect way by painting those toe nails of yours. Your feet at the end of our session
                     will be smooth, healthy and lush, all ready to go!</p>
                 <ul class="service-lists">
-                    {% for treatment in object_list %}
+                    {% for treatment in treatments %}
                     {% if treatment.treatment_type == 2 %}
                     <li>{{ treatment.treatment_name }}</li>
                     {% endif %}
@@ -138,7 +138,7 @@
                     colours. Our Beautician is happy to help advice you with what is the best treatment that will suit
                     your needs. At the end of the session, you will be wanting us to come back regularly.</p>
                 <ul class="service-lists list-right">
-                    {% for treatment in object_list %}
+                    {% for treatment in treatments %}
                     {% if treatment.treatment_type == 3 %}
                     <li class="item-right">
                         <a>{{ treatment.treatment_name }}</a>
@@ -164,7 +164,7 @@
                     get to relax from the comfort of your own home. It is a lovely caring service for our clients that
                     is highly recommended by all our customers.</p>
                 <ul class="service-lists">
-                    {% for treatment in object_list %}
+                    {% for treatment in treatments %}
                     {% if treatment.treatment_type == 4 %}
                     <li>{{ treatment.treatment_name }}</li>
                     {% endif %}

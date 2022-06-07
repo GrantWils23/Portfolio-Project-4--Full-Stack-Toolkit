@@ -420,6 +420,9 @@ td {
         padding-right: 0px;
     }
 
+    .custom-btn {
+        font-size: 7vmin;
+    }
 }
 
 @media (max-width: 368px) {
