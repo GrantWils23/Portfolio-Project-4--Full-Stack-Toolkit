@@ -105,6 +105,22 @@ td {
     word-wrap: break-word;
 }
 
+/* Service list fixers */
+.service-lists {
+    list-style: circle;
+}
+
+.list-right {
+    padding: 0;
+    direction: rtl;
+    padding-right: 32px;
+}
+
+.item-right a {
+    direction: ltr;
+    unicode-bidi: embed;
+}
+
 /* button styles */
 .custom-btn {
     background-color: mistyrose;

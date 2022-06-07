@@ -2,7 +2,6 @@
 
 {% block content %}
 
-
 <div class="container">
     <div class="box-wrap">
         <h1 class="center-text title-font sub-title">Services</h1>
@@ -36,6 +35,14 @@
                     their skin complextion and the styling to go with it. We provide a touch up of eyebrows and putting
                     on eyelash extentions. With our 5 years in the industry and ever growing experience, we promise that
                     you will come away looking fantastic!</p>
+                <ul class="service-lists">
+                    {% for treatment in object_list %}
+                    {% if treatment.treatment_type == 1 %}
+                    <li>{{ treatment.treatment_name }}</li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+
             </div>
             <div class="col-lg-4">
                 <div class="relative-tag photos">
@@ -68,6 +75,13 @@
                     clean
                     them and leaving them tighten and youthful. It is the ultimate stress realise after staring at a
                     screen all day to really lift your spirit.</p>
+                <ul class="service-lists list-right">
+                    {% for treatment in object_list %}
+                    {% if treatment.treatment_type == 0 %}
+                    <li class="item-right">{{ treatment.treatment_name }}</li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
             </div>
             <div class="col-sm-1"></div>
         </div>
@@ -84,6 +98,13 @@
                     for removing all that hard dead skin under your feet and once we have done that we will top off your
                     feet in the perfect way by painting those toe nails of yours. Your feet at the end of our session
                     will be smooth, healthy and lush, all ready to go!</p>
+                <ul class="service-lists">
+                    {% for treatment in object_list %}
+                    {% if treatment.treatment_type == 2 %}
+                    <li>{{ treatment.treatment_name }}</li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
             </div>
             <div class="col-lg-4">
                 <div class="relative-tag photos">
@@ -108,7 +129,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 text-end">
+            <div class="col-lg-6 text-lg-end">
                 <u>
                     <h2>Manicure</h2>
                 </u>
@@ -116,6 +137,15 @@
                     of your nails, then this is the treatment for you. We offer a wide range of nail style and polish
                     colours. Our Beautician is happy to help advice you with what is the best treatment that will suit
                     your needs. At the end of the session, you will be wanting us to come back regularly.</p>
+                <ul class="service-lists list-right">
+                    {% for treatment in object_list %}
+                    {% if treatment.treatment_type == 3 %}
+                    <li class="item-right">
+                        <a>{{ treatment.treatment_name }}</a>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
             </div>
             <div class="col-sm-1"></div>
         </div>
@@ -133,6 +163,13 @@
                     hassle of having to rush to get to your appointment like you would at a normal hair salon and you
                     get to relax from the comfort of your own home. It is a lovely caring service for our clients that
                     is highly recommended by all our customers.</p>
+                <ul class="service-lists">
+                    {% for treatment in object_list %}
+                    {% if treatment.treatment_type == 4 %}
+                    <li>{{ treatment.treatment_name }}</li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
             </div>
             <div class="col-lg-4">
                 <div class="relative-tag photos">

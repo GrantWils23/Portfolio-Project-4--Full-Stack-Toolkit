@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from booking.views import Home, Gallery, Services, Contact, ListBookings, AddBookingView, ViewBooking, EditBookingView, DeleteBookingView
-from treatment.views import TreatmentListView
+from booking.views import Home, Gallery, Contact, ListBookings, AddBookingView, ViewBooking, EditBookingView, DeleteBookingView
+from treatment.views import TreatmentListView, ServicesListView
 
 
 handler400 = 'booking.views.handler400'
@@ -29,7 +29,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Home.as_view(), name='home'),
     path('gallery', Gallery.as_view(), name='gallery'),
-    path('services', Services.as_view(), name='services'),
+    path('services', ServicesListView.as_view(), name='services'),
     path('contact', Contact.as_view(), name='contact'),
     path('price-list', TreatmentListView.as_view(), name='price-list'),
     path('bookings', ListBookings.as_view(), name='bookings'),

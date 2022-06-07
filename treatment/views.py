@@ -11,3 +11,8 @@ class TreatmentListView(ListView):
     queryset = Treatment.objects.all().order_by('treatment_type')
     context_object_name = "treatments"
 
+
+class ServicesListView(ListView):
+    template_name = 'services.html'
+    queryset = Treatment.objects.all()
+    coontext_object_name = 'treatments'

@@ -18,8 +18,8 @@ class Gallery(TemplateView):
     template_name = 'gallery.html'
 
 
-class Services(TemplateView):
-    template_name = 'services.html'
+# class Services(TemplateView):
+#     template_name = 'services.html'
 
 
 class Contact(TemplateView):
