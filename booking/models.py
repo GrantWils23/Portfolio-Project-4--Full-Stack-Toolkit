@@ -24,6 +24,7 @@ class Booking(models.Model):
     post_code = models.CharField(max_length=10)
     addition_info = models.TextField(max_length=300, blank=True)
 
+
     class _Meta:
         ordering = ['appointment_date', 'appointment_slot']
 

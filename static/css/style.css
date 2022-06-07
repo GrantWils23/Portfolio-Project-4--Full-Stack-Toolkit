@@ -19,6 +19,10 @@ body {
     text-align: center;
 }
 
+.contact-holder {
+    text-align: end;
+}
+
 .nav-title {
     font-size: 5vmin;
 }
@@ -48,7 +52,7 @@ footer .fab {
 }
 
 .extra-padding {
-    padding: 0px 20px;
+    padding: 0px 15px;
 }
 
 .padding-top {
@@ -82,11 +86,23 @@ nav li a {
     font-size: 5vw;
 }
 
+/* Slogon fixer */
 .slogon {
     font-family: 'Playfair Display';
     font-style: italic;
     font-size: 1.6rem;
     color: black;
+}
+
+/* Table fixes */
+table {
+    table-layout: fixed;
+}
+
+td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
 }
 
 /* button styles */
@@ -257,8 +273,14 @@ nav li a {
 }
 
 /* Modal Custom styles */
-.modal-dialog {
-    top: 35%;
+.modal-dialog {}
+
+.modal-text {
+    font-size: 1.2rem;
+}
+
+.modal-custom-size {
+    size: 1000px 750px;
 }
 
 .modal-content {
@@ -288,13 +310,21 @@ nav li a {
 }
 
 .screen-container {
-    min-height: 75vh;
+    min-height: 40vh;
 }
 
 /* large devices (landscape phones, 1100px and up) */
 @media (max-width: 1166px) {
     nav li a {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+    }
+
+    .nav-title {
+        font-size: 4vw;
+    }
+
+    .contact-holder {
+        font-size: 1.1rem;
     }
 
     .slogon {
@@ -302,10 +332,21 @@ nav li a {
     }
 }
 
+/* // Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+    .contact-holder {
+        font-size: 1.0rem;
+    }
+}
+
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 575px) {
     body {
         font-size: 1.1em;
+    }
+
+    .contact-holder {
+        text-align: center;
     }
 
     .nav-title {
@@ -341,6 +382,28 @@ nav li a {
     .relative-tag img {
         border: 5px mistyrose solid;
     }
+
+    table {
+        font-size: 0.8rem;
+        padding: 2px;
+        line-height: 1;
+    }
+
+    .td-name {
+        overflow: visible;
+        word-wrap: normal;
+        padding-left: 0px;
+    }
+
+    .td-price {
+        align-items: flex-end;
+        justify-content: flex-end
+    }
+
+    td {
+        padding-right: 0px;
+    }
+
 }
 
 @media (max-width: 368px) {
@@ -348,6 +411,10 @@ nav li a {
         width: 200px;
         text-align: center;
         font-size: small;
+    }
+
+    .contact-holder {
+        font-size: 0.9rem;
     }
 
     .opps-text {

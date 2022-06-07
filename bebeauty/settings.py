@@ -52,8 +52,8 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'crispy_forms',
     'booking',
-    'userprofile',
-]
+    'treatment',
+    ]
 
 SITE_ID = 1
 

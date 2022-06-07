@@ -1,0 +1,66 @@
+{% load static %}
+
+{% for treatment in treatments %}
+
+<!-- Modal -->
+<div class="modal fade" id="treatmentModal" tabindex="-1" aria-labelledby="treatmentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="treatmentModalLabel">{{ treatment.treatment_name }}</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-5">
+                            <h5>
+                                <b>
+                                    <u>Treatment Type:</u>
+                                </b>
+                            </h5>
+                            <p>{{ treatment.get_treatment_type_display }}</p>
+                            <h5>
+                                <b>
+                                    <u>Price:</u>
+                                </b>
+                            </h5>
+                            <p>£{{ treatment.treatment_price }}</p>
+                        </div>
+                        <div class="col-sm-5">
+                            <h5>
+                                <b>
+                                    <u>Session Time:</u>
+                                </b>
+                            </h5>
+                            <p>
+                                Approx ~
+                                {{ treatment.treatment_time }}</p>
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-10 modal-text">
+                            <h5>
+                                <b>
+                                    <u>Description</u>
+                                </b>
+                            </h5>
+                            <p>{{ treatment.treatment_description }}</p>
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="custom-site-btn btn-remove-blue edit-but hvr" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}

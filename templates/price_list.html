@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="box-wrap">
+        <h1 class="center-text title-font sub-title">Price List</h1>
+    </div>
+</div>
+
+
+<div class="bodywork">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-md-10 g-0">
+                <br>
+                <h5>Treatment</h5>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col"> Type</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for treatment in treatments %}
+                        <tr>
+                            <td>{{ treatment.get_treatment_type_display }}</td>
+                            <td class="td-name">{{ treatment.treatment_name }}</td>
+                            <td class="td-price">£{{ treatment.treatment_price }}</td>
+                            <td>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#treatmentModal" class="custom-site-btn btn-remove-blue edit-but hvr">More info</button>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        <br>
+    </div>
+</div>
+
+{% include 'treatment-price.html' %}
+
+{% endblock %}
