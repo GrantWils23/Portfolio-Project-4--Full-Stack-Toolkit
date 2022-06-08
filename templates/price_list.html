@@ -5,46 +5,50 @@
 
 <div class="container">
     <div class="box-wrap">
-        <h1 class="center-text title-font sub-title">Price List</h1>
+        <h1 class="col center-text title-font sub-title">Price List</h1>
     </div>
 </div>
-
-
-<div class="bodywork">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-md-10 g-0">
-                <br>
-                <h2><u><b>Treatments</b></u></h2>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Type</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Price</th>
-                            <th scope="col"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for treatment in treatments %}
-                        <tr>
-                            <td>{{ treatment.get_treatment_type_display }}</td>
-                            <td class="td-name">{{ treatment.treatment_name }}</td>
-                            <td class="td-price">£{{ treatment.treatment_price }}</td>
-                            <td>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#treatmentModal" class="custom-site-btn btn-remove-blue edit-but hvr">More info</button>
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+<br>
+<div class="container booking-box">
+    <br>
+    <div class="bodywork">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-md-10 g-0">
+                    <br>
+                    <h2><u><b>Treatments</b></u></h2>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Type</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for treatment in treatments %}
+                            <tr>
+                                <td>{{ treatment.get_treatment_type_display }}</td>
+                                <td class="td-name">{{ treatment.treatment_name }}</td>
+                                <td class="td-price">£{{ treatment.treatment_price }}</td>
+                                <td>
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#treatmentModal" class="custom-site-btn btn-remove-blue edit-but hvr">More info</button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-sm-1"></div>
             </div>
-            <div class="col-sm-1"></div>
+            <br>
         </div>
-        <br>
     </div>
+    <br>
 </div>
+<br>
 <br>
 <!--booking button-->
 <div class="container_fluid">
@@ -55,7 +59,6 @@
 </div>
 <br>
 <br>
-
 
 {% include 'treatment-price.html' %}
 
