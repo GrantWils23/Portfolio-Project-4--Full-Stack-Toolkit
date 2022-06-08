@@ -10,8 +10,21 @@
     </div>
 </div>
 <br>
-<div class="col-sm-3 d-inline-block"></div>
-<div class="container col-sm-6 booking-box d-inline-block">
+<div class="col-md-3 col-sm-2 d-inline-block"></div>
+<div class="container col-md-6 col-sm-8 booking-box d-inline-block">
+    {% if booking.cancelled == True %}
+    <br>
+    <section class="text-center dead-btn">
+        <button class="cancel-box">Appointment Cancelled</button>
+    </section>
+    <br>
+    {% endif %}
+    {% if user.last_login.date > booking.appointment_date and booking.cancelled == False %}
+    <br>
+    <section class="text-center dead-btn">
+        <button class="attended-box">Appointment Attended</button>
+    </section>
+    {% endif %}
     <br>
     <section>
         <section class="row">
@@ -75,8 +88,15 @@
                 Address:
             </div>
             <div class="col-sm-6 spacer-2">
-                {{ booking.address_line_one }},<br> {{ booking.address_line_two }},<br>
-                {{ booking.address_line_three }},<br> {{ booking.city }},<br> {{ booking.post_code }}
+                {{ booking.address_line_one }},
+                <br>
+                {{ booking.address_line_two }},
+                <br>
+                {{ booking.address_line_three }},
+                <br>
+                {{ booking.city }},
+                <br>
+                {{ booking.post_code }}
             </div>
         </section>
         <section class="row">
@@ -89,16 +109,29 @@
         </section>
         <br>
         <section class="row g-0">
-            <div class="col-5"></div>
-            <div class="col-sm-2 text-center justify-center-content">
-                <a type="button" class="custom-site-btn btn-remove-blue edit-but hvr" href="{% url 'edit-booking' booking.pk %}">Edit</a>
-                <a type="button" class="custom-site-btn btn-remove-blue del-but hvr" href="{% url 'delete-booking' booking.pk %}">Delete</a>
-                <div class="col-2"></div>
+            <div class="text-center justify-center-content">
+                {% if booking.cancelled == False %}
+                {% if user.last_login.date < booking.appointment_date %}
+                <a class="custom-site-btn btn-remove-blue edit-but" type="button" href="{% url 'edit-booking' booking.pk %}">Edit</a>
+                <a class="custom-site-btn btn-remove-blue del-but" type="button" href="{ url 'cancel-booking' booking.pk }">Cancel</a><!-- Make cancel view-->
+                {% else %}
+                <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Edit</s></a>
+                <a class="custom-site-btn btn-remove-blue del-but" type="button" href="{% url 'delete-booking' booking.pk %}">Delete</a>
+                {% endif %}
+                {% else %}
+                {% if user.last_login.date < booking.appointment_date %}
+                <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Edit</s></a>
+                <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Cancelled</s></a>
+                {% else %}
+                <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Edit</s></a>
+                <a class="custom-site-btn btn-remove-blue del-but" type="button" href="{% url 'delete-booking' booking.pk %}">Delete</a>
+                {% endif %}
+                {% endif %}
         </section>
         <br>
     </section>
 </div>
-<div class="col-sm-2 d-inline-block"></div>
+<div class="col-md-3 col-sm-2 d-inline-block"></div>
 <br>
 <br>
 <div class="container">
@@ -110,7 +143,9 @@
 </div>
 <br>
 <br>
-
 {% endif %}
-
 {% endblock content %}
+
+
+<a class="custom-site-btn btn-remove-blue nul-but" type="button">Edit</a>
+<a class="custom-site-btn btn-remove-blue nul-but" type="button">Cancelled</a>

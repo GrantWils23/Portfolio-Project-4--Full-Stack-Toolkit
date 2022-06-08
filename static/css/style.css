@@ -175,7 +175,7 @@ td {
 }
 
 .edit-but:hover {
-    border: 4px pink solid;
+    border: 4px rgb(163, 189, 236) solid;
 }
 
 .del-but {
@@ -184,8 +184,28 @@ td {
     padding: 3px 8px;
 }
 
+.nul-but {
+    background-color: rgb(172, 171, 171);
+    border: 4px rgb(172, 171, 171) solid;
+    padding: 3px 8px;
+}
+
+.nul-hvr:hover {
+    border: 4px lightgray solid;
+}
+
+.fin-but {
+    background-color: rgb(179, 236, 179);
+    border: 4px rgb(179, 236, 179) solid;
+    padding: 3px 8px;
+}
+
+.fin-but:hover {
+    border: 4px rgb(140, 214, 140) solid;
+}
+
 .del-but:hover {
-    border: 4px pink solid;
+    border: 4px rgb(216, 84, 84) solid;
 }
 
 .pag-page-btn {
@@ -288,9 +308,31 @@ td {
     margin-bottom: 3px;
 }
 
-/* Modal Custom styles */
-.modal-dialog {}
+.cancel-box {
+    background-color: indianred;
+    width: max-content;
+    padding: 6px 10px;
+    font-weight: 600;
+    border: 4px indianred solid;
+    border-radius: 4px;
+    font-size: 1.9rem;
+}
 
+.attended-box {
+    background-color: rgb(179, 236, 179);
+    width: max-content;
+    padding: 6px 10px;
+    font-weight: 600;
+    border: 4px rgb(179, 236, 179) solid;
+    border-radius: 4px;
+    font-size: 1.9rem;
+}
+
+.dead-btn button {
+    cursor: default;
+}
+
+/* Modal Custom styles */
 .modal-text {
     font-size: 1.2rem;
 }

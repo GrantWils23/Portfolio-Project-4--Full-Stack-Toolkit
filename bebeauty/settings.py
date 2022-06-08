@@ -60,9 +60,12 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-# # The user is required to hand over an e-mail address when signing up.
+# The user is required to hand over an e-mail address when signing up. #
 ACCOUNT_EMAIL_REQUIRED = (True)
 ACCOUNT_EMAIL_VERIFICATION = ("none")
+
+# The user is logged out when the session expires #
+# SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',

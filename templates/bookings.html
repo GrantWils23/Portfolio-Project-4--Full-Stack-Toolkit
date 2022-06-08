@@ -12,9 +12,9 @@
 <br>
 <div class="container booking-box">
     <br>
-
+    <!-- {{ user.last_login.date }} -->
     {% for booking in bookings %}
-
+    {% if booking.cancelled == False %}
     <div class="container">
         <div class="row">
             <div class="col-1 no-padding"></div>
@@ -26,16 +26,46 @@
                         {{ booking.appointment_date }} | Time: {{ booking.get_appointment_slot_display }}
                     </div>
                     <div class="col-sm-3">
+                        {% if user.last_login.date < booking.appointment_date %}
                         <a class="custom-site-btn btn-remove-blue edit-but" type="button" href="{% url 'edit-booking' booking.pk %}">Edit</a>
-                        <a class="custom-site-btn btn-remove-blue del-but" type="button" href="{% url 'delete-booking' booking.pk %}">Delete</a>
+                        <a class="custom-site-btn btn-remove-blue del-but" type="button" href="{ url 'cancel-booking' booking.pk }">Cancel</a><!-- Make cancel view-->
+                        {% else %}
+                        <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Edit</s></a>
+                        <a class="custom-site-btn btn-remove-blue fin-but" type="button" href="{% url 'view-booking' booking.pk %}">Completed</a>
                         </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <br>
-
+    {% else %}
+    <div class="container">
+        <div class="row">
+            <div class="col-1 no-padding"></div>
+            <div class="col-sm-11">
+                <div class="row text-wrap">
+                    <div class="col-sm-9">
+                        <a class="" href="{% url 'view-booking' booking.pk %}">View Booking</a> | <s>Booking No:
+                            {{ booking.booking_id }} | Treatment: {{ booking.get_treatment_display }} | Date:
+                            {{ booking.appointment_date }} | Time: {{ booking.get_appointment_slot_display }}</s>
+                    </div>
+                    <div class="col-sm-3">
+                        {% if user.last_login.date < booking.appointment_date %}
+                        <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Edit</s></a>
+                        <a class="custom-site-btn btn-remove-blue nul-but nul-hvr" type="button" href="{% url 'view-booking' booking.pk %}">Cancelled</a>
+                        {% else %}
+                        <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Edit</s></a>
+                        <a class="custom-site-btn btn-remove-blue nul-but nul-hvr" type="button" href="{% url 'view-booking' booking.pk %}">Cancelled</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    {% endif %}
     {% endfor %}
 </div>
 
@@ -67,3 +97,14 @@
 {% endif %}
 
 {% endblock %}
+
+
+
+<!-- Inject this code below with update to cancel a booking -->
+<!-- { if user.is_authenticated }
+<form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+    { csrf_token }
+    { if liked  }
+
+    <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn=like"><i
+            class="fas fa-heart"></i></button> -->

@@ -23,6 +23,7 @@ class Booking(models.Model):
     city = models.CharField(max_length=20)
     post_code = models.CharField(max_length=10)
     addition_info = models.TextField(max_length=300, blank=True)
+    cancelled = models.BooleanField(default=False)
 
 
     class _Meta:

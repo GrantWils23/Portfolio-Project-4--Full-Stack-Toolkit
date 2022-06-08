@@ -6,14 +6,40 @@ from django.forms import ModelForm
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Field, Layout, HTML
 
+from django.core.exceptions import ValidationError
+from django.utils.translation import gettext_lazy as _
+
+import datetime
+
+
 class DateInput(forms.DateInput):
     input_type = 'date'
 
-class BookingForm(ModelForm):
-    addition_info = forms.CharField(required=False, widget=forms.Textarea(attrs={'rows': 4}))
-    # appointment_date = forms.DateField(widget=DateInput)
-    appointment_date = forms.DateField(widget=DateInput(attrs={"class": "form-control datepicker validate"}))
 
+placeholder='Please add the service you are thinking of getting and request anything special'
+
+
+class BookingForm(ModelForm):
+    def clean_appointment_date(self):
+        data = self.cleaned_data['appointment_date']
+
+        if data < datetime.date.today():
+            raise ValidationError(_('invalid date - date is in the past'))
+        return data
+
+
+    # def clean_appointment_slot(self):
+    #     data = self.cleaned_data['appointment_slot', 'appointment_date']
+
+    #     if data == :
+    #         raise ValidationError(_('invalid timeslot - This slot is already been booked on this day'))
+    #     return data
+
+
+    addition_info = forms.CharField(required=False, widget=forms.Textarea(attrs={'rows': 4},))
+    appointment_date = forms.DateField(widget=DateInput)
+    appointment_date = forms.DateField(widget=DateInput(attrs={"class": "form-control datepicker validate"}))
+    
     class Meta:
         model = Booking
         fields = ['contact_no', 'treatment',
@@ -21,6 +47,8 @@ class BookingForm(ModelForm):
                   'address_line_two', 'address_line_three', 'city',
                   'post_code', 'addition_info',
                   ]
+        help_texts = {'due_back': _('invalid date - date is in the past')}
+
 
 # Custom control required on the treatment, appointment_date and appointment_slot
     @property

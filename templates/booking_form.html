@@ -21,8 +21,9 @@
             <div class="col-sm-1 col-md-2"></div>
             <div class="col-lg-8">
                 <form method="POST">
-                    {{ booking_form | crispy }}
-
+                    <!-- {{ booking_form | crispy }} -->
+                    <!-- {{ form.contact_no.label_tag }}
+                    {{ form.contact_no }} -->
                     <div class="text-center">
                         <h2>Submit your Booking:</h2>
                     </div>
@@ -34,6 +35,7 @@
                     <div class="text-center">
                         <h4><i> {{ user.email }}</i></h4>
                     </div>
+
                     {% crispy form %}
 
                     <!---------------------------------------------------------------------------------------------------------------->
