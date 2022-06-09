@@ -1,13 +1,14 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.urls import reverse_lazy
 from django.views import generic, View
+from django.http import HttpResponseRedirect
 from django.views.generic import TemplateView, CreateView, DeleteView, UpdateView, DetailView, ListView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.http import request
 from .models import Booking
-from .forms import BookingForm
+from .forms import BookingForm, CancelForm
 class Home(TemplateView):
     template_name = 'index.html'
 
@@ -67,6 +68,38 @@ class EditBookingView(SuccessMessageMixin, UpdateView):
     def get_queryset(self):
         queryset = super().get_queryset()
         return queryset.filter(user=self.request.user)
+
+
+
+
+
+
+
+
+
+
+class CancelBookingView(SuccessMessageMixin, UpdateView):
+    template_name = 'cancel-booking.html'
+    form_class = CancelForm
+    model = Booking
+    success_message = 'Your booking has been cancelled'
+    form = BookingForm(initial={'cancelled': True})
+
+
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset.filter(user=self.request.user)
+
+
+
+
+
+
+
+
+
+
 
 
 class DeleteBookingView(SuccessMessageMixin, DeleteView):

@@ -1,14 +1,12 @@
 {% load static %}
 
-{% for treatment in treatments %}
-
 <!-- Modal -->
-<div class="modal fade" id="treatmentModal" tabindex="-1" aria-labelledby="treatmentModalLabel" aria-hidden="true">
+<div class="modal fade" id="treatmentModal{{treatment.pk}}" tabindex="-1" aria-labelledby="treatmentModal{{treatment.pk}}Label" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="treatmentModalLabel">{{ treatment.treatment_name }}</h3>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h3 class="modal-title" id="treatmentModal{{treatment.pk}}Label">{{ treatment.treatment_name }}</h3>
+                <button type=" button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="container">
@@ -62,5 +60,3 @@
             </div>
         </div>
     </div>
-
-    {% endfor %}

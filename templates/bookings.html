@@ -28,7 +28,7 @@
                     <div class="col-sm-3">
                         {% if user.last_login.date < booking.appointment_date %}
                         <a class="custom-site-btn btn-remove-blue edit-but" type="button" href="{% url 'edit-booking' booking.pk %}">Edit</a>
-                        <a class="custom-site-btn btn-remove-blue del-but" type="button" href="{ url 'cancel-booking' booking.pk }">Cancel</a><!-- Make cancel view-->
+                        <a class="custom-site-btn btn-remove-blue del-but" type="button" href="{% url 'cancel-booking' booking.pk %}">Cancel</a><!-- Make cancel view-->
                         {% else %}
                         <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Edit</s></a>
                         <a class="custom-site-btn btn-remove-blue fin-but" type="button" href="{% url 'view-booking' booking.pk %}">Completed</a>
@@ -56,8 +56,8 @@
                         <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Edit</s></a>
                         <a class="custom-site-btn btn-remove-blue nul-but nul-hvr" type="button" href="{% url 'view-booking' booking.pk %}">Cancelled</a>
                         {% else %}
-                        <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Edit</s></a>
-                        <a class="custom-site-btn btn-remove-blue nul-but nul-hvr" type="button" href="{% url 'view-booking' booking.pk %}">Cancelled</a>
+                        <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Edit</s></a> <!-- DONT NEED!?!?! -->
+                        <a class="custom-site-btn btn-remove-blue nul-but nul-hvr" type="button" href="{% url 'view-booking' booking.pk %}">Cancelled</a> <!-- DONT NEED!?!?! -->
                         {% endif %}
                     </div>
                 </div>
@@ -97,14 +97,3 @@
 {% endif %}
 
 {% endblock %}
-
-
-
-<!-- Inject this code below with update to cancel a booking -->
-<!-- { if user.is_authenticated }
-<form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
-    { csrf_token }
-    { if liked  }
-
-    <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn=like"><i
-            class="fas fa-heart"></i></button> -->

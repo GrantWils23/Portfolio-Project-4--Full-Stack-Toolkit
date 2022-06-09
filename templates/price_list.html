@@ -3,6 +3,7 @@
 {% block content %}
 
 
+
 <div class="container">
     <div class="box-wrap">
         <h1 class="col center-text title-font sub-title">Price List</h1>
@@ -29,12 +30,13 @@
                         </thead>
                         <tbody>
                             {% for treatment in treatments %}
+                            {% include 'treatment-price.html' %}
                             <tr>
                                 <td>{{ treatment.get_treatment_type_display }}</td>
                                 <td class="td-name">{{ treatment.treatment_name }}</td>
                                 <td class="td-price">£{{ treatment.treatment_price }}</td>
                                 <td>
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#treatmentModal" class="custom-site-btn btn-remove-blue edit-but hvr">More info</button>
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#treatmentModal{{treatment.pk}}" class="custom-site-btn btn-remove-blue edit-but hvr">More info</button>
                                 </td>
                             </tr>
                             {% endfor %}
@@ -59,6 +61,7 @@
 </div>
 <br>
 <br>
+
 
 {% include 'treatment-price.html' %}
 

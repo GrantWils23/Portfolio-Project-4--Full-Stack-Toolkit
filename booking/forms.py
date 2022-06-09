@@ -19,6 +19,13 @@ class DateInput(forms.DateInput):
 placeholder='Please add the service you are thinking of getting and request anything special'
 
 
+class CancelForm(forms.ModelForm):
+    class Meta:
+        model = Booking
+        fields = ["cancelled",]
+        
+
+
 class BookingForm(ModelForm):
     def clean_appointment_date(self):
         data = self.cleaned_data['appointment_date']

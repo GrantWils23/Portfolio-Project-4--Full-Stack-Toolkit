@@ -6,6 +6,7 @@ from .models import Treatment
 
 
 class TreatmentListView(ListView):
+    model = Treatment
     template_name = "price_list.html"
     queryset = Treatment.objects.all().order_by('treatment_type')
     context_object_name = "treatments"
