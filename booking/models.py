@@ -8,6 +8,9 @@ TREATMENTS = ((0, "Facial"), (1, "Make-Up"), (2, "Pedicure"), (3, "Manicure"), (
 
 TIMESLOTS = ((0, "9am-11am"), (1, "12pm-2pm"), (2, "3pm-5pm"), (3, "6pm-8pm"))
 
+APPOINTMENT_STATUS = ((0, 'OK'), (1, 'CANCELLED'))
+
+
 class Booking(models.Model):
     booking_id = models.BigAutoField(primary_key=True, unique=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="User")
@@ -23,8 +26,7 @@ class Booking(models.Model):
     city = models.CharField(max_length=20)
     post_code = models.CharField(max_length=10)
     addition_info = models.TextField(max_length=300, blank=True)
-    cancelled = models.BooleanField(default=False)
-
+    cancelled = models.IntegerField(choices=APPOINTMENT_STATUS, default=0)
 
     class _Meta:
         ordering = ['appointment_date', 'appointment_slot']
@@ -37,4 +39,5 @@ class Booking(models.Model):
 
     def get_absolute_url(self):
         return reverse("view-booking", kwargs={'pk': self.pk})
+
 

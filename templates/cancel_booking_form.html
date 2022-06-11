@@ -32,11 +32,10 @@
                             {% csrf_token %}
                             {{ booking.cancelled }}
 
-                            {{ form | safe }}
-                            <!-- 
-                            { if form.cancelled == False %}
-                            { form.cancelled.value = True }}
-                            { endif %} -->
+                            {{ form.cancelled.is_ | safe }}
+                            {{form.cancelled}}
+
+
 
                             <input type="submit" name="Submit" value="Cancel Booking" class="custom-site-btn line-height-setter del-but" />
                         </form>

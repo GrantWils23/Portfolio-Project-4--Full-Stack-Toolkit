@@ -1,7 +1,6 @@
 from .models import Booking
 from django import forms
-from django.forms import Form
-from django.forms import ModelForm
+from django.forms import Form, ModelForm
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Field, Layout, HTML
@@ -11,18 +10,16 @@ from django.utils.translation import gettext_lazy as _
 
 import datetime
 
-
 class DateInput(forms.DateInput):
     input_type = 'date'
 
 
-placeholder='Please add the service you are thinking of getting and request anything special'
-
-
 class CancelForm(forms.ModelForm):
+    
     class Meta:
         model = Booking
         fields = ["cancelled",]
+        # widgets = {'cancelled': forms.HiddenInput(),}
         
 
 

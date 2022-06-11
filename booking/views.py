@@ -64,42 +64,22 @@ class EditBookingView(SuccessMessageMixin, UpdateView):
     form_class = BookingForm
     model = Booking
     success_message = 'Your booking details has been updated.'
-
+    
     def get_queryset(self):
         queryset = super().get_queryset()
         return queryset.filter(user=self.request.user)
-
-
-
-
-
-
-
-
 
 
 class CancelBookingView(SuccessMessageMixin, UpdateView):
-    template_name = 'cancel-booking.html'
+    template_name = 'cancel_booking_form.html'
     form_class = CancelForm
     model = Booking
+    model.cancelled = 1
     success_message = 'Your booking has been cancelled'
-    form = BookingForm(initial={'cancelled': True})
-
-
 
     def get_queryset(self):
         queryset = super().get_queryset()
         return queryset.filter(user=self.request.user)
-
-
-
-
-
-
-
-
-
-
 
 
 class DeleteBookingView(SuccessMessageMixin, DeleteView):

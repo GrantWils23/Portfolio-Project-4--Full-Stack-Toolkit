@@ -4,40 +4,40 @@
 
 {% if user.is_authenticated %}
 
-<form>
-    <div class="screen-container">
-        <div class="container">
-            <div class="box-wrap">
-                <h3 class="center-text title-font sub-title">Delete Booking</h3>
-            </div>
+
+<div class="screen-container">
+    <div class="container">
+        <div class="box-wrap">
+            <h3 class="center-text title-font sub-title">Delete Booking</h3>
         </div>
-        <br>
-        <div class="col-sm-3"></div>
-        <div class="container col-sm-6 booking-box">
-            <div class="row g-0">
-                <div class="text-center">
-                    <div class=" text-center delete-box-top-margin">
-                        <h3>Delete Booking</h3>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <h4><i>Hi {{ booking.user }}</i></h4>
-                        <br>
-                        <br>
-                        <p>Are you sure you wish to delete booking# {{ booking.booking_id }} from your booking history?</p>
-                    </div>
-                    <div class="container d-inline-flex justify-content-center delete-box-bottom-margin">
-                        <a type="button" class="custom-site-btn line-height-setter btn-remove-blue nul-but nul-hvr" href="{% url 'bookings' %}">Cancel</a>
-                        <form method="POST" class="delete-booking-form">
-                            {% csrf_token %}
-                            <input type="submit" value="Delete Booking" class="custom-site-btn line-height-setter del-but">
-                    </div>
+    </div>
+    <br>
+    <div class="col-sm-3"></div>
+    <div class="container col-sm-6 booking-box">
+        <div class="row g-0">
+            <div class="text-center">
+                <div class=" text-center delete-box-top-margin">
+                    <h3>Delete Booking</h3>
+                </div>
+                <hr>
+                <div class="row">
+                    <h4><i>Hi {{ booking.user }}</i></h4>
+                    <br>
+                    <br>
+                    <p>Are you sure you wish to delete booking# {{ booking.booking_id }} from your booking history?</p>
+                </div>
+                <div class="container d-inline-flex justify-content-center delete-box-bottom-margin">
+                    <a type="button" class="custom-site-btn line-height-setter btn-remove-blue nul-but nul-hvr" href="{% url 'bookings' %}">Cancel</a>
+                    <form method="POST" class="delete-booking-form">
+                        {% csrf_token %}
+                        <input type="submit" value="Delete Booking" class="custom-site-btn line-height-setter del-but" />
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-sm-3"></div>
-</form>
+</div>
+<div class="col-sm-3"></div>
 <br>
 <br>
 <br>
