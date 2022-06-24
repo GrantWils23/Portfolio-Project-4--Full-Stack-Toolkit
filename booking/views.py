@@ -74,7 +74,6 @@ class CancelBookingView(SuccessMessageMixin, UpdateView):
     template_name = 'cancel_booking_form.html'
     form_class = CancelForm
     model = Booking
-    model.cancelled = 1
     success_message = 'Your booking has been cancelled'
 
     def get_queryset(self):

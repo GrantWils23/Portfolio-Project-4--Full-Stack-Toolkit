@@ -15,11 +15,14 @@ class DateInput(forms.DateInput):
 
 
 class CancelForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.initial['cancelled'] = 1
     
     class Meta:
         model = Booking
         fields = ["cancelled",]
-        # widgets = {'cancelled': forms.HiddenInput(),}
+        widgets = {'cancelled': forms.HiddenInput(), }
         
 
 

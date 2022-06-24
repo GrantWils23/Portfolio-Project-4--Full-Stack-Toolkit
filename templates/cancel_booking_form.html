@@ -30,13 +30,8 @@
                         <a type="button" class="custom-site-btn line-height-setter btn-remove-blue nul-but nul-hvr" href="{% url 'view-booking' booking.pk %}">Return</a>
                         <form method="POST" action="{% url 'cancel-booking' booking.pk %}">
                             {% csrf_token %}
-                            {{ booking.cancelled }}
-
                             {{ form.cancelled.is_ | safe }}
                             {{form.cancelled}}
-
-
-
                             <input type="submit" name="Submit" value="Cancel Booking" class="custom-site-btn line-height-setter del-but" />
                         </form>
                     </div>
