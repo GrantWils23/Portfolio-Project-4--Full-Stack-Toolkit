@@ -204,6 +204,16 @@ td {
     border: 4px rgb(140, 214, 140) solid;
 }
 
+.today-but {
+    background-color: rgb(249, 240, 146);
+    border: 4px rgb(249, 240, 146) solid;
+    padding: 3px 8px;
+}
+
+.today-but:hover {
+    border: 4px rgb(254, 243, 125) solid
+}
+
 .del-but:hover {
     border: 4px rgb(216, 84, 84) solid;
 }
@@ -325,6 +335,16 @@ td {
     padding: 6px 10px;
     font-weight: 600;
     border: 4px rgb(179, 236, 179) solid;
+    border-radius: 4px;
+    font-size: 3vmax;
+}
+
+.today-box {
+    background-color: rgb(249, 240, 146);
+    width: max-content;
+    padding: 6px 10px;
+    font-weight: 600;
+    border: 4px rgb(249, 240, 146) solid;
     border-radius: 4px;
     font-size: 3vmax;
 }

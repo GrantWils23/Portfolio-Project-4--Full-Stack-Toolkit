@@ -18,11 +18,15 @@
         <button class="cancel-box">Appointment Cancelled</button>
     </section>
     <br>
-    {% endif %}
-    {% if user.last_login.date > booking.appointment_date and booking.cancelled == False %}
+    {% elif user.last_login.date > booking.appointment_date and booking.cancelled == False %}
     <br>
     <section class="text-center dead-btn">
         <button class="attended-box">Appointment Attended</button>
+    </section>
+    {% elif user.last_login.date == booking.appointment_date %}
+    <br>
+    <section class="text-center dead-btn">
+        <button class="today-box">Appointment Today</button>
     </section>
     {% endif %}
     <br>
@@ -114,6 +118,9 @@
                 {% if user.last_login.date < booking.appointment_date %}
                 <a class="custom-site-btn btn-remove-blue edit-but" type="button" href="{% url 'edit-booking' booking.pk %}">Edit</a>
                 <a class="custom-site-btn btn-remove-blue del-but" type="button" href="{% url 'cancel-booking' booking.pk %}">Cancel</a><!-- Make cancel view-->
+                {% elif user.last_login.date == booking.appointment_date %}
+                <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Edit</s></a>
+                <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Delete</s></a>
                 {% else %}
                 <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Edit</s></a>
                 <a class="custom-site-btn btn-remove-blue del-but" type="button" href="{% url 'delete-booking' booking.pk %}">Delete</a>
