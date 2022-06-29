@@ -10,6 +10,11 @@ from django.utils.translation import gettext_lazy as _
 
 import datetime
 
+
+# TRYLINE
+from django.shortcuts import render, get_object_or_404, reverse
+# TRYLINE
+
 class DateInput(forms.DateInput):
     input_type = 'date'
 
@@ -34,17 +39,22 @@ class BookingForm(ModelForm):
             raise ValidationError(_('invalid date - date is in the past'))
         return data
 
-
+# TryLine
     # def clean_appointment_slot(self):
-    #     data = self.cleaned_data['appointment_slot', 'appointment_date']
 
-    #     if data == :
+    #     # def get_queryset(self):
+    #     #     queryset = super().get_queryset()
+    #     #     return queryset.filter.__all__
+    #     # data = queryset
+
+    #     data_date = self.cleaned_data['appointment_date']
+    #     data_slot = self.cleaned_data['appointment_slot']
+    #     if data_date and data_slot in data :
     #         raise ValidationError(_('invalid timeslot - This slot is already been booked on this day'))
     #     return data
-
+    # TryLines
 
     addition_info = forms.CharField(required=False, widget=forms.Textarea(attrs={'rows': 4},))
-    appointment_date = forms.DateField(widget=DateInput)
     appointment_date = forms.DateField(widget=DateInput(attrs={"class": "form-control datepicker validate"}))
     
     class Meta:
@@ -76,3 +86,4 @@ class BookingForm(ModelForm):
         helper.layout.append(HTML('</div>'))
 
         return helper
+

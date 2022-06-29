@@ -6,7 +6,7 @@ TREATMENTS = ((0, "Facial"), (1, "Make-Up"), (2, "Pedicure"), (3, "Manicure"), (
 class Treatment(models.Model):
     treatment_type = models.IntegerField(choices=TREATMENTS)
     treatment_name = models.CharField(max_length=60, unique=True)
-    slug = models.SlugField(max_length=60, unique=True)
+    slug = models.SlugField(max_length=60, unique=True, primary_key=True)
     treatment_price = models.DecimalField(blank=False, max_digits=5, decimal_places=2)
     treatment_description = models.TextField()
     treatment_time = models.CharField(max_length=50)

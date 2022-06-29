@@ -48,6 +48,11 @@ class ViewBooking(DetailView):
 
 class AddBookingView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset.filter.__all__
+
+
     context_object_name = 'bookings'
     template_name = 'booking_form.html'
     form_class = BookingForm
