@@ -22,7 +22,7 @@
                 <div class="row text-wrap">
                     <div class="col-sm-9">
                         <a class="" href="{% url 'view-booking' booking.pk %}">View Booking</a> | Booking No:
-                        {{ booking.booking_id }} | Treatment: {{ booking.get_treatment_display }} | Date:
+                        {{ booking.booking_id }} | Treatment: {{ booking.treatment }} | Date:
                         {{ booking.appointment_date }} | Time: {{ booking.get_appointment_slot_display }}
                     </div>
                     <div class="col-sm-3">
