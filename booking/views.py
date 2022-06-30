@@ -48,11 +48,6 @@ class ViewBooking(DetailView):
 
 class AddBookingView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
-    def get_queryset(self):
-        queryset = super().get_queryset()
-        return queryset.filter.__all__
-
-
     context_object_name = 'bookings'
     template_name = 'booking_form.html'
     form_class = BookingForm
@@ -62,7 +57,6 @@ class AddBookingView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         form.instance.user = self.request.user
         form.instance.email = self.request.user.email
         return super().form_valid(form)
-
 
 class EditBookingView(SuccessMessageMixin, UpdateView):
     template_name = 'booking_form.html'
