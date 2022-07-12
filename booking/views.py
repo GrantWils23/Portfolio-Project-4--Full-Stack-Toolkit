@@ -20,10 +20,6 @@ class Gallery(TemplateView):
 class Contact(TemplateView):
     template_name = 'contact.html'
 
-
-class PriceList(TemplateView):
-    template_name = 'price_list.html'
-
 class ListBookings(ListView):
     model = Booking
     queryset = Booking.objects.all().order_by('-booking_id')

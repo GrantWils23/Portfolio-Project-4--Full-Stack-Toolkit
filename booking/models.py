@@ -24,7 +24,7 @@ class Booking(models.Model):
     address_line_three = models.CharField(max_length=60, blank=True)
     city = models.CharField(max_length=20)
     post_code = models.CharField(max_length=10)
-    addition_info = models.TextField(max_length=300, blank=True)
+    additional_info = models.TextField(max_length=300, blank=True)
     cancelled = models.IntegerField(choices=APPOINTMENT_STATUS, default=0)
 
     class Meta:

@@ -6,7 +6,8 @@ from django import forms
 from django.forms import ModelForm
 from crispy_forms.layout import Submit, Field, Layout, HTML
 from crispy_forms.helper import FormHelper
-from .models import Booking
+from phonenumber_field.formfields import PhoneNumberField
+from .models import Booking, TIMESLOTS
 
 
 class DateInput(forms.DateInput):
@@ -36,8 +37,8 @@ class BookingForm(ModelForm):
     def clean_appointment_date(self):
         data = self.cleaned_data['appointment_date']
 
-        if data < datetime.date.today():
-            raise ValidationError(_('invalid date - date selected is in the past'))
+        if data <= datetime.date.today():
+            raise ValidationError(_('invalid date - date selected has to be in the future from today'))
         return data
 
     def validate_unique(self):
@@ -52,26 +53,27 @@ class BookingForm(ModelForm):
             error = {'__all__': "The date and time slot have selected by someone else, please try a new time or date"}
             self._update_errors(error)
 
-    addition_info = forms.CharField(required=False, widget=forms.Textarea(attrs={'rows': 4},))
+    contact_no = PhoneNumberField(widget=forms.TextInput(attrs={'placeholder': '+44'}), label=_("Phone number"))
+    additional_info = forms.CharField(required=False, widget=forms.Textarea(attrs={'rows': 4},))
     appointment_date = forms.DateField(widget=DateInput(attrs={"class": "form-control datepicker validate"}))
+    appointment_slot = forms.ChoiceField(choices=TIMESLOTS, widget=forms.RadioSelect)
+    
 
     class Meta:
         model = Booking
         fields = ['contact_no', 'treatment',
                   'appointment_date', 'appointment_slot', 'address_line_one',
                   'address_line_two', 'address_line_three', 'city',
-                  'post_code', 'addition_info',
+                  'post_code', 'additional_info',
                   ]
 
-
-# Custom control required on the treatment, appointment_date and appointment_slot
     @property
     def helper(self):
         helper = FormHelper()
         helper.layout = Layout()
         for field in self.Meta().fields:
             helper.layout.append(
-                Field(field, wrapper_class='row')
+                Field(field, wrapper_class='row'),
             )
         helper.field_class = 'col-sm-9'
         helper.label_class = 'col-sm-3'
