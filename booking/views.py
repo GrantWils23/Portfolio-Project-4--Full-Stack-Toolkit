@@ -1,7 +1,5 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views import generic, View
-from django.http import HttpResponseRedirect
 from django.views.generic import TemplateView, CreateView, DeleteView, UpdateView, DetailView, ListView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -48,7 +46,7 @@ class AddBookingView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     template_name = 'booking_form.html'
     form_class = BookingForm
     success_message = 'Thank you for your booking.'
-    
+
     def form_valid(self, form):
         form.instance.user = self.request.user
         form.instance.email = self.request.user.email
@@ -59,7 +57,7 @@ class EditBookingView(SuccessMessageMixin, UpdateView):
     form_class = BookingForm
     model = Booking
     success_message = 'Your booking details has been updated.'
-    
+
     def get_queryset(self):
         queryset = super().get_queryset()
         return queryset.filter(user=self.request.user)

@@ -29,5 +29,10 @@
    },
    "[html]": {
       "editor.defaultFormatter": "mblode.pretty-formatter"
-   }
+   },
+   "python.testing.pytestArgs": [
+      "."
+   ],
+   "python.testing.unittestEnabled": false,
+   "python.testing.pytestEnabled": true
 }
