@@ -392,6 +392,8 @@ td {
     min-height: 40vh;
 }
 
+.admin-table {}
+
 /* large devices (landscape phones, 1100px and up) */
 @media (max-width: 1166px) {
     nav li a {
@@ -502,5 +504,25 @@ td {
 
     .opps-text {
         font-size: 2rem;
+    }
+
+    .admin-table {
+        font-size: 0.2rem;
+    }
+
+    .admin-table td {
+        padding: 1px;
+    }
+
+    .admin-table th {
+        padding: 1px;
+    }
+
+    .admin-modal p {
+        font-size: 1.2rem;
+    }
+
+    .modal-footer button {
+        font-size: 1.2rem;
     }
 }

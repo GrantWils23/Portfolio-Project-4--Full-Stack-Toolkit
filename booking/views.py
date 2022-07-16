@@ -4,9 +4,13 @@ from django.views.generic import TemplateView, CreateView, DeleteView, UpdateVie
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
+from django.utils import timezone
 from django.http import request
 from .models import Booking
 from .forms import BookingForm, CancelForm
+from .filters import BookingFilter
+import datetime
+
 class Home(TemplateView):
     template_name = 'index.html'
 
@@ -87,6 +91,21 @@ class DeleteBookingView(SuccessMessageMixin, DeleteView):
     def delete(self, *args, **kwargs):
         messages.error(self.request, self.success_message)
         return super(DeleteBookingView, self).delete(request, *args, **kwargs)
+
+
+class AdminPlannerView(ListView):
+    now = datetime.date.today()
+    model = Booking
+    queryset = Booking.objects.all().order_by('-appointment_date')
+    template_name = 'admin-planner.html'
+    paginate_by = 10
+
+    context_object_name = 'bookings'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['today'] = today = datetime.date.today()
+        return context
 
 
 # Error Handlers #

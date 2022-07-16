@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% if user.is_authenticated and user.is_staff %}
+<br>
+<div class="container">
+    <div class="box-wrap">
+        <h1 class="col center-text title-font">Admin Bookings Terminal</h1>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="booking-box col-sm-10">
+            <br>
+            <div class="bodywork">
+                <div class="g-0 admin-table">
+                    <div class="">
+                        <table class="table table-nowrap">
+                            <thead>
+                                <tr>
+                                    <th class="col-1">#</th>
+                                    <th class="col-2">Name</th>
+                                    <th class="col-2 d-none d-sm-table-cell">Tel No.</th>
+                                    <th class="col-2">Date</th>
+                                    <th class="col-2">Time</th>
+                                    <th class="col-2 d-none d-sm-table-cell">Session</th>
+                                    <th class="col-1">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for booking in bookings %}
+                                {% include 'admin-booking-modal.html' %}
+                                <tr>
+                                    <th scope="'row">
+                                        <p type="button" data-bs-toggle="modal" data-bs-target="#bookingModal{{booking.pk}}" style="color:cadetblue; font-size:1.4em;"><b>{{booking.booking_id}}</b></p>
+                                        {% include 'admin-booking-modal.html' %}
+                                    </th>
+                                    <td>{{ booking.user }}</td>
+                                    <td class="d-none d-sm-table-cell">{{ booking.contact_no }}</td>
+                                    <td>{{ booking.appointment_date|date:"j/m/y" }}</td>
+                                    <td>{{ booking.get_appointment_slot_display }}</td>
+                                    <td class="d-none d-sm-table-cell">{{ booking.treatment }}</td>
+                                    {% if booking.cancelled == 1 %}
+                                    <td style="color:red"><b>X</b></td>
+                                    {% elif today >= booking.appointment_date and booking.cancelled != 1 %}
+                                    <td style="color:lime"><b>&#10003;</b></td>
+                                    {% else %}
+                                    <td style="color:blue"><b>-</b></td>
+                                    {% endif %}
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>
+<br>
+
+<br>
+
+{% if is_paginated %}
+<div aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link pag-page-btn">&laquo; Prev </a></li>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link pag-page-btn">Next &raquo;</a></li>
+        {% endif %}
+    </ul>
+</div>
+{% endif %}
+
+
+{% endif %}
+
+{% endblock %}

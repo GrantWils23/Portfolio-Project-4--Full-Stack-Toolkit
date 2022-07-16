@@ -1,0 +1,96 @@
+{% load static %}
+
+<!-- Modal -->
+<div class="modal fade" id="bookingModal{{booking.pk}}" tabindex="-1" aria-labelledby="bookingModal{{booking.pk}}Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title col-sm-5" id="bookingModal{{booking.pk}}Label" class="d-inline">Booking ref: <b>{{ booking.booking_id }}</b>
+                </h3>
+                {% if booking.cancelled == 1 %}
+                <h3 class="col-sm-6" style="font-size:1.8em; color:crimson"><b> Cancelled</b></h3>
+                {% endif %}
+                <button type=" button" class="btn-close col-sm-1" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body admin-modal">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-5">
+                            <h5>
+                                <b>
+                                    <u>Name</u>
+                                </b>
+                            </h5>
+                            <p>{{ booking.user }}</p>
+                            <h5>
+                                <b>
+                                    <u>Email</u>
+                                </b>
+                            </h5>
+                            <p>{{ booking.email }}</p>
+                            <h5>
+                                <b>
+                                    <u>Booking Date</u>
+                                </b>
+                            </h5>
+                            <p>{{ booking.appointment_date }}</p>
+                            <h5>
+                                <b>
+                                    <u>Booking Time</u>
+                                </b>
+                            </h5>
+                            <p>{{ booking.get_appointment_slot_display }}</p>
+                        </div>
+                        <div class="col-sm-5">
+                            <h5>
+                                <b>
+                                    <u>Tel No</u>
+                                </b>
+                            </h5>
+                            <p>{{ booking.contact_no }}</p>
+                            <h5>
+                                <b>
+                                    <u>Treatment</u>
+                                </b>
+                            </h5>
+                            <p>{{ booking.treatment }}</p>
+                            <h5>
+                                <b>
+                                    <u>Address</u>
+                                </b>
+                            </h5>
+                            <p>{{ booking.address_line_one }}
+                                {% if booking.adress_line_two == "" %}
+                                <br>{{ booking.address_line_two }}
+                                {% endif %}
+                                {% if booking.adress_line_three == "" %}
+                                <br>{{ booking.address_line_three }}
+                                {% endif %}
+                                <br>{{ booking.city }}
+                                <br>{{ booking.post_code }}</p>
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-10 modal-text">
+                            <h5>
+                                <b>
+                                    <u>Client Notes & Requests</u>
+                                </b>
+                            </h5>
+                            <p>{{ booking.additional_info }}</p>
+                        </div>
+                        <div class="col-sm-1"></div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="custom-site-btn btn-remove-blue edit-but hvr" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
