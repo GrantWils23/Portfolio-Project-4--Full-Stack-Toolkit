@@ -1,16 +1,17 @@
+
+from datetime import date, timedelta
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, CreateView, DeleteView, UpdateView, DetailView, ListView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
-from django.utils import timezone
 from django.core.paginator import Paginator
 from django.http import request
 from .models import Booking
 from .forms import BookingForm, CancelForm
 from .filters import AdminFilter
-import datetime
+
 
 class Home(TemplateView):
     template_name = 'index.html'
@@ -103,21 +104,82 @@ class AdminListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['today'] = today = datetime.date.today()
+        context['today'] = today = date.today()
         context['filter'] = AdminFilter(self.request.GET, self.get_queryset())
         return context
 
 class AdminListTodayView(ListView):
     model = Booking
     template_name = 'admin-planner.html'
-    today = datetime.date.today()
-    queryset = Booking.objects.filter(appointment_date=today)
+    today = date.today()
+    queryset = Booking.objects.filter(appointment_date=today).order_by('-appointment_date', 'appointment_slot')
+
 
     context_object_name = 'bookings'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['today'] = today = datetime.date.today()
+        context['today'] = today = date.today()
+        context['filter'] = AdminFilter(self.request.GET, self.get_queryset())
+        return context
+
+class AdminListPastSevenDaysView(ListView):
+    model = Booking
+    template_name = 'admin-planner.html'
+    startdate = date.today()
+    enddate = startdate - timedelta(days=7)
+    queryset = Booking.objects.filter(appointment_date__range=[enddate, startdate]).order_by('appointment_date', 'appointment_slot')
+
+    context_object_name = 'bookings'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['today'] = today = date.today()
+        context['filter'] = AdminFilter(self.request.GET, self.get_queryset())
+        return context
+
+
+class AdminListNextSevenDaysView(ListView):
+    model = Booking
+    template_name = 'admin-planner.html'
+    today = date.today()
+    startdate = today + timedelta(days=1)
+    enddate = startdate + timedelta(days=7)
+    queryset = Booking.objects.filter(appointment_date__range=[startdate, enddate]).order_by('-appointment_date', 'appointment_slot')
+
+    context_object_name = 'bookings'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['today'] = today = date.today()
+        context['filter'] = AdminFilter(self.request.GET, self.get_queryset())
+        return context
+
+class AdminListThisMonthView(ListView):
+    model = Booking
+    template_name = 'admin-planner.html'
+    today = date.today()
+    queryset = Booking.objects.filter(appointment_date__year=today.year).filter(appointment_date__month=today.month).order_by('-appointment_date', 'appointment_slot')
+
+    context_object_name = 'bookings'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['today'] = today = date.today()
+        context['filter'] = AdminFilter(self.request.GET, self.get_queryset())
+        return context
+
+class AdminListThisYearView(ListView):
+    model = Booking
+    template_name = 'admin-planner.html'
+    today = date.today()
+    queryset = Booking.objects.filter(appointment_date__year=today.year).order_by('-appointment_date', 'appointment_slot')
+
+    context_object_name = 'bookings'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['today'] = today = date.today()
         context['filter'] = AdminFilter(self.request.GET, self.get_queryset())
         return context
 

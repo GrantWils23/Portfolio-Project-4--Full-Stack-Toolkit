@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from booking.views import Home, Gallery, Contact, ListBookings, AddBookingView, ViewBooking, EditBookingView, DeleteBookingView, CancelBookingView, AdminListView, AdminListTodayView
+from booking.views import Home, Gallery, Contact, ListBookings, AddBookingView, ViewBooking, EditBookingView, DeleteBookingView, CancelBookingView
+from booking.views import AdminListView, AdminListTodayView, AdminListPastSevenDaysView, AdminListNextSevenDaysView, AdminListThisMonthView, AdminListThisYearView
 from treatment.views import TreatmentListView, ServicesListView
 
 
@@ -41,4 +42,9 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('admin-bookings', AdminListView.as_view(), name='admin-bookings'),
     path('admin-bookings/today', AdminListTodayView.as_view(), name='admin-bookings-today'),
+    path('admin-bookings/past_7_days', AdminListPastSevenDaysView.as_view(), name='admin-bookings-past-7'),
+    path('admin-bookings/next_7_days', AdminListNextSevenDaysView.as_view(), name='admin-bookings-next-7'),
+    path('admin-bookings/this-month', AdminListThisMonthView.as_view(), name='admin-bookings-this-month'),
+    path('admin-bookings/this-year', AdminListThisYearView.as_view(), name='admin-bookings-this-year'),
+
 ]
