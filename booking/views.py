@@ -1,8 +1,9 @@
 
 from datetime import date, timedelta
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView, CreateView, DeleteView, UpdateView, DetailView, ListView
+from django.views.generic import TemplateView, CreateView, DeleteView, UpdateView, DetailView, ListView, edit
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
@@ -40,7 +41,7 @@ class ViewBooking(DetailView):
     template_name = 'booking_details.html'
     model = Booking
     template_name_suffix = '<int:pk>'
-
+###########################################################
     def get_queryset(self):
         queryset = super().get_queryset()
         return queryset.filter(user=self.request.user)
@@ -182,6 +183,36 @@ class AdminListThisYearView(ListView):
         context['today'] = today = date.today()
         context['filter'] = AdminFilter(self.request.GET, self.get_queryset())
         return context
+
+class AdminEditBookingView(SuccessMessageMixin, UpdateView, edit.ModelFormMixin):
+    template_name = 'admin_booking_form.html'
+    form_class = BookingForm
+    model = Booking
+    success_message = 'Your booking details has been updated.'
+    # def get_absolute_url(success_url):
+    #     success_url = "admin-bookings"
+    #     return success_url
+    success_url = reverse_lazy("admin-bookings")
+
+   
+
+class AdminCancelBookingView(SuccessMessageMixin, UpdateView):
+    template_name = 'cancel_booking_form.html'
+    form_class = CancelForm
+    model = Booking
+    success_message = 'Your booking has been cancelled'
+
+
+class AdminDeleteBookingView(SuccessMessageMixin, DeleteView):
+    template_name = 'delete_booking.html'
+    model = Booking
+    success_url = reverse_lazy('bookings')
+    success_message = 'Your booking has been deleted.'
+
+
+    def delete(self, *args, **kwargs):
+        messages.error(self.request, self.success_message)
+        return super(DeleteBookingView, self).delete(request, *args, **kwargs)
 
 
 # Error Handlers #

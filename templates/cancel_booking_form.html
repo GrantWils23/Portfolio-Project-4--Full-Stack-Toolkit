@@ -4,13 +4,17 @@
 
 {% block content %}
 
-{% if user.is_authenticated %}
+{% if user.is_authenticated or user.is_authenticated and user.is_staff %}
 
 <body>
     <div class="screen-container">
         <div class="container">
             <div class="box-wrap">
+                {% if user.username and user.is_staff %}
+                <h3 class="center-text title-font sub-title"> Admin Cancel Booking</h3>
+                {% else %}
                 <h3 class="center-text title-font sub-title">Cancel Booking</h3>
+                {% endif %}
             </div>
         </div>
         <br>
@@ -23,13 +27,17 @@
                     </div>
                     <hr>
                     <div class="row">
-                        <p> Hi {{booking.user}} </p>
+                        <p> Hi {{ user.username }} </p>
                         <br>
                         <br>
                         <p>Are you sure you wish to cancel this booking?</p>
                     </div>
                     <div class="container d-inline-flex justify-content-center delete-box-bottom-margin">
+                        {% if user.username and user.is_staff %}
+                        <a type="button" class="custom-site-btn line-height-setter btn-remove-blue nul-but nul-hvr" href="{% url 'admin-bookings' %}">Return</a>
+                        {% else %}
                         <a type="button" class="custom-site-btn line-height-setter btn-remove-blue nul-but nul-hvr" href="{% url 'view-booking' booking.pk %}">Return</a>
+                        {% endif %}
                         <form method="POST" action="{% url 'cancel-booking' booking.pk %}">
                             {% csrf_token %}
                             {{ form.cancelled.is_ | safe }}
@@ -54,12 +62,3 @@
 {% endif %}
 
 {% endblock %}
-
-<!-- Inject this code below with update to cancel a booking -->
-<!-- { if user.is_authenticated }
-<form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
-    { csrf_token }
-    { if liked  }
-
-    <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn=like"><i
-            class="fas fa-heart"></i></button> -->

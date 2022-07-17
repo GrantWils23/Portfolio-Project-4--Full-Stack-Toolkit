@@ -14,7 +14,6 @@
 <br>
 <div class="container booking-box">
     <br>
-    <!-- {{ user.last_login.date }} -->
     {% for booking in bookings %}
     {% if booking.cancelled == False %}
     <div class="container">
@@ -61,8 +60,8 @@
                         <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Edit</s></a>
                         <a class="custom-site-btn btn-remove-blue nul-but nul-hvr" type="button" href="{% url 'view-booking' booking.pk %}">Cancelled</a>
                         {% else %}
-                        <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Edit</s></a> <!-- DONT NEED!?!?! -->
-                        <a class="custom-site-btn btn-remove-blue nul-but nul-hvr" type="button" href="{% url 'view-booking' booking.pk %}">Cancelled</a> <!-- DONT NEED!?!?! -->
+                        <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Edit</s></a>
+                        <a class="custom-site-btn btn-remove-blue nul-but nul-hvr" type="button" href="{% url 'view-booking' booking.pk %}">Cancelled</a>
                         {% endif %}
                     </div>
                 </div>

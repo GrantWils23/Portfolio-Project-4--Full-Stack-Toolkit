@@ -86,7 +86,17 @@
                         </div>
                         <div class="col-sm-1"></div>
                     </div>
-
+                    <div class="container">
+                        <div class="text-center">
+                            <br>
+                            <br>
+                            <a class="custom-site-btn btn-remove-blue edit-but" type="button" href="{% url 'admin-booking-edit' booking.pk %}">Edit</a>
+                            <a class="custom-site-btn btn-remove-blue del-but" type="button" href="{% url 'admin-booking-cancel' booking.pk %}">Cancel</a>
+                            <a class="custom-site-btn btn-remove-blue nul-but" type="button" href="{% url 'admin-booking-delete' booking.pk %}">Delete</a>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="custom-site-btn btn-remove-blue edit-but hvr" data-bs-dismiss="modal">Close</button>

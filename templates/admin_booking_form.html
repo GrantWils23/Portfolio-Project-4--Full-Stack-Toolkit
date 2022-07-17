@@ -11,7 +11,7 @@
 <br>
 <div class="container">
     <div class="box-wrap">
-        <h1 class="center-text title-font smaller-sub-title">Book an Appointment</h1>
+        <h1 class="center-text title-font smaller-sub-title">Admin Edit Booking</h1>
     </div>
 </div>
 <br>
@@ -29,10 +29,10 @@
                     <br>
                     {% csrf_token %}
                     <div class="text-center">
-                        <h4><i>{{ user.username }}</i></h4>
+                        <h4><i>{{ booking.user }}</i></h4>
                     </div>
                     <div class="text-center">
-                        <h4><i> {{ user.email }}</i></h4>
+                        <h4><i> {{ booking.email }}</i></h4>
                     </div>
                     {% crispy form %}
 
@@ -46,6 +46,15 @@
 </div>
 <br>
 <br>
+{% if user.is_staff %}
+<div class="container g-0">
+    <div class="text-center">
+        <a class="custom-site-btn btn-remove-blue del-but" type="button" href="{% url 'admin-bookings' %}">Return</a>
+    </div>
+</div>
+<br>
+<br>
+{% endif %}
 <!---------------------------------------------------------------------------------------------------------------->
 
 {% endif %}
