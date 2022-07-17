@@ -243,6 +243,18 @@ td {
     box-shadow: none;
 }
 
+.margin-updown {
+    margin: 6px 6px;
+}
+
+.no-text-dec {
+    text-decoration: none;
+}
+
+.admin-font-size {
+    font-size: 1.2rem;
+}
+
 /* index Photo tag styles */
 .text-center img {
     width: 100%;

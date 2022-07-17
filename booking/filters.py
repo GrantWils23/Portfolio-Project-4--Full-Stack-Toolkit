@@ -1,7 +1,15 @@
 import django_filters
 from .models import Booking
+from django_filters import DateFilter
 
-class BookingFilter(django_filters.FilterSet):
+
+class AdminFilter(django_filters.FilterSet):
+    # start_date = DateFilter(field_name='appointment_date', lookup_expr="gte", )
+    # end_date = DateFilter(field_name='appointment_date', lookup_expr="lte")
+
     class Meta:
         model = Booking
-        fields = '__all__'
+        fields = {'user': ['exact'],
+                  'booking_id': ['exact'],
+        }
+

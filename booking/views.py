@@ -5,10 +5,11 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.utils import timezone
+from django.core.paginator import Paginator
 from django.http import request
 from .models import Booking
 from .forms import BookingForm, CancelForm
-from .filters import BookingFilter
+from .filters import AdminFilter
 import datetime
 
 class Home(TemplateView):
@@ -93,18 +94,31 @@ class DeleteBookingView(SuccessMessageMixin, DeleteView):
         return super(DeleteBookingView, self).delete(request, *args, **kwargs)
 
 
-class AdminPlannerView(ListView):
-    now = datetime.date.today()
+class AdminListView(ListView):
     model = Booking
-    queryset = Booking.objects.all().order_by('-appointment_date')
     template_name = 'admin-planner.html'
-    paginate_by = 10
+    queryset = Booking.objects.order_by('-appointment_date')
 
     context_object_name = 'bookings'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['today'] = today = datetime.date.today()
+        context['filter'] = AdminFilter(self.request.GET, self.get_queryset())
+        return context
+
+class AdminListTodayView(ListView):
+    model = Booking
+    template_name = 'admin-planner.html'
+    today = datetime.date.today()
+    queryset = Booking.objects.filter(appointment_date=today)
+
+    context_object_name = 'bookings'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['today'] = today = datetime.date.today()
+        context['filter'] = AdminFilter(self.request.GET, self.get_queryset())
         return context
 
 
