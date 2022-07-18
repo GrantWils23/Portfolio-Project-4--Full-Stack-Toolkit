@@ -404,8 +404,6 @@ td {
     min-height: 40vh;
 }
 
-.admin-table {}
-
 /* large devices (landscape phones, 1100px and up) */
 @media (max-width: 1166px) {
     nav li a {
@@ -477,32 +475,21 @@ td {
     }
 
     table {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         padding: 2px;
         line-height: 1;
-    }
-
-    .td-name {
-        overflow: visible;
-        word-wrap: normal;
-        padding-left: 0px;
-    }
-
-    .td-price {
-        align-items: flex-end;
-        justify-content: flex-end;
-        text-align: end;
-    }
-
-    td {
-        padding-right: 0px;
     }
 
     .custom-btn {
         font-size: 7vmin;
     }
+
+    .contact-table {
+        font-size: 1.05rem;
+    }
 }
 
+/* Extra Small devices (landscape phones, 368px and down) */
 @media (max-width: 368px) {
     .bottomright {
         width: 200px;
@@ -536,5 +523,13 @@ td {
 
     .modal-footer button {
         font-size: 1.2rem;
+    }
+
+    .table-prices {
+        font-size: 0.7rem;
+    }
+
+    .info-btn {
+        padding: 3px;
     }
 }

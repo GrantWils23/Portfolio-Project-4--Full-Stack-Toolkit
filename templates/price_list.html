@@ -21,13 +21,14 @@
                 <div class="col-md-10 g-0">
                     <br>
                     <h2><u><b>Treatments</b></u></h2>
-                    <table class="table">
+                    <table class="table table-prices">
                         <thead>
                             <tr>
-                                <th scope="col">Type</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Description</th>
+                                <th class="col-2">Type</th>
+                                <th class="col-3">Name</th>
+                                <th class="col-2">Price</th>
+                                <th class="col-2 d-none d-sm-table-cell">Time</th>
+                                <th class="col-3">Description</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -35,10 +36,11 @@
                             {% include 'treatment-price.html' %}
                             <tr>
                                 <td>{{ treatment.get_treatment_type_display }}</td>
-                                <td class="td-name">{{ treatment.treatment_name }}</td>
-                                <td class="td-price">£{{ treatment.treatment_price }}</td>
+                                <td>{{ treatment.treatment_name }}</td>
+                                <td>£{{ treatment.treatment_price }}</td>
+                                <td class="d-none d-sm-table-cell">£{{ treatment.treatment_time }}</td>
                                 <td>
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#treatmentModal{{treatment.pk}}" class="custom-site-btn btn-remove-blue edit-but hvr">More info</button>
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#treatmentModal{{treatment.pk}}" class="custom-site-btn btn-remove-blue edit-but hvr info-btn">More info</button>
                                 </td>
                             </tr>
                             {% endfor %}
