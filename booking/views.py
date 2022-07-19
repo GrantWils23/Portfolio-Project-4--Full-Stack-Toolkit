@@ -100,22 +100,26 @@ class AdminListView(ListView):
     model = Booking
     template_name = 'admin-planner.html'
     queryset = Booking.objects.order_by('-appointment_date')
-
+    paginate_by = 10
     context_object_name = 'bookings'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['today'] = today = date.today()
-        context['filter'] = AdminFilter(self.request.GET, self.get_queryset())
+        context['today'] = date.today()
+        context['filter'] = AdminFilter(self.request.GET, self.get_queryset(),)
         return context
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return AdminFilter(self.request.GET, queryset=queryset).qs
+
 
 class AdminListTodayView(ListView):
     model = Booking
     template_name = 'admin-planner.html'
     today = date.today()
     queryset = Booking.objects.filter(appointment_date=today).order_by('-appointment_date', 'appointment_slot')
-
-
+    paginate_by = 10
     context_object_name = 'bookings'
 
     def get_context_data(self, **kwargs):
@@ -123,6 +127,11 @@ class AdminListTodayView(ListView):
         context['today'] = today = date.today()
         context['filter'] = AdminFilter(self.request.GET, self.get_queryset())
         return context
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return AdminFilter(self.request.GET, queryset=queryset).qs
+
 
 class AdminListPastSevenDaysView(ListView):
     model = Booking
@@ -130,7 +139,7 @@ class AdminListPastSevenDaysView(ListView):
     startdate = date.today()
     enddate = startdate - timedelta(days=7)
     queryset = Booking.objects.filter(appointment_date__range=[enddate, startdate]).order_by('appointment_date', 'appointment_slot')
-
+    paginate_by = 10
     context_object_name = 'bookings'
 
     def get_context_data(self, **kwargs):
@@ -138,6 +147,10 @@ class AdminListPastSevenDaysView(ListView):
         context['today'] = today = date.today()
         context['filter'] = AdminFilter(self.request.GET, self.get_queryset())
         return context
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return AdminFilter(self.request.GET, queryset=queryset).qs
 
 
 class AdminListNextSevenDaysView(ListView):
@@ -147,7 +160,7 @@ class AdminListNextSevenDaysView(ListView):
     startdate = today + timedelta(days=1)
     enddate = startdate + timedelta(days=7)
     queryset = Booking.objects.filter(appointment_date__range=[startdate, enddate]).order_by('-appointment_date', 'appointment_slot')
-
+    paginate_by = 10
     context_object_name = 'bookings'
 
     def get_context_data(self, **kwargs):
@@ -155,34 +168,49 @@ class AdminListNextSevenDaysView(ListView):
         context['today'] = today = date.today()
         context['filter'] = AdminFilter(self.request.GET, self.get_queryset())
         return context
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return AdminFilter(self.request.GET, queryset=queryset).qs
+
 
 class AdminListThisMonthView(ListView):
     model = Booking
     template_name = 'admin-planner.html'
     today = date.today()
     queryset = Booking.objects.filter(appointment_date__year=today.year).filter(appointment_date__month=today.month).order_by('-appointment_date', 'appointment_slot')
-
+    paginate_by = 10
     context_object_name = 'bookings'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['today'] = today = date.today()
+        context['today'] = date.today()
         context['filter'] = AdminFilter(self.request.GET, self.get_queryset())
         return context
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return AdminFilter(self.request.GET, queryset=queryset).qs
+
 
 class AdminListThisYearView(ListView):
     model = Booking
     template_name = 'admin-planner.html'
     today = date.today()
     queryset = Booking.objects.filter(appointment_date__year=today.year).order_by('-appointment_date', 'appointment_slot')
-
+    paginate_by = 10
     context_object_name = 'bookings'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['today'] = today = date.today()
+        context['today'] = date.today()
         context['filter'] = AdminFilter(self.request.GET, self.get_queryset())
         return context
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return AdminFilter(self.request.GET, queryset=queryset).qs
+
 
 class AdminAddBookingView(LoginRequiredMixin, SuccessMessageMixin, CreateView, edit.ModelFormMixin):
     context_object_name = 'bookings'
@@ -197,15 +225,14 @@ class AdminEditBookingView(SuccessMessageMixin, UpdateView, edit.ModelFormMixin)
     form_class = AdminBookingForm
     model = Booking
     success_message = 'Your booking details has been updated.'
+    success_url = reverse_lazy("admin-bookings")
     
     def form_valid(self, form):
         form.instance.user = self.request.user
         form.instance.email = self.request.user.email
         return super().form_valid(form)
-    # def get_absolute_url(success_url):
-    #     success_url = "admin-bookings"
-    #     return success_url
-    success_url = reverse_lazy("admin-bookings")
+
+
 
    
 

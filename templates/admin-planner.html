@@ -81,14 +81,14 @@
                                     <th scope="col" class="col-1">#</th>
                                     <th scope="col" class="col-2">Name</th>
                                     <th scope="col" class="col-2 d-none d-md-table-cell">Tel No.</th>
-                                    <th scope="col" class="col-2">Date</th>
+                                    <th scope="col" class="col-2">Date &#8595</th>
                                     <th scope="col" class="col-2">Time</th>
                                     <th scope="col" class="col-2 d-none d-md-table-cell">Session</th>
                                     <th scope="col" class="col-1">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for booking in filter.qs %}
+                                {% for booking in bookings %}
                                 {% include 'admin-booking-modal.html' %}
                                 <tr>
                                     <th scope="'row">
@@ -120,7 +120,7 @@
 </div>
 <br>
 
-<!-- {% if is_paginated %}
+{% if is_paginated %}
 <div aria-label="Page navigation">
     <ul class="pagination justify-content-center">
         {% if page_obj.has_previous %}
@@ -131,7 +131,7 @@
         {% endif %}
     </ul>
 </div>
-{% endif %} -->
+{% endif %}
 
 {% if user.is_staff %}
 <div class="container_fluid">
