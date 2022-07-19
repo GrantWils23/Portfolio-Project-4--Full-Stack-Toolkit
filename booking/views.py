@@ -10,7 +10,7 @@ from django.contrib import messages
 from django.core.paginator import Paginator
 from django.http import request
 from .models import Booking
-from .forms import BookingForm, CancelForm
+from .forms import BookingForm, CancelForm, AdminBookingForm
 from .filters import AdminFilter
 
 
@@ -184,11 +184,24 @@ class AdminListThisYearView(ListView):
         context['filter'] = AdminFilter(self.request.GET, self.get_queryset())
         return context
 
+class AdminAddBookingView(LoginRequiredMixin, SuccessMessageMixin, CreateView, edit.ModelFormMixin):
+    context_object_name = 'bookings'
+    template_name = 'admin_booking_form.html'
+    form_class = AdminBookingForm
+    success_message = 'Thank you for your booking.'
+    success_url = reverse_lazy("admin-bookings")
+    
+
 class AdminEditBookingView(SuccessMessageMixin, UpdateView, edit.ModelFormMixin):
     template_name = 'admin_booking_form.html'
-    form_class = BookingForm
+    form_class = AdminBookingForm
     model = Booking
     success_message = 'Your booking details has been updated.'
+    
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        form.instance.email = self.request.user.email
+        return super().form_valid(form)
     # def get_absolute_url(success_url):
     #     success_url = "admin-bookings"
     #     return success_url
@@ -201,12 +214,13 @@ class AdminCancelBookingView(SuccessMessageMixin, UpdateView):
     form_class = CancelForm
     model = Booking
     success_message = 'Your booking has been cancelled'
+    success_url = reverse_lazy("admin-bookings")
 
 
 class AdminDeleteBookingView(SuccessMessageMixin, DeleteView):
     template_name = 'delete_booking.html'
     model = Booking
-    success_url = reverse_lazy('bookings')
+    success_url = reverse_lazy('admin-bookings')
     success_message = 'Your booking has been deleted.'
 
 

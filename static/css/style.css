@@ -126,7 +126,7 @@ td {
     background-color: mistyrose;
     font-weight: 600;
     border-radius: 40px;
-    font-size: 4.5vmin;
+    font-size: 3.5vmin;
     border: 4px mistyrose solid;
     text-shadow: 2px 2px pink;
 }
@@ -166,6 +166,7 @@ td {
     border-radius: 5px;
     line-height: 1;
     border: 4px pink solid;
+    margin-top: 3px;
 }
 
 .edit-but {
@@ -475,7 +476,7 @@ td {
     }
 
     table {
-        font-size: 0.75rem;
+        font-size: 0.9rem;
         padding: 2px;
         line-height: 1;
     }
@@ -486,6 +487,14 @@ td {
 
     .contact-table {
         font-size: 1.05rem;
+    }
+
+    .booking-box-filter {
+        font-size: 1.1rem;
+    }
+
+    .booking-box-filter .center-button {
+        font-size: 1rem;
     }
 }
 
@@ -531,5 +540,9 @@ td {
 
     .info-btn {
         padding: 3px;
+    }
+
+    .booking-box-filter table {
+        font-size: 0.80rem;
     }
 }

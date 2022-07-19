@@ -6,7 +6,7 @@
 
 {% block content %}
 
-{% if user.is_authenticated or user.is_authenticated and user.is_staff %}
+{% if user.is_authenticated and user.is_staff %}
 
 <br>
 <div class="container">
@@ -22,18 +22,12 @@
             <div class="col-sm-1 col-md-2"></div>
             <div class="col-lg-8">
                 <form method="POST">
-                    {{ booking_form | crispy }}
+                    {{ admin_booking_form | crispy }}
                     <div class="text-center">
-                        <h2>Submit your Booking:</h2>
+                        <h2>Administrator Submit Booking:</h2>
                     </div>
                     <br>
                     {% csrf_token %}
-                    <div class="text-center">
-                        <h4><i>{{ booking.user }}</i></h4>
-                    </div>
-                    <div class="text-center">
-                        <h4><i> {{ booking.email }}</i></h4>
-                    </div>
                     {% crispy form %}
 
                 </form>
@@ -49,7 +43,7 @@
 {% if user.is_staff %}
 <div class="container g-0">
     <div class="text-center">
-        <a class="custom-site-btn btn-remove-blue del-but" type="button" href="{% url 'admin-bookings' %}">Return</a>
+        <a class="custom-site-btn btn-remove-blue edit-but" type="button" href="{% url 'admin-bookings' %}">Return to Admin</a>
     </div>
 </div>
 <br>

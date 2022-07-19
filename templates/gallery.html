@@ -55,13 +55,32 @@
 </div>
 <br>
 <!--booking button-->
+{% if user.is_staff %}
 <div class="container_fluid">
     <div class="justify-content-center text-center ">
-        <a type="button" class="btn-lg light custom-btn hvr-pulse btn-remove-blue" href="{% url 'booking' %}">Book
-            now</a>
+        <a type="button" class="btn-lg light custom-btn hvr-pulse btn-remove-blue" href="{% url 'admin-booking' %}">Book Now</a>
+    </div>
+</div>
+{% else %}
+<div class="container_fluid">
+    <div class="justify-content-center text-center ">
+        <a type="button" class="btn-lg light custom-btn hvr-pulse btn-remove-blue" href="{% url 'booking' %}">Book Now</a>
+    </div>
+</div>
+{% endif %}
+<br>
+<br>
+<div class="container g-0">
+    <div class="text-center">
+        <a class="custom-site-btn btn-remove-blue edit-but" type="button" href="#">Return to top</a>
     </div>
 </div>
 <br>
 <br>
 
 {% endblock %}
+
+
+
+
+class="btn-lg light custom-btn hvr-pulse btn-remove-blue"

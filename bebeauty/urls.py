@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from booking.views import Home, Gallery, Contact, ListBookings, AddBookingView, ViewBooking, EditBookingView, DeleteBookingView, CancelBookingView
 from booking.views import AdminListView, AdminListTodayView, AdminListPastSevenDaysView, AdminListNextSevenDaysView, AdminListThisMonthView, AdminListThisYearView
-from booking.views import AdminEditBookingView, AdminCancelBookingView, AdminDeleteBookingView
+from booking.views import AdminAddBookingView, AdminEditBookingView, AdminCancelBookingView, AdminDeleteBookingView
 from treatment.views import TreatmentListView, ServicesListView
 
 
@@ -47,6 +47,7 @@ urlpatterns = [
     path('admin-bookings/next_7_days', AdminListNextSevenDaysView.as_view(), name='admin-bookings-next-7'),
     path('admin-bookings/this-month', AdminListThisMonthView.as_view(), name='admin-bookings-this-month'),
     path('admin-bookings/this-year', AdminListThisYearView.as_view(), name='admin-bookings-this-year'),
+    path('booking-admin', AdminAddBookingView.as_view(), name='admin-booking'),
     path('booking-admin/<int:pk>/edit', AdminEditBookingView.as_view(), name='admin-booking-edit'),
     path('booking-admin/<int:pk>/cancel', AdminCancelBookingView.as_view(), name='admin-booking-cancel'),
     path('booking-admin/<int:pk>/delete', AdminDeleteBookingView.as_view(), name='admin-booking-delete'),
