@@ -24,6 +24,7 @@ click here to go to the deployed website: <a href="https://bebeauty-app.herokuap
     * [Future Features](<#future-features>)
 * [**Data Model**](<#data-model>)
 * [**Testing**](<#testing>)
+    * [User Story Tests](<#user-story-tests>)
     * [Bugs](<#bugs>)
     * [Solved Bugs](<#solved-bugs>)
     * [Validation Testing](<#validation-testing>)
@@ -44,11 +45,13 @@ Provide a user stories table here or list of the general user stories
     <li>As a Site User I can Navigate to the Gallery to see previous work so that I can make an informed decision on whether I like the beautician's work or not.</li>
     <li>As a Site User I can browse the front page so that I can select different parts of the website I wish to view.</li>
     <li>As Site Admin I can Create, Read, Edit, and Delete bookings so that I can manage my work schedule.</li>
-    <li>As a Site User/ Admin I can make an appointment with the beautician so that I will have a make-up session on the date I Choose.</li>
-    <li>As a Site User / Admin I can edit my bookings so that they change to a better time/date that suits me.</li>
-    <li>As a Site User/ Admin I can cancel a booking so that I no longer have to go to the appointment that is not required.</li>
-    <li>As a Site User/ Admin I can receive/ send booking notifications so that the user is aware of any changes to their appointment, from creation, edit, and deletion of appointments</li>
+    <li>As a Site User I can make an appointment with the beautician so that I will have a make-up session on the date I Choose.</li>
+    <li>As a Site User I can edit my bookings so that they change to a better time/date that suits me.</li>
+    <li>As a Site User I can cancel a booking so that I no longer have to go to the appointment that is not required.</li>
+    <li>As a Site User I can see notifcations that my actions were successful so that is aware of any changes to their appointment, from creation, edit, and deletion of appointments</li>
     <li>As a Site User I can Register an Account so that I can create and view all my bookings</li>
+    <li>As a Admin/User I can receive emails regarding bookings made, alter and cancel so that I can manage all my bookings.</li>
+    <li>As a User I can contact the company with any queries i may have so that my concerns are answered.</li>
 </ul>
 
 [Back to Top](<#contents>)
@@ -90,6 +93,11 @@ The site structure is extremely important to the clients who will wish to book a
     <li>Edit Booking</li>
     <li>Cancel Booking</li>
     <li>Delete Bookig</li>
+    <li>Admin-Planner</li>
+    <li>Admin Add Booking</li>
+    <li>Admin Edit Booking</li>
+    <li>Admin Cancel Booking</li>
+    <li>Admin Delete Booking</li>
 </ul>
 
 The Desktop version of the site is very spacous but when the user drops down to a smaller aspect ratio the content will be forced to occupy a majority of the screen not to waste the restricted space that is left on the display. So any Wireframes above that take up larger areas with content and spacing will be forced to a column that occupies the screen so it displays all on one screen with no side to side juddering. This will greatly improve the UX as it will be easier to use on smaller devices, just as it would be on a desktop or larger screen device.
@@ -140,9 +148,15 @@ The second font for the general font for the website which was settled on which 
 
 ![image](https://user-images.githubusercontent.com/72948843/178716276-c5cf98f9-fec0-4922-a76b-d8c35296ca15.png)
 
-<i>Signed in</i>
+<i>User signed in</i>
 
-![image](https://user-images.githubusercontent.com/72948843/178716483-d50da929-9cc0-416c-9fe8-b10f8962ff22.png)
+![image](https://user-images.githubusercontent.com/72948843/180424025-1958c6c7-6a10-485f-a374-4631ed7ea667.png)
+
+
+<i>Admin signed in</i>
+
+![image](https://user-images.githubusercontent.com/72948843/180423660-8c95fe49-44fd-43f5-b423-c3f967ede232.png)
+
 
 <i>Dropdown menu - smaller aspect ratio devices</i>
 
@@ -238,7 +252,10 @@ Validation of the form is implemented by checking  before the document is submit
 
 ## Data Model
 
-Here you can find the logical flow chart that I made to help me create the data model... <a href="link" target="_blank">link tag</a>. This was really useful in helping me understand the flow and direction on how to create the app and models, views and templates... etc... something along these lines
+Here below you can find the Data schema used to create the data model. This was really useful in helping me understand the flow and direction on how to create the app models, views and templates. A well working data schema is really important to the database be established properly for the website to work correctly. 
+
+![image](https://user-images.githubusercontent.com/72948843/180508284-61cee041-2d54-41ae-b696-d54960757d1f.png)
+
 <br>
 
 [Back to Top](<#contents>)
@@ -269,7 +286,56 @@ To test my project, I have manually tested the project by doing the following:
     </li>
 </ul>
 
-![image]()
+## User Story Tests
+
+<h3>As a Site User I can Navigate to the gallery to see previous work so that I can make an informed decision on whether I like the beautician's work or not</h3>
+   <li>while navigating the website, the user can click on the nav bar and then click on the gallery link, to view the work of the beautician's</li> 
+   <li>within the gallery, the user can has a button at the bottom of the page to prompt the user into making a booking and a return to the top.</li> 
+   <li>...</li>
+
+<h3>As a Site User I can browse the front page so that I can select different parts of the website I wish to view</h3>
+   <li>At the top of the webpage, the nav bar has a interactive nav menu. It contains links for the price listing of the treatments, a contact details page, view the services details page, the gallery and Sign In and Sign Up.</li> 
+   <li>The site user and admin when signed in both have different views of the nav bar, the user can view their bookings in the My bookings link, while the admin has access to an admin planner view.</li> 
+   <li>The na bar sits at the top of the site and is the same throughout the whole website making it easy for the user to get familiar with the website</li> 
+
+<h3>As Site Admin I can Create, Read, Edit, and Delete bookings so that I can manage my work schedule</h3>
+   <li>The Admin has access to the admin planner which contains a booking button for the user to create a new booking for someone.</li> 
+   <li>Within the admin planner view, the user can edit, cancel and delete bookings, this is acheived by clicking on the booking reference within the populated list view.</li> 
+
+<h3>As a Site User I can make an appointment with the beautician so that I will have a make-up session on the date I Choose</h3>
+   <li>On all pages apart form the contact page, the user has a button featured at the bottom of each page and can click on it to make a booking.</li> 
+   <li>This button will take you to a booking form, where the user can make a booking for an appointment that suits them.</li> 
+   <li>Once the form is submitted, if any errors are detected whilst entering the form, the form is returned back to the user to alter the alerted fields before submiting the form.</li>
+   <li>once the booking is made, it returns to the booking details view and alerts the user with a confirmation message that appears and disappears</li>
+
+<h3>As a Site User I can edit my bookings so that they change to a better time/date that suits me</h3>
+   <li>Within the users my booking view, the user has access to a button directly attached to list of bookings on the right or directly within the booking details page itself at the bottom of the box</li>
+   <li>The button takes you back to the booking form with the existing details, where you can see the current details. After altering the fields to what the user wishes, the user can submit the form, providing the details entered are correct. If any errors are detected whilst entering the form, the form is returned back to the user to alter the alerted fields before submiting the form. </li>
+   <li>once the booking is made, it returns to the booking details view and alerts the user with a confirmation message that appears and disappears</li>
+
+<h3>As a Site User I can cancel a booking so that I no longer have to go to the appointment that is not required</h3>
+    <li>Within the users my booking view, the user has access to a button directly attached to list of bookings on the right or directly within the booking details page itself at the bottom of the box</li>
+   <li>The button takes you to a cancel booking view were the booking is cancelled upon request. The user is asked the question if they are sure they wish to cancel the booking.</li> 
+   <li>Once the booking is cancelled the booking then becomes a uneditable object, which only the admin has overriding access to delete the booking.</li> 
+
+<h3>As a Site User I can see notifcations that my actions were successful so that is aware of any changes to their appointment, from creation, edit, and deletion of appointments</h3>
+   <li>Upon any submission of data to the database, there will be a notice informing you of the success of the users actions</li>
+   <li>This makes the user aware that whatever data was requested was successful</li>
+
+<h3>As a Site User I can Register an Account so that I can view all my bookings</h3>
+   <li>The User has to Sign up to create a booking, this is acheieved by createing an account. aSign up at the top in the nav bar, and upon signing up, the user then can click on the 'My Bookings' link.</li> 
+   <li>The user who is logged in has their name generated next to the top of the 'My Bookings' page to alert the user that they are signed in, next to the sign out link</li> 
+
+<h3>As a Admin/User I can receive emails regarding bookings made, alter and cancel so that I can manage all my bookings</h3>
+   <li>...</li> 
+
+<h3>As a User I can contact the company with any queries i may have so that my concerns are answered</h3>
+    <li>The user has two options within the website to contact the company</li>
+    <li>Within the nav bar, at the very top in the middle is a telephone number in which to call the company</li>
+    <li>Next to the telephone number is the email address which is another quick way to get into contact with the staff</li>
+    <li>There is a contact page within the nav bar which directs you to a page with a larger array of details of how to get into contact with the company.</li>
+    <li>Alternative means to contact include a fax number and a link to the companies social accounts where you can contact via facebook, Instagram and Twitter. (educational purposes only - no real links to bebeauty exist)</li>
+
 
 [Back to Top](<#contents>)
 <br>
@@ -352,6 +418,8 @@ To test my project, I have manually tested the project by doing the following:
 !!!! REMOVE DEBUG FROM TRUE TO FALSE BEFORE SUBMISSION !!!
 
 [Back to Top](<#contents>)
+
+<!-- how to set up env.py, what steps we take, install requirements.txt, set up the database -->
 
 <br>
 
