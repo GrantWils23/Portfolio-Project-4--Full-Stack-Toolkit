@@ -56,44 +56,44 @@ class AddBookingView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         form.instance.user = self.request.user
         form.instance.email = self.request.user.email
 
-        # body0 = (f"Hello {form.instance.user},\nYour {form.instance.treatment} booking is on {form.instance.appointment_date}, for 9am to 11am.\nThe address provided is: {form.instance.address_line_one}, {form.instance.city}, {form.instance.post_code}.\n\nIf you have any questions regarding your booking, please do not hesitate to get into contact with us.\n\nBest Wishes\n\nThe BeBeauty Team")
-        # body1 = (f"Hello {form.instance.user},\nYour {form.instance.treatment} booking is on {form.instance.appointment_date}, for 12am to 2pm.\nThe address provided is: {form.instance.address_line_one}, {form.instance.city}, {form.instance.post_code}.\n\nIf you have any questions regarding your booking, please do not hesitate to get into contact with us.\n\nBest Wishes\n\nThe BeBeauty Team")
-        # body2 = (f"Hello {form.instance.user},\nYour {form.instance.treatment} booking is on {form.instance.appointment_date}, for 3pm to 5pm.\nThe address provided is: {form.instance.address_line_one}, {form.instance.city}, {form.instance.post_code}.\n\nIf you have any questions regarding your booking, please do not hesitate to get into contact with us.\n\nBest Wishes\n\nThe BeBeauty Team")
-        # body3 = (f"Hello {form.instance.user},\nYour {form.instance.treatment} booking is on {form.instance.appointment_date}, for 6pm to 8pm.\nThe address provided is: {form.instance.address_line_one}, {form.instance.city}, {form.instance.post_code}.\n\nIf you have any questions regarding your booking, please do not hesitate to get into contact with us.\n\nBest Wishes\n\nThe BeBeauty Team")
+        body0 = (f"Hello {form.instance.user},\nYour {form.instance.treatment} booking is on {form.instance.appointment_date}, for 9am to 11am.\nThe address provided is: {form.instance.address_line_one}, {form.instance.city}, {form.instance.post_code}.\n\nIf you have any questions regarding your booking, please do not hesitate to get into contact with us.\n\nBest Wishes\n\nThe BeBeauty Team")
+        body1 = (f"Hello {form.instance.user},\nYour {form.instance.treatment} booking is on {form.instance.appointment_date}, for 12am to 2pm.\nThe address provided is: {form.instance.address_line_one}, {form.instance.city}, {form.instance.post_code}.\n\nIf you have any questions regarding your booking, please do not hesitate to get into contact with us.\n\nBest Wishes\n\nThe BeBeauty Team")
+        body2 = (f"Hello {form.instance.user},\nYour {form.instance.treatment} booking is on {form.instance.appointment_date}, for 3pm to 5pm.\nThe address provided is: {form.instance.address_line_one}, {form.instance.city}, {form.instance.post_code}.\n\nIf you have any questions regarding your booking, please do not hesitate to get into contact with us.\n\nBest Wishes\n\nThe BeBeauty Team")
+        body3 = (f"Hello {form.instance.user},\nYour {form.instance.treatment} booking is on {form.instance.appointment_date}, for 6pm to 8pm.\nThe address provided is: {form.instance.address_line_one}, {form.instance.city}, {form.instance.post_code}.\n\nIf you have any questions regarding your booking, please do not hesitate to get into contact with us.\n\nBest Wishes\n\nThe BeBeauty Team")
         
-        # if form.instance.appointment_slot == 0:
-        #     email = EmailMessage(
-        #         "BeBeauty Booking Confirmation",
-        #         body0,
-        #         "info@BeBeauty.co.uk",
-        #         [self.request.user.email, "grantwils.23@googlemail.com"],
-        #     )
-        #     email.send(fail_silently=False)
-        # elif form.instance.appointment_slot == 1:
-        #     email = EmailMessage(
-        #         "BeBeauty Booking Confirmation",
-        #         body1,
-        #         "info@BeBeauty.co.uk",
-        #         [self.request.user.email, "grantwils.23@googlemail.com"],
-        #     )
-        #     email.send(fail_silently=False)
-        # elif form.instance.appointment_slot == 2:
-        #     email = EmailMessage(
-        #         "BeBeauty Booking Confirmation",
-        #         body2,
-        #         "info@BeBeauty.co.uk",
-        #         [self.request.user.email, "grantwils.23@googlemail.com"],
-        #     )
-        #     email.send(fail_silently=False)
-        # else:
-        #     email = EmailMessage(
-        #         "BeBeauty Booking Confirmation",
-        #         body3,
-        #         "info@BeBeauty.co.uk",
-        #         [self.request.user.email, "grantwils.23@googlemail.com"],
-        #     )
-        #     email.send(fail_silently=False)
-        # send_mail("hELLO", "how are yoU?", "grantwils.23@googlemail.com", ["grantwils.23@googlemail.com"])
+        if form.instance.appointment_slot == 0:
+            email = EmailMessage(
+                "BeBeauty Booking Confirmation",
+                body0,
+                "info@BeBeauty.co.uk",
+                [self.request.user.email, "grantwils.23@googlemail.com"],
+            )
+            email.send(fail_silently=False)
+        elif form.instance.appointment_slot == 1:
+            email = EmailMessage(
+                "BeBeauty Booking Confirmation",
+                body1,
+                "info@BeBeauty.co.uk",
+                [self.request.user.email, "grantwils.23@googlemail.com"],
+            )
+            email.send(fail_silently=False)
+        elif form.instance.appointment_slot == 2:
+            email = EmailMessage(
+                "BeBeauty Booking Confirmation",
+                body2,
+                "info@BeBeauty.co.uk",
+                [self.request.user.email, "grantwils.23@googlemail.com"],
+            )
+            email.send(fail_silently=False)
+        else:
+            email = EmailMessage(
+                "BeBeauty Booking Confirmation",
+                body3,
+                "info@BeBeauty.co.uk",
+                [self.request.user.email, "grantwils.23@googlemail.com"],
+            )
+            email.send(fail_silently=False)
+        send_mail("hELLO", "how are yoU?", "grantwils.23@googlemail.com", ["grantwils.23@googlemail.com"])
         return super().form_valid(form)
         
 
