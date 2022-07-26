@@ -6,7 +6,7 @@ from django.views.generic import TemplateView, CreateView, DeleteView, UpdateVie
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
-from django.core.mail import EmailMessage, send_mail
+from django.core.mail import EmailMessage
 from django.http import request
 from .models import Booking
 from .forms import BookingForm, CancelForm, AdminBookingForm
@@ -55,15 +55,14 @@ class AddBookingView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         form.instance.email = self.request.user.email
-
-        body0 = (f"Hello {form.instance.user},\nYour {form.instance.treatment} booking is on {form.instance.appointment_date}, for 9am to 11am.\nThe address provided is: {form.instance.address_line_one}, {form.instance.city}, {form.instance.post_code}.\n\nIf you have any questions regarding your booking, please do not hesitate to get into contact with us.\n\nBest Wishes\n\nThe BeBeauty Team")
-        body1 = (f"Hello {form.instance.user},\nYour {form.instance.treatment} booking is on {form.instance.appointment_date}, for 12am to 2pm.\nThe address provided is: {form.instance.address_line_one}, {form.instance.city}, {form.instance.post_code}.\n\nIf you have any questions regarding your booking, please do not hesitate to get into contact with us.\n\nBest Wishes\n\nThe BeBeauty Team")
-        body2 = (f"Hello {form.instance.user},\nYour {form.instance.treatment} booking is on {form.instance.appointment_date}, for 3pm to 5pm.\nThe address provided is: {form.instance.address_line_one}, {form.instance.city}, {form.instance.post_code}.\n\nIf you have any questions regarding your booking, please do not hesitate to get into contact with us.\n\nBest Wishes\n\nThe BeBeauty Team")
-        body3 = (f"Hello {form.instance.user},\nYour {form.instance.treatment} booking is on {form.instance.appointment_date}, for 6pm to 8pm.\nThe address provided is: {form.instance.address_line_one}, {form.instance.city}, {form.instance.post_code}.\n\nIf you have any questions regarding your booking, please do not hesitate to get into contact with us.\n\nBest Wishes\n\nThe BeBeauty Team")
-        
+        body0 = (f"Hello {form.instance.user} ({form.instance.contact_no.as_national}),\n\nYour <b>'{form.instance.treatment}'</b> booking is on {form.instance.appointment_date.strftime('%A')} - {form.instance.appointment_date.strftime('%d/%m/%Y')}, for 9am to 11am. The address of the booking will take place at is:\n{form.instance.address_line_one},\n{form.instance.city},\n{form.instance.post_code}.\n\nIf you have any questions regarding your booking, please do not hesitate to get into contact with us.\n\nBest Wishes\n\nThe BeBeauty Team\n\nTel: +44 7838 555 323\nEmail: info@BeBeauty.co.uk")
+        body1 = (f"Hello {form.instance.user} ({form.instance.contact_no.as_national}),\n\nYour <b>'{form.instance.treatment}'</b> booking is on {form.instance.appointment_date.strftime('%A')} - {form.instance.appointment_date.strftime('%d/%m/%Y')}, for 12am to 2pm. The address of the booking will take place at is:\n{form.instance.address_line_one},\n{form.instance.city},\n{form.instance.post_code}.\n\nIf you have any questions regarding your booking, please do not hesitate to get into contact with us.\n\nBest Wishes\n\nThe BeBeauty Team\n\nTel: +44 7838 555 323\nEmail: info@BeBeauty.co.uk")
+        body2 = (f"Hello {form.instance.user} ({form.instance.contact_no.as_national}),\n\nYour <b>'{form.instance.treatment}'</b> booking is on {form.instance.appointment_date.strftime('%A')} - {form.instance.appointment_date.strftime('%d/%m/%Y')}, for 3pm to 5pm. The address of the booking will take place at is:\n{form.instance.address_line_one},\n{form.instance.city},\n{form.instance.post_code}.\n\nIf you have any questions regarding your booking, please do not hesitate to get into contact with us.\n\nBest Wishes\n\nThe BeBeauty Team\n\nTel: +44 7838 555 323\nEmail: info@BeBeauty.co.uk")
+        body3 = (f"Hello {form.instance.user} ({form.instance.contact_no.as_national}),\n\nYour <b>'{form.instance.treatment}'</b> booking is on {form.instance.appointment_date.strftime('%A')} - {form.instance.appointment_date.strftime('%d/%m/%Y')}, for 6pm to 8pm. The address of the booking will take place at is:\n{form.instance.address_line_one},\n{form.instance.city},\n{form.instance.post_code}.\n\nIf you have any questions regarding your booking, please do not hesitate to get into contact with us.\n\nBest Wishes\n\nThe BeBeauty Team\n\nTel: +44 7838 555 323\nEmail: info@BeBeauty.co.uk")
+        form.save()
         if form.instance.appointment_slot == 0:
             email = EmailMessage(
-                "BeBeauty Booking Confirmation",
+                f"BeBeauty Booking Confirmation {form.instance.booking_id}",
                 body0,
                 "info@BeBeauty.co.uk",
                 [self.request.user.email, "grantwils.23@googlemail.com"],
@@ -71,7 +70,7 @@ class AddBookingView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
             email.send(fail_silently=False)
         elif form.instance.appointment_slot == 1:
             email = EmailMessage(
-                "BeBeauty Booking Confirmation",
+                f"BeBeauty Booking Confirmation {form.instance.booking_id}",
                 body1,
                 "info@BeBeauty.co.uk",
                 [self.request.user.email, "grantwils.23@googlemail.com"],
@@ -79,7 +78,7 @@ class AddBookingView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
             email.send(fail_silently=False)
         elif form.instance.appointment_slot == 2:
             email = EmailMessage(
-                "BeBeauty Booking Confirmation",
+                f"BeBeauty Booking Confirmation {form.instance.booking_id}",
                 body2,
                 "info@BeBeauty.co.uk",
                 [self.request.user.email, "grantwils.23@googlemail.com"],
@@ -87,13 +86,12 @@ class AddBookingView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
             email.send(fail_silently=False)
         else:
             email = EmailMessage(
-                "BeBeauty Booking Confirmation",
+                f"BeBeauty Booking Confirmation {form.instance.booking_id}",
                 body3,
                 "info@BeBeauty.co.uk",
                 [self.request.user.email, "grantwils.23@googlemail.com"],
             )
             email.send(fail_silently=False)
-        send_mail("hELLO", "how are yoU?", "grantwils.23@googlemail.com", ["grantwils.23@googlemail.com"])
         return super().form_valid(form)
         
 
@@ -102,6 +100,48 @@ class EditBookingView(SuccessMessageMixin, UpdateView):
     form_class = BookingForm
     model = Booking
     success_message = 'Your booking details has been updated.'
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        form.instance.email = self.request.user.email
+        body0 = (f"Hello {form.instance.user} ({form.instance.contact_no.as_national}),\n\nYour booking (ref: #{form.instance.booking_id}) has been updated. \n\n{form.instance.treatment},\n{form.instance.appointment_date.strftime('%A')} - {form.instance.appointment_date.strftime('%d/%m/%Y')}, for 9am to 11am.\n\nThe address of the booking will take place at is:\n{form.instance.address_line_one},\n{form.instance.city},\n{form.instance.post_code}.\n\nIf you have any questions regarding your booking, please do not hesitate to get into contact with us.\n\nBest Wishes\n\nThe BeBeauty Team\n\nTel: +44 7838 555 323\nEmail: info@BeBeauty.co.uk")
+        body1 = (f"Hello {form.instance.user} ({form.instance.contact_no.as_national}),\n\nYour booking (ref: #{form.instance.booking_id}) has been updated. \n\n{form.instance.treatment},\n{form.instance.appointment_date.strftime('%A')} - {form.instance.appointment_date.strftime('%d/%m/%Y')}, for 12am to 2pm.\n\nThe address of the booking will take place at is:\n{form.instance.address_line_one},\n{form.instance.city},\n{form.instance.post_code}.\n\nIf you have any questions regarding your booking, please do not hesitate to get into contact with us.\n\nBest Wishes\n\nThe BeBeauty Team\n\nTel: +44 7838 555 323\nEmail: info@BeBeauty.co.uk")
+        body2 = (f"Hello {form.instance.user} ({form.instance.contact_no.as_national}),\n\nYour booking (ref: #{form.instance.booking_id}) has been updated. \n\n{form.instance.treatment},\n{form.instance.appointment_date.strftime('%A')} - {form.instance.appointment_date.strftime('%d/%m/%Y')}, for 3pm to 5pm.\n\n The address of the booking will take place at is:\n{form.instance.address_line_one},\n{form.instance.city},\n{form.instance.post_code}.\n\nIf you have any questions regarding your booking, please do not hesitate to get into contact with us.\n\nBest Wishes\n\nThe BeBeauty Team\n\nTel: +44 7838 555 323\nEmail: info@BeBeauty.co.uk")
+        body3 = (f"Hello {form.instance.user} ({form.instance.contact_no.as_national}),\n\nYour booking (ref: #{form.instance.booking_id}) has been updated. \n\n{form.instance.treatment},\n{form.instance.appointment_date.strftime('%A')} - {form.instance.appointment_date.strftime('%d/%m/%Y')}, for 6pm to 8pm.\n\n The address of the booking will take place at is:\n{form.instance.address_line_one},\n{form.instance.city},\n{form.instance.post_code}.\n\nIf you have any questions regarding your booking, please do not hesitate to get into contact with us.\n\nBest Wishes\n\nThe BeBeauty Team\n\nTel: +44 7838 555 323\nEmail: info@BeBeauty.co.uk")
+        form.save()
+        if form.instance.appointment_slot == 0:
+            email = EmailMessage(
+                f"BeBeauty Booking Confirmation {form.instance.booking_id}",
+                body0,
+                "info@BeBeauty.co.uk",
+                [self.request.user.email, "grantwils.23@googlemail.com"],
+            )
+            email.send(fail_silently=False)
+        elif form.instance.appointment_slot == 1:
+            email = EmailMessage(
+                f"BeBeauty Booking Confirmation {form.instance.booking_id}",
+                body1,
+                "info@BeBeauty.co.uk",
+                [self.request.user.email, "grantwils.23@googlemail.com"],
+            )
+            email.send(fail_silently=False)
+        elif form.instance.appointment_slot == 2:
+            email = EmailMessage(
+                f"BeBeauty Booking Confirmation {form.instance.booking_id}",
+                body2,
+                "info@BeBeauty.co.uk",
+                [self.request.user.email, "grantwils.23@googlemail.com"],
+            )
+            email.send(fail_silently=False)
+        else:
+            email = EmailMessage(
+                f"BeBeauty Booking Confirmation {form.instance.booking_id}",
+                body3,
+                "info@BeBeauty.co.uk",
+                [self.request.user.email, "grantwils.23@googlemail.com"],
+            )
+            email.send(fail_silently=False)
+        return super().form_valid(form)
 
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -113,6 +153,48 @@ class CancelBookingView(SuccessMessageMixin, UpdateView):
     form_class = CancelForm
     model = Booking
     success_message = 'Your booking has been cancelled'
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        form.instance.email = self.request.user.email
+        body0 = (f"Hello {form.instance.user} ({form.instance.contact_no.as_national}),\n\nYour booking (ref: #{form.instance.booking_id}) has been cancelled.\n\n We are sorry you can't make the appointment, We look forward to doing business with you in the future.\n\nBest Wishes\n\nThe BeBeauty Team\n\nTel: +44 7838 555 323\nEmail: info@BeBeauty.co.uk")
+        body1 = (f"Hello {form.instance.user} ({form.instance.contact_no.as_national}),\n\nYour booking (ref: #{form.instance.booking_id}) has been cancelled.\n\n We are sorry you can't make the appointment, We look forward to doing business with you in the future.\n\nBest Wishes\n\nThe BeBeauty Team\n\nTel: +44 7838 555 323\nEmail: info@BeBeauty.co.uk")
+        body2 = (f"Hello {form.instance.user} ({form.instance.contact_no.as_national}),\n\nYour booking (ref: #{form.instance.booking_id}) has been cancelled.\n\n We are sorry you can't make the appointment, We look forward to doing business with you in the future.\n\nBest Wishes\n\nThe BeBeauty Team\n\nTel: +44 7838 555 323\nEmail: info@BeBeauty.co.uk")
+        body3 = (f"Hello {form.instance.user} ({form.instance.contact_no.as_national}),\n\nYour booking (ref: #{form.instance.booking_id}) has been cancelled.\n\n We are sorry you can't make the appointment, We look forward to doing business with you in the future.\n\nBest Wishes\n\nThe BeBeauty Team\n\nTel: +44 7838 555 323\nEmail: info@BeBeauty.co.uk")
+        form.save()
+        if form.instance.appointment_slot == 0:
+            email = EmailMessage(
+                f"BeBeauty Booking Confirmation {form.instance.booking_id}",
+                body0,
+                "info@BeBeauty.co.uk",
+                [self.request.user.email, "grantwils.23@googlemail.com"],
+            )
+            email.send(fail_silently=False)
+        elif form.instance.appointment_slot == 1:
+            email = EmailMessage(
+                f"BeBeauty Booking Confirmation {form.instance.booking_id}",
+                body1,
+                "info@BeBeauty.co.uk",
+                [self.request.user.email, "grantwils.23@googlemail.com"],
+            )
+            email.send(fail_silently=False)
+        elif form.instance.appointment_slot == 2:
+            email = EmailMessage(
+                f"BeBeauty Booking Confirmation {form.instance.booking_id}",
+                body2,
+                "info@BeBeauty.co.uk",
+                [self.request.user.email, "grantwils.23@googlemail.com"],
+            )
+            email.send(fail_silently=False)
+        else:
+            email = EmailMessage(
+                f"BeBeauty Booking Confirmation {form.instance.booking_id}",
+                body3,
+                "info@BeBeauty.co.uk",
+                [self.request.user.email, "grantwils.23@googlemail.com"],
+            )
+            email.send(fail_silently=False)
+        return super().form_valid(form)
 
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -252,11 +334,11 @@ class AdminListThisYearView(ListView):
 
 class AdminAddBookingView(LoginRequiredMixin, SuccessMessageMixin, CreateView, edit.ModelFormMixin):
     context_object_name = 'bookings'
-    template_name = 'admin_booking_form.html'
-    form_class = AdminBookingForm
+    template_name = 'booking_form.html'
+    form_class = BookingForm
     success_message = 'Thank you for your booking.'
     success_url = reverse_lazy("admin-bookings")
-    
+
 
 class AdminEditBookingView(SuccessMessageMixin, UpdateView, edit.ModelFormMixin):
     template_name = 'admin_booking_form.html'
@@ -264,22 +346,14 @@ class AdminEditBookingView(SuccessMessageMixin, UpdateView, edit.ModelFormMixin)
     model = Booking
     success_message = 'Your booking details has been updated.'
     success_url = reverse_lazy("admin-bookings")
-    
-    def form_valid(self, form):
-        form.instance.user = self.request.user
-        form.instance.email = self.request.user.email
-        return super().form_valid(form)
 
 
-
-   
-
-class AdminCancelBookingView(SuccessMessageMixin, UpdateView):
+class AdminCancelBookingView(SuccessMessageMixin, UpdateView, edit.ModelFormMixin):
     template_name = 'cancel_booking_form.html'
     form_class = CancelForm
     model = Booking
-    success_message = 'Your booking has been cancelled'
     success_url = reverse_lazy("admin-bookings")
+    success_message = 'Your booking has been cancelled'
 
 
 class AdminDeleteBookingView(SuccessMessageMixin, DeleteView):
@@ -287,7 +361,6 @@ class AdminDeleteBookingView(SuccessMessageMixin, DeleteView):
     model = Booking
     success_url = reverse_lazy('admin-bookings')
     success_message = 'Your booking has been deleted.'
-
 
     def delete(self, *args, **kwargs):
         messages.error(self.request, self.success_message)

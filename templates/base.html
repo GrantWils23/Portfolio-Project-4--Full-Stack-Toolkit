@@ -17,15 +17,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
     <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
-
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-    </script>
-    <!-- EMAILJS TAGS -->
-    <script type="text/javascript">
-        (function() {
-            emailjs.init("user_rH4EtMLNNyBDK7stBwgov");
-        })();
-    </script>
 </head>
 
 <body class="d-flex flex-column h-100 main-bg">
@@ -136,7 +127,5 @@
         alert.close();
     }, 6000);
 </script>
-<!-- EMAILJS TAGS -->
-<script src="{% static 'js/sendEmail.js' %}"></script>
 
 </html>

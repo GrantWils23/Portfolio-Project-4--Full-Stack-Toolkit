@@ -38,12 +38,21 @@
                         {% else %}
                         <a type="button" class="custom-site-btn line-height-setter btn-remove-blue nul-but nul-hvr" href="{% url 'view-booking' booking.pk %}">Return</a>
                         {% endif %}
+                        {% if user.username and user.is_staff %}
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{ form.cancelled.is_ | safe }}
+                            {{form.cancelled}}
+                            <input type="submit" name="Submit" value="Cancel Booking" class="custom-site-btn line-height-setter del-but" />
+                        </form>
+                        {% else %}
                         <form method="POST" action="{% url 'cancel-booking' booking.pk %}">
                             {% csrf_token %}
                             {{ form.cancelled.is_ | safe }}
                             {{form.cancelled}}
                             <input type="submit" name="Submit" value="Cancel Booking" class="custom-site-btn line-height-setter del-but" />
                         </form>
+                        {% endif %}
                     </div>
                 </div>
             </div>

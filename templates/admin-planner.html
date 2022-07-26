@@ -96,7 +96,7 @@
                                         {% include 'admin-booking-modal.html' %}
                                     </th>
                                     <td>{{ booking.user }}</td>
-                                    <td class="d-none d-md-table-cell">{{ booking.contact_no }}</td>
+                                    <td class="d-none d-md-table-cell">{{ booking.contact_no.as_national }}</td>
                                     <td>{{ booking.appointment_date|date:"j/m/y" }}</td>
                                     <td>{{ booking.get_appointment_slot_display }}</td>
                                     <td class="d-none d-md-table-cell">{{ booking.treatment }}</td>

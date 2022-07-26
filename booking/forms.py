@@ -58,8 +58,8 @@ class BookingForm(ModelForm):
     appointment_date = forms.DateField(widget=DateInput(attrs={"class": "form-control datepicker validate"}))
     appointment_slot = forms.ChoiceField(choices=TIMESLOTS, widget=forms.RadioSelect)
     
-    def send_email(self):
-        pass
+    # def send_email(self):
+    #     pass
 
     class Meta:
         model = Booking
@@ -121,7 +121,7 @@ class AdminBookingForm(forms.ModelForm):
         fields = ['user', 'email', 'contact_no', 'treatment',
                   'appointment_date', 'appointment_slot', 'address_line_one',
                   'address_line_two', 'address_line_three', 'city',
-                  'post_code', 'additional_info',
+                  'post_code', 'additional_info', 'cancelled',
                   ]
 
     @property
