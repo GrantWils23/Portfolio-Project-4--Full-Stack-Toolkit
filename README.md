@@ -286,6 +286,23 @@ To test my project, I have manually tested the project by doing the following:
     </li>
 </ul>
 
+## Lighthouse Testing
+
+<p>To check the production levels against its performance, I used the Lighthouse testing facilities in the chrome development tools.</p>
+<ul>
+<li>Home page BeBeauty - PC view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/181924994-d13567fc-2331-427d-8d37-001717ba0760.png)
+
+<li>Home page BeBeauty - responsive view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/181925133-c0a7e8bd-8607-41f4-ab1c-2a923e7ef723.png)
+![image](https://user-images.githubusercontent.com/72948843/181925147-dc254705-1bfa-4ad8-b6e8-e3772d66330e.png)
+
+
+</ul>
+
+
 ## User Story Tests
 
 <h3>As a Site User I can Navigate to the gallery to see previous work so that I can make an informed decision on whether I like the beautician's work or not</h3>
@@ -348,7 +365,9 @@ To test my project, I have manually tested the project by doing the following:
 <ul>
     <li>I had found a bug whereby if I booked an appointment on the same day as someone else has already done with the same time slot, I would get multiple bookings that match and it would not be possible for the Beautician to attend both and would require manual checking.
     To get over this problem, I put a constraint into the database stating that a booking cannot be placed if the booking requested with these parameters already exists. </li>
+    <li> A bug was found in the admin booking view which was when the submit button was hit, a 500 error handler popped up. I resolved the issue by changing the form to take in a new form model and template which gave the admin greater control of the booking.</li>
 </ul>
+
 
 [Back to Top](<#contents>)
 <br>
@@ -375,13 +394,12 @@ To test my project, I have manually tested the project by doing the following:
 <li><a href="https://django-crispy-forms.readthedocs.io/en/latest/" target="_blank">Django-crispy-forms</a> - Is a form generator helper that enables quick and tidy forms to be made with minimal input on the front end.</li>
 <li><a href="https://fontawesome.com/" target="_blank">fontawesome</a> -  Is used to get the icons at the bottom of the page for the social media resources</li>
 <li><a href="https://favicon.io/" target="_blank">Favicon</a> - was used to design the Favicon for display in the browser tab</li>
-<li><a href="https://" target="_blank"> Bootstrap </a> - .....</li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank"> CSS </a> - .....</li>
+<li><a href="https://getbootstrap.com/" target="_blank"> Bootstrap </a> - Bootstrap was used in this project to help create the website with fast and easy web designs, from drop in code for modals, nav bars and how the viewports react</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank"> CSS </a> - Aside from some basic stylings inherited from bootstrap, CSS was used to customise the website to a tailored fit. The design schema was heavily influenced by the theme and colors requested and the wireframes used at the beginning stage of development. CSS gave the ability to create a beautiful website exactly as the client requested.</li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank"> HTML </a> - HTML used as the language to render the text in the front-end.</li>
 <li><a href="https://www.dreamstime.com/" target="_blank"> Dreamstime </a> - An online stock of photos that are royalty free to use</li>
 <li><a href="https://www.pexels.com/" target="_blank"> Pexels </a> - An online stock of photos that are royalty free to use</li>
-<li><a href="https://" target="_blank"> ..... </a> - .....</li>
-<li><a href="https://" target="_blank"> ..... </a> - .....</li>
+<li><a href="https://docs.djangoproject.com/en/4.0/topics/email/" target="_blank"> Django Email </a> - Django Email is a very useful and powerful tool that allowed the clients to recieve emails regarding their booking. It is a really useful tool that provides real time functionality with great results.</li>
 
 
 <br>
