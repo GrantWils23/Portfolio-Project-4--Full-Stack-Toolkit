@@ -400,7 +400,47 @@ To test my project, I have manually tested the project by doing the following:
 <li><a href="https://www.dreamstime.com/" target="_blank"> Dreamstime </a> - An online stock of photos that are royalty free to use</li>
 <li><a href="https://www.pexels.com/" target="_blank"> Pexels </a> - An online stock of photos that are royalty free to use</li>
 <li><a href="https://docs.djangoproject.com/en/4.0/topics/email/" target="_blank"> Django Email </a> - Django Email is a very useful and powerful tool that allowed the clients to recieve emails regarding their booking. It is a really useful tool that provides real time functionality with great results.</li>
+<li><a href="https://compressor.io/" target="_blank"> Compressor </a> - An online compressing tool, great for compressing stock images down to a user freindly size, and it is completely free to use.</li>
 
+
+<br>
+
+[Back to Top](<#contents>)
+<br>
+
+## Libaries
+
+<p>The libaries used in this project are located in the requirements.txt file and where set up in the virtual environment to get the project working. Below is the list of libaries used to run the website</p>
+
+<ul>
+    <li><a href="" target="_blank">asgiref</a> - </li>
+    <li><a href="" target="_blank">backport.zoneinfo</a> - </li>
+    <li><a href="" target="_blank">click</a> - </li>
+    <li><a href="" target="_blank">dj-database-url</a> - </li>
+    <li><a href="" target="_blank">dj3-cloudinary-storage</a> - </li>
+    <li><a href="" target="_blank">Django</a> - </li>
+    <li><a href="" target="_blank">django-allauth</a> - </li>
+    <li><a href="" target="_blank">django-cloudinary-storage</a> - </li>
+    <li><a href="" target="_blank">django-crispy-forms</a> - </li>
+    <li><a href="" target="_blank">django-filter</a> - </li>
+    <li><a href="" target="_blank">django-phonenumber-field</a> - </li>
+    <li><a href="" target="_blank">docstring-parse</a> - </li>
+    <li><a href="" target="_blank">gunicorn</a> - </li>
+    <li><a href="" target="_blank">inconfig</a> - </li>
+    <li><a href="" target="_blank">oauthlib</a> - </li>
+    <li><a href="" target="_blank">phonenumbers</a> - </li>
+    <li><a href="" target="_blank">pluggy</a> - </li>
+    <li><a href="" target="_blank">psycopg2</a> - </li>
+    <li><a href="" target="_blank">py</a> - </li>
+    <li><a href="" target="_blank">pyJWT</a> - </li>
+    <li><a href="" target="_blank">pylint-django</a> - </li>
+    <li><a href="" target="_blank">pylint_plugin-utils</a> - </li>
+    <li><a href="" target="_blank">pytest</a> - </li>
+    <li><a href="" target="_blank">python3-openid</a> - </li>
+    <li><a href="" target="_blank">pytz</a> - </li>
+    <li><a href="" target="_blank">request-oauthlib</a> - </li>
+    <li><a href="" target="_blank">sqlparse</a> - </li>
+</ul>
 
 <br>
 
