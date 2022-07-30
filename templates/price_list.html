@@ -4,8 +4,6 @@
 
 {% block content %}
 
-
-
 <div class="container">
     <div class="box-wrap">
         <h1 class="col center-text title-font sub-title">Price List</h1>
@@ -38,7 +36,7 @@
                                 <td>{{ treatment.get_treatment_type_display }}</td>
                                 <td>{{ treatment.treatment_name }}</td>
                                 <td>£{{ treatment.treatment_price }}</td>
-                                <td class="d-none d-sm-table-cell">£{{ treatment.treatment_time }}</td>
+                                <td class="d-none d-sm-table-cell">{{ treatment.treatment_time }}</td>
                                 <td>
                                     <button type="button" data-bs-toggle="modal" data-bs-target="#treatmentModal{{treatment.pk}}" class="custom-site-btn btn-remove-blue edit-but hvr info-btn">More info</button>
                                 </td>
@@ -56,7 +54,6 @@
 </div>
 <br>
 <br>
-<!--booking button-->
 {% if user.is_staff %}
 <div class="container_fluid">
     <div class="justify-content-center text-center ">

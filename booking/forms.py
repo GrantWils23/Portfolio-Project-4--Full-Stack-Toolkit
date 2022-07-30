@@ -57,9 +57,6 @@ class BookingForm(ModelForm):
     additional_info = forms.CharField(required=False, widget=forms.Textarea(attrs={'rows': 4},))
     appointment_date = forms.DateField(widget=DateInput(attrs={"class": "form-control datepicker validate"}))
     appointment_slot = forms.ChoiceField(choices=TIMESLOTS, widget=forms.RadioSelect)
-    
-    # def send_email(self):
-    #     pass
 
     class Meta:
         model = Booking

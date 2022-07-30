@@ -327,7 +327,8 @@ To test my project, I have manually tested the project by doing the following:
    <li>The user who is logged in has their name generated next to the top of the 'My Bookings' page to alert the user that they are signed in, next to the sign out link</li> 
 
 <h3>As a Admin/User I can receive emails regarding bookings made, alter and cancel so that I can manage all my bookings</h3>
-   <li>...</li> 
+   <li>When a user makes a booking, or alters ut by any means. The user is sent an email upon the submission of the booking, the client recieves a confimation email stating the details of the booking.</li>
+   <li>A copy of any is also forwarded to the admin user, so that they can monitor the status of the bookings in real time without having to sign in to the app and search what are the status of the bookings day by day</li> 
 
 <h3>As a User I can contact the company with any queries i may have so that my concerns are answered</h3>
     <li>The user has two options within the website to contact the company</li>
@@ -391,7 +392,15 @@ To test my project, I have manually tested the project by doing the following:
 ## Deployment
 
 ### Deployment of the project
+<!-- DEPLOYMENT INSTRUCTIONS -->
 
+<p>To deploy the site is a labour intensive process. To start we need copy(clone) or fork the repository. Then when ready, go into your working environment and from the terminal we need pip to install all the necessary pyhton packages for the app to run. Using pip, install the requirements.txt file. this is achived with the command line code of " .... ".</p>
+
+<p>once you have installled all the necessary packages, you will need to configure your settings.py file to contain the appropriate environmental variables for the site to operate. </p>
+
+<p>sensative data that doesn't want to be exposed on the internet, should be added into a env.py file with all the sensative data is stored away and not exposed in github, making it vulnerable to attacks. the env.py file has then to be added to the .gitignore file to prevent git uploading the sensative data to the internet.</p>
+
+<!--  -->
 <p> I deployed this site using Heroku which is a container based cloud platform where you can deploy, manage and scale applications. To deploy this project I used the following steps in Heroku:</p>
 <li>Fork or clone a copy of this repository.</li>
 <li>Log in or create an account in heroku.</li>
