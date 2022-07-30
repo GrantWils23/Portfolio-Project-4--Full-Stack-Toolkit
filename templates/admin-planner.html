@@ -27,7 +27,7 @@
                                     <div class="d-inline">
                                         <h2>Filters:</h2>
                                     </div>
-                                    <div class="d-inline"><a href="{% url 'admin-bookings' %} " class="no-text-dec admin-font-size">Clear <b>X</b></a></div>
+                                    <div class="d-inline"><a href="{% url 'admin-bookings' %} " class="no-text-dec admin-font-size filter-text-col">Clear <b>X</b></a></div>
                                 </div>
                             </div>
                             {{ filter.form | crispy }}
@@ -40,19 +40,19 @@
                         <div class="col-sm-4 text-center">
                             <h4>Filter By Days:</h4>
                             <div class="d-block margin-updown">
-                                <a href="{% url 'admin-bookings-today' %}" class="admin-font-size">Today</a>
+                                <a href="{% url 'admin-bookings-today' %}" class="admin-font-size filter-text-col">Today</a>
                             </div>
                             <div class="d-block margin-updown">
-                                <a href="{% url 'admin-bookings-past-7' %}" class="admin-font-size">Past 7 Days</a>
+                                <a href="{% url 'admin-bookings-past-7' %}" class="admin-font-size filter-text-col">Past 7 Days</a>
                             </div>
                             <div class="d-block margin-updown">
-                                <a href="{% url 'admin-bookings-next-7' %}" class="admin-font-size">Next 7 Days</a>
+                                <a href="{% url 'admin-bookings-next-7' %}" class="admin-font-size filter-text-col">Next 7 Days</a>
                             </div>
                             <div class="d-block margin-updown">
-                                <a href="{% url 'admin-bookings-this-month' %}" class="admin-font-size">This Month</a>
+                                <a href="{% url 'admin-bookings-this-month' %}" class="admin-font-size filter-text-col">This Month</a>
                             </div>
                             <div class="b-block margin-updown">
-                                <a href="{% url 'admin-bookings-this-year' %}" class="admin-font-size">This Year</a>
+                                <a href="{% url 'admin-bookings-this-year' %}" class="admin-font-size filter-text-col">This Year</a>
                             </div>
                             </ul>
                         </div>
@@ -92,7 +92,7 @@
                                 {% include 'admin-booking-modal.html' %}
                                 <tr>
                                     <th scope="'row">
-                                        <div type="button" data-bs-toggle="modal" data-bs-target="#bookingModal{{booking.pk}}" style="color:cadetblue; font-size:1.4em;"><b>{{booking.booking_id}}</b></div>
+                                        <div type="button" data-bs-toggle="modal" data-bs-target="#bookingModal{{booking.pk}}" style="color:peru ; font-size:1.1em;">{{booking.booking_id}}</div>
                                         {% include 'admin-booking-modal.html' %}
                                     </th>
                                     <td>{{ booking.user }}</td>
@@ -136,7 +136,7 @@
 {% if user.is_staff %}
 <div class="container_fluid">
     <div class="justify-content-center text-center ">
-        <a type="button" class="btn-lg light sub-custom-btn btn-remove-blue hvr-pulse" href="{% url 'admin-booking' %}">Create
+        <a class="btn-lg light sub-custom-btn btn-remove-blue hvr-pulse" href="{% url 'admin-booking' %}">Create
             <!-- add new url here -->
             a new booking</a>
     </div>
@@ -144,7 +144,7 @@
 {% else %}
 <div class="container_fluid">
     <div class="justify-content-center text-center ">
-        <a type="button" class="btn-lg light sub-custom-btn btn-remove-blue hvr-pulse" href="{% url 'booking' %}">Create
+        <a class="btn-lg light sub-custom-btn btn-remove-blue hvr-pulse" href="{% url 'booking' %}">Create
             a new booking</a>
     </div>
 </div>

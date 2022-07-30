@@ -256,6 +256,10 @@ td {
     font-size: 1.2rem;
 }
 
+.filter-text-col {
+    color: peru;
+}
+
 /* index Photo tag styles */
 .text-center img {
     width: 100%;
@@ -528,6 +532,7 @@ td {
 
     .admin-modal p {
         font-size: 1.2rem;
+        word-break: break-all;
     }
 
     .modal-footer button {
@@ -544,5 +549,9 @@ td {
 
     .booking-box-filter table {
         font-size: 0.80rem;
+    }
+
+    .admin-btn {
+        font-size: 1.1rem;
     }
 }

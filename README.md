@@ -287,18 +287,196 @@ To test my project, I have manually tested the project by doing the following:
     </li>
 </ul>
 
+## Code Validation
+
+BeBeauty has been validated by using online validation tools W3C HTML Validator, W3C CSS Validator, JSHint JavaScript Validator and the PEP8 Online Validator.
+HTML Validation Image
+
+
 ## Lighthouse Testing
 
 <p>To check the production levels against its performance, I used the Lighthouse testing facilities in the chrome development tools.</p>
 <ul>
-<li>Home page BeBeauty - PC view</li>
+<li>Home page BeBeauty url - PC view</li>
 
 ![image](https://user-images.githubusercontent.com/72948843/181924994-d13567fc-2331-427d-8d37-001717ba0760.png)
 
-<li>Home page BeBeauty - responsive view</li>
+<li>Home page BeBeauty url - responsive view</li>
 
-![image](https://user-images.githubusercontent.com/72948843/181925147-dc254705-1bfa-4ad8-b6e8-e3772d66330e.png)
+![image](https://user-images.githubusercontent.com/72948843/181945988-e1a33a91-ecc4-4905-be83-1b52f4b9ec20.png)
 
+<!--  -->
+
+<li>Services page BeBeauty url - PC view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/181950867-8804762e-9910-4ffb-86b9-f98be859942a.png)
+
+<li>Services page BeBeauty url - responsive view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/181952437-429dd851-51b6-4dad-86ed-466ab8d4d81a.png)
+
+<!--  -->
+
+<li>Prices page BeBeauty url - PC view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/181954813-4f2ab473-19ec-4ddd-9711-78fc84531170.png)
+
+<li>Prices page BeBeauty url - responsive view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/181979384-59fd4ac2-3e92-43fc-abe8-061bd5b79c78.png)
+
+<!--  -->
+
+<li>Gallery page BeBeauty url - PC view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/181942515-c5a4edfa-1507-4169-b71f-98aea0702175.png)
+
+<li>Gallery page BeBeauty url - responsive view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/181941066-eea2464d-0a57-4fed-9caa-0f08e289d5b1.png)
+
+<!--  -->
+
+<li>Contact page BeBeauty url - PC view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/181969177-edc84091-0df2-409d-b70f-d8464787f4b7.png)
+
+<li>Contact page BeBeauty url - responsive view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/181971978-758e1a0c-e99d-49ba-885d-1a4e551e67a5.png)
+
+<!--  -->
+
+<li>SignUp page BeBeauty url - PC view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/181966978-1470b331-7476-461a-973d-706d5f94ecdc.png)
+
+<li>SignUp page BeBeauty url - responsive view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/181965779-6181b6db-2b62-4b14-bdb8-0fc4e33555ea.png)
+
+<!--  -->
+
+<li>SignIn page BeBeauty url - PC view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/181976459-f6dd76c3-c806-401c-b917-81b86b3593b7.png)
+
+<li>SignIn page BeBeauty url - responsive view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/181974745-3c419c79-d0e2-4030-a18a-99cc873921f8.png)
+
+<!--  -->
+
+<li>SignOut page BeBeauty url - PC view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/181985377-f53a8308-73e5-481e-a1d9-84d4d5b7e325.png)
+
+<li>SignOut page BeBeauty url - responsive view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/181984587-f5d7caa4-a798-4080-a01e-b56c1b6e88ce.png)
+
+<!--  -->
+
+<li>Admin Booking page BeBeauty url - PC view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/181993584-7603e985-356c-47c8-9f8e-ecdbc0a0298a.png)
+
+
+<li>Admin Booking page BeBeauty url - responsive view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/181994335-203621aa-d5cc-43d0-af53-0212947b51f2.png)
+
+<!--  -->
+
+<li>Admin Edit Booking page BeBeauty url - PC view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/181994444-2d5907f7-e062-4d09-bc7e-25e78907a485.png)
+
+<li>Admin Edit Booking page BeBeauty url - responsive view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/181994456-e58e8c0d-58ff-4b75-b628-f62a20e57719.png)
+
+<!--  -->
+
+<li>Admin Cancel Booking page BeBeauty url - PC view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/181994515-987ff67d-a3a4-403c-b7e6-07486183d3a5.png)
+
+<li>Admin Cancel Booking page BeBeauty url - responsive view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/181995122-bcea69b1-bc8d-4f8e-920f-8ffd865c371e.png)
+
+<!--  -->
+
+<li>Admin Delete Booking page BeBeauty url - PC view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/181995155-f2fe3e8f-8c30-4ead-8172-26a78080b697.png)
+
+<li>Admin Delete Booking page BeBeauty url - responsive view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/181995164-fcc0f14b-c3fd-4eb9-90fb-711841242484.png)
+
+<!--  -->
+
+<li>Admin planner page BeBeauty url - PC view</li>
+
+
+
+<li>Admin planer page BeBeauty url - responsive view</li>
+
+
+
+<!--  -->
+
+<li>Admin planner filter/today page BeBeauty url - PC view</li>
+
+
+
+<li>Admin planner filter/today page BeBeauty url - responsive view</li>
+
+
+
+<!--  -->
+
+<li>Admin planner filter next 7 days page BeBeauty url - PC view</li>
+
+
+
+<li>Admin planner filter next 7 days page BeBeauty url - responsive view</li>
+
+
+
+<!--  -->
+
+<li>Admin planner filter last 7 days page BeBeauty url - PC view</li>
+
+
+
+<li>Admin planner filter last 7 days page BeBeauty url - responsive view</li>
+
+
+
+<!--  -->
+
+<li>Admin planner filter this month page BeBeauty url - PC view</li>
+
+
+
+<li>Admin planner filter this month page BeBeauty url - responsive view</li>
+
+
+
+<!--  -->
+
+<li>Admin planner filter this year page BeBeauty url - PC view</li>
+
+
+
+<li>Admin planner filter this year page BeBeauty url - responsive view</li>
+
+
+
+<!--  -->
 
 </ul>
 
