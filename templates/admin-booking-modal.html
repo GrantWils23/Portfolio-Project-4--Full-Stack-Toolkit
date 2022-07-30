@@ -5,7 +5,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title col-sm-5" id="bookingModal{{booking.pk}}Label" class="d-inline">Booking ref: <b>{{ booking.booking_id }}</b>
+                <h3 class="modal-title col-sm-5" id="bookingModal{{booking.pk}}" class="d-inline">Booking ref: <b>{{ booking.booking_id }}</b>
                 </h3>
                 {% if booking.cancelled == 1 %}
                 <h3 class="col-sm-6" style="font-size:1.8em; color:crimson"><b> Cancelled</b></h3>

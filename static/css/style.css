@@ -257,7 +257,7 @@ td {
 }
 
 .filter-text-col {
-    color: peru;
+    color: Black;
 }
 
 /* index Photo tag styles */
@@ -407,6 +407,10 @@ td {
 
 .screen-container {
     min-height: 40vh;
+}
+
+.admin-modal p {
+    word-break: break-all;
 }
 
 /* large devices (landscape phones, 1100px and up) */
