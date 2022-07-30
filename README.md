@@ -7,8 +7,9 @@
 click here to go to the deployed website: <a href="https://bebeauty-app.herokuapp.com/" target="_blank"><b><i>"BeBeauty"</i></b></a>
 <br><br>
 
-![image](https://user-images.githubusercontent.com/72948843/178713181-4b727681-9d6d-4c3b-8e09-883b60f3409e.png)
+![image](https://user-images.githubusercontent.com/72948843/181935137-008ff294-97f7-412c-96a5-cb3f4b4dd023.png)
 
+![image](https://user-images.githubusercontent.com/72948843/181935492-f4929234-fadd-45a4-b88c-786a809978d0.png)
 
 # Contents
 
@@ -296,7 +297,6 @@ To test my project, I have manually tested the project by doing the following:
 
 <li>Home page BeBeauty - responsive view</li>
 
-![image](https://user-images.githubusercontent.com/72948843/181925133-c0a7e8bd-8607-41f4-ab1c-2a923e7ef723.png)
 ![image](https://user-images.githubusercontent.com/72948843/181925147-dc254705-1bfa-4ad8-b6e8-e3772d66330e.png)
 
 
@@ -413,33 +413,33 @@ To test my project, I have manually tested the project by doing the following:
 <p>The libaries used in this project are located in the requirements.txt file and where set up in the virtual environment to get the project working. Below is the list of libaries used to run the website</p>
 
 <ul>
-    <li><a href="" target="_blank">asgiref</a> - </li>
-    <li><a href="" target="_blank">backport.zoneinfo</a> - </li>
-    <li><a href="" target="_blank">click</a> - </li>
-    <li><a href="" target="_blank">dj-database-url</a> - </li>
-    <li><a href="" target="_blank">dj3-cloudinary-storage</a> - </li>
-    <li><a href="" target="_blank">Django</a> - </li>
-    <li><a href="" target="_blank">django-allauth</a> - </li>
-    <li><a href="" target="_blank">django-cloudinary-storage</a> - </li>
-    <li><a href="" target="_blank">django-crispy-forms</a> - </li>
-    <li><a href="" target="_blank">django-filter</a> - </li>
-    <li><a href="" target="_blank">django-phonenumber-field</a> - </li>
-    <li><a href="" target="_blank">docstring-parse</a> - </li>
-    <li><a href="" target="_blank">gunicorn</a> - </li>
-    <li><a href="" target="_blank">inconfig</a> - </li>
-    <li><a href="" target="_blank">oauthlib</a> - </li>
-    <li><a href="" target="_blank">phonenumbers</a> - </li>
-    <li><a href="" target="_blank">pluggy</a> - </li>
-    <li><a href="" target="_blank">psycopg2</a> - </li>
-    <li><a href="" target="_blank">py</a> - </li>
-    <li><a href="" target="_blank">pyJWT</a> - </li>
-    <li><a href="" target="_blank">pylint-django</a> - </li>
-    <li><a href="" target="_blank">pylint_plugin-utils</a> - </li>
-    <li><a href="" target="_blank">pytest</a> - </li>
-    <li><a href="" target="_blank">python3-openid</a> - </li>
-    <li><a href="" target="_blank">pytz</a> - </li>
-    <li><a href="" target="_blank">request-oauthlib</a> - </li>
-    <li><a href="" target="_blank">sqlparse</a> - </li>
+    <li><a href="https://pypi.org/project/asgiref/" target="_blank">asgiref</a> - Reference ASGI adapters and channel layers.</li>
+    <li><a href="https://pypi.org/project/backports.zoneinfo/" target="_blank">backport.zoneinfo</a> - The module used to implement the IANA time zone database in the python standard libary.</li>
+    <li><a href="https://pypi.org/project/click8/" target="_blank">click</a> - A python package to help write command line interfaces with as little code as necessary.</li>
+    <li><a href="https://pypi.org/project/dj-database-url/" target="_blank">dj-database-url</a> - This utility package allows the user to utilize the "DATABASE_URL" environmental variable to configure the Django App.</li>
+    <li><a href="https://pypi.org/project/dj3-cloudinary-storage/" target="_blank">dj3-cloudinary-storage</a> - This package allows django to facilitate intergration with Cloudinary by implementing Django Storage API.</li>
+    <li><a href="https://pypi.org/project/Django/" target="_blank">Django</a> - A high-level Python web framework that encourages rapid develpoment and clean, pragmatic design.</li>
+    <li><a href="https://pypi.org/project/django-allauth/" target="_blank">django-allauth</a> - Intergrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication.</li>
+    <li><a href="https://pypi.org/project/django-cloudinary-storage/" target="_blank">django-cloudinary-storage</a> - Django package that provides Cloudinary storages for both media and static files as well as management commands for removing unnecessary files.</li>
+    <li><a href="https://pypi.org/project/django-crispy-forms/" target="_blank">django-crispy-forms</a> - Build programmatic reusable layouts out of components, having full control of the rendered HTML without writing HTML in templates.</li>
+    <li><a href="https://pypi.org/project/django-filter/" target="_blank">django-filter</a> - Django-filter is a reusable Django application for allowing users to filter querysets dynamically.</li>
+    <li><a href="https://pypi.org/project/django-phonenumber-field/" target="_blank">django-phonenumber-field</a> - A Django library which interfaces with python-phonenumbers to validate, pretty print and convert phone numbers.</li>
+    <li><a href="https://pypi.org/project/docstring-parser/" target="_blank">docstring-parser</a> - Parse Python docstrings in reST, Google and Numpydoc format.</li>
+    <li><a href="https://pypi.org/project/gunicorn/" target="_blank">gunicorn</a> - Gunicorn ‘Green Unicorn’ is a Python WSGI HTTP Server for UNIX.</li>
+    <li><a href="https://pypi.org/project/iniconfig/" target="_blank">iniconfig</a> - Iniconfig is a small and simple INI-file parser module having a unique set of features.</li>
+    <li><a href="https://pypi.org/project/oauthlib/" target="_blank">oauthlib</a> - A generic, spec-compliant, thorough implementation of the OAuth request-signing logic.</li>
+    <li><a href="https://pypi.org/project/phonenumbers/" target="_blank">phonenumbers</a> - Python version of Google's common library for parsing, formatting, storing and validating international phone numbers.</li>
+    <li><a href="https://pypi.org/project/pluggy/" target="_blank">pluggy</a> - plugin and hook calling mechanisms for python</li>
+    <li><a href="https://pypi.org/project/psycopg/" target="_blank">psycopg2</a> - PostgreSQL database adapter for Python</li>
+    <li><a href="https://pypi.org/project/py3/" target="_blank">py</a> - This is a dummy package.</li>
+    <li><a href="https://pypi.org/project/PyJWT/" target="_blank">pyJWT</a> - JSON Web Token implementation in Python.</li>
+    <li><a href="https://pypi.org/project/pylint-django/" target="_blank">pylint-django</a> - A Pylint plugin to help Pylint understand the Django web framework.</li>
+    <li><a href="https://pypi.org/project/pylint-plugin-utils/" target="_blank">pylint_plugin-utils</a> - Utilities and helpers for writing Pylint plugins</li>
+    <li><a href="https://pypi.org/project/pytest/" target="_blank">pytest</a> - A simple, powerful testing package in python.</li>
+    <li><a href="https://pypi.org/project/python-openid3/" target="_blank">python3-openid</a> - OpenID support for servers and consumers. Python 3 support fork.</li>
+    <li><a href="https://pypi.org/project/pytz/" target="_blank">pytz</a> - World timezone definitions, modern and historical.</li>
+    <li><a href="https://pypi.org/project/requests-oauthlib/" target="_blank">request-oauthlib</a> - OAuthlib authentication support for Requests.</li>
+    <li><a href="https://pypi.org/project/sqlparse/" target="_blank">sqlparse</a> - A non-validating SQL parser.</li>
 </ul>
 
 <br>
