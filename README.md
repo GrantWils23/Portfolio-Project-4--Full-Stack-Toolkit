@@ -639,6 +639,27 @@ HTML Validation Image... Below are the results of the Validations of the code th
 <p>The results were very positive and successful. There was a few orange flags in the performance checks of the lighthouse coverage which related to the responsive views in mobile for the urls of the admin filter. On a whole the tests have been successful in the desktop view and responsive view. This is a really good return on my the test that show the website is working correctly and behaving as is expected.</p>
 <br>
 
+[Back to Top](<#contents>)
+<br>
+
+## Accessability Testing
+<p>I used a website called <a href="https://color.a11y.com/" target="_blank">A11y</a> which is an accessability validator to check the colour of the font against the background. The website passed the test, the colours passed the validations.</p>
+
+![image](https://user-images.githubusercontent.com/72948843/182040435-6931739e-ef4d-4504-be24-564813dbaea9.png)
+<br>
+
+[Back to Top](<#contents>)
+<br>
+
+## Responsive Testing
+<p>I used a website called <a href="https://responsivedesignchecker.com/" target="_blank">responsive design checker</a> to check the responsive nature of the website and it passed in all  screen aspect aspect ratios</p>
+
+![image](https://user-images.githubusercontent.com/72948843/182042392-7e49e776-7f57-4695-847d-965f06390a87.png)
+<br>
+
+[Back to Top](<#contents>)
+<br>
+
 ## User Story Tests
 
 <h3>As a Site User I can Navigate to the gallery to see previous work so that I can make an informed decision on whether I like the beautician's work or not</h3>
@@ -695,15 +716,27 @@ HTML Validation Image... Below are the results of the Validations of the code th
 <br>
 
 ## Manual Testing
+<p>following the above User Story Tests, those tests coincide with the manual testing procedures of the website. A lot of the features above where check through manual testing to ensure a great user experience. Below is a list of the some of the features manually tested.</p>
 
-<!--  -->
+![image](https://user-images.githubusercontent.com/72948843/182045459-f03705c8-8c91-4199-ae7d-56b8e90963c5.png)
+![image](https://user-images.githubusercontent.com/72948843/182045518-21d8f059-d60c-4a84-9728-d35f75a5b568.png)
+![image](https://user-images.githubusercontent.com/72948843/182045529-c30443b5-9f9b-4cdf-932f-9fbfc3ae7d44.png)
+![image](https://user-images.githubusercontent.com/72948843/182045600-685994d0-e382-4fe2-b116-e80d2b7d0945.png)
+
 [Back to Top](<#contents>)
 <br>
 
 
 
 ## Automated Testing
-<!--  -->
+<p>To check the code, I ran <a href="https://pypi.org/project/coverage/" target="_blank">Coverage</a> (A Third party pacakge) to check how well my Automated tests performed. The report came back with a 73% coverage, the biggest areas that would require more comprehensive tests are the booking/views.py and the booking/forms.py. On a whole, The tests I have writen have performed well but ideally greater coverage would be preferential.</p>
+<li>I ran 27 tests with a 73% coverage.</li>
+<li>To run these tests, you need to run the command <i>"python3 manage.py test"</i> in the terminal.</li>
+
+![image](https://user-images.githubusercontent.com/72948843/182039419-792b0105-9a87-4a81-b8ad-8a29db2e70e3.png)
+![image](https://user-images.githubusercontent.com/72948843/182039899-bcd7aac5-8b76-4c8e-a0f9-63cb5ad4719f.png)
+
+
 
 [Back to Top](<#contents>)
 <br>
@@ -711,7 +744,6 @@ HTML Validation Image... Below are the results of the Validations of the code th
 ## Bugs
 
 ### Solved Bugs
-
 <ul>
     <li>I had found a bug whereby if I booked an appointment on the same day as someone else has already done with the same time slot, I would get multiple bookings that match and it would not be possible for the Beautician to attend both and would require manual checking.
     To get over this problem, I put a constraint into the database stating that a booking cannot be placed if the booking requested with these parameters already exists. </li>
@@ -723,9 +755,15 @@ HTML Validation Image... Below are the results of the Validations of the code th
 <br>
 
 ### Unsolved Bugs
-
 <p>There are no unfixed bugs found on the project.</p>
 <br>
+
+### Browser Compatability
+<p>The Website was manually tested in different browsers to check the responsive nature of the website and no errors were found during these tests.</p>
+<li>Google Chrome</li>
+<li>Microsoft Edge</li>
+<li>Safari</li>
+<li>Samsung Internet<li>
 
 [Back to Top](<#contents>)
 <br>
@@ -758,7 +796,9 @@ GitBash - Terminal used to push changes to the GitHub repository.
 <li><a href="https://validator.w3.org/nu/" target="_blank"> HTML Validator </a> - An online website used to validate my HTML code.</li>
 <li><a href="https://jigsaw.w3.org/css-validator/" target="_blank"> CSS Validator </a> - An online website used to validate my CSS code.</li>
 <li><a href="https://developer.chrome.com/docs/devtools/" target="_blank"> Google Chrome DevTools </a> - An online resource that lays within Google Chrome used to debug the website during development.</li>
-<li><a href="https://drawsql.app/" target="_blank"> DrawSQL </a> - An online app used to create the database schema..</li>
+<li><a href="https://drawsql.app/" target="_blank"> DrawSQL </a> - An online app used to create the database schema.</li>
+<li><a href="https://color.a11y.com/" target="_blank">A11y</a> - An online accessability validator that checks the colour of the background against the text. </li>
+
 
 
 
@@ -776,6 +816,7 @@ GitBash - Terminal used to push changes to the GitHub repository.
     <li><a href="https://pypi.org/project/asgiref/" target="_blank">asgiref</a> - Reference ASGI adapters and channel layers.</li>
     <li><a href="https://pypi.org/project/backports.zoneinfo/" target="_blank">backport.zoneinfo</a> - The module used to implement the IANA time zone database in the python standard libary.</li>
     <li><a href="https://pypi.org/project/click8/" target="_blank">click</a> - A python package to help write command line interfaces with as little code as necessary.</li>
+    <li><a href="https://pypi.org/project/coverage/" target="_blank">coverage</a> - A python package that helps determine test coverage.</li>
     <li><a href="https://pypi.org/project/dj-database-url/" target="_blank">dj-database-url</a> - This utility package allows the user to utilize the "DATABASE_URL" environmental variable to configure the Django App.</li>
     <li><a href="https://pypi.org/project/dj3-cloudinary-storage/" target="_blank">dj3-cloudinary-storage</a> - This package allows django to facilitate intergration with Cloudinary by implementing Django Storage API.</li>
     <li><a href="https://pypi.org/project/Django/" target="_blank">Django</a> - A high-level Python web framework that encourages rapid develpoment and clean, pragmatic design.</li>

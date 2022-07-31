@@ -103,21 +103,16 @@ class TestBooking(TestCase):
 
     def test_unique_appointment(self):
         ''' tests if one appointment is unique from another '''
-        print("test_unique_appointment")
-        print(self.booking.appointment_date, self.booking.appointment_slot)
-        print(self.booking2.appointment_date, self.booking2.appointment_slot)
         form_data = {'booking': self.booking2}
         self.assertNotEqual(form_data, self.booking)
 
     def test_booking_date_not_old(self):
         ''' tests if the booking made is not an old date '''
-        print('test_booking_date_is_not_old')
         self.assertTrue(self.booking3.appointment_date <=
                         self.booking3.booking_time)
 
     def test_get_absolute_url(self):
         ''' tests the get absolute url function of a booking '''
-        print('test_get_absolute_url')
         self.assertEqual(self.booking.get_absolute_url(), '/booking/1')
 
     def test_booking_id(self):
@@ -130,7 +125,6 @@ class TestBooking(TestCase):
 
     def test_cancel_booking_form(self):
         ''' tests the cancel booking form works correctly '''
-        print('test cancel booking form')
         form = CancelForm(data={'cancelled': 1})
         self.assertTrue(form.is_valid())
 
@@ -144,73 +138,61 @@ class TestUrls(TestCase):
     def test_home_view_resolves(self):
         ''' tests the home url resloves '''
         url = reverse('home')
-        print(resolve(url))
         self.assertEqual(resolve(url).func.view_class, Home)
 
     def test_gallery_view_resolves(self):
         ''' tests the gallery url resolves '''
         url = reverse('gallery')
-        print(resolve(url))
         self.assertEqual(resolve(url).func.view_class, Gallery)
 
     def test_contact_view_resolves(self):
         ''' tests the contact url resolves '''
         url = reverse('contact')
-        print(resolve(url))
         self.assertEqual(resolve(url).func.view_class, Contact)
 
     def test_bookings_view_resolves(self):
         ''' tests the bookings url resolves '''
         url = reverse('bookings')
-        print(resolve(url))
         self.assertEqual(resolve(url).func.view_class, ListBookings)
 
     def test_add_booking_view_url_resloves(self):
         ''' tests the add booking url resolves '''
         url = reverse('booking')
-        print(resolve(url))
         self.assertEqual(resolve(url).func.view_class, AddBookingView)
 
     def test_view_booking_view_url_resloves(self):
         ''' tests the view booking url resloves '''
         url = reverse('view-booking', args=['2'])
-        print(resolve(url))
         self.assertEqual(resolve(url).func.view_class, ViewBooking)
 
     def test_edit_booking_view_url_resloves(self):
         ''' tests the edit booking url resolves '''
         url = reverse('edit-booking', args=['2'])
-        print(resolve(url))
         self.assertEqual(resolve(url).func.view_class, EditBookingView)
 
     def test_cancel_booking_view_url_resloves(self):
         ''' tests the cancel booking url resolves '''
         url = reverse('cancel-booking', args=['2'])
-        print(resolve(url))
         self.assertEqual(resolve(url).func.view_class, CancelBookingView)
 
     def test_delete_booking_view_url_resloves(self):
         ''' tests the delete booking url resloves '''
         url = reverse('delete-booking', args=['2'])
-        print(resolve(url))
         self.assertEqual(resolve(url).func.view_class, DeleteBookingView)
 
     def test_admin_list_view_url_resolves(self):
         ''' tests the admin list view url resolves '''
         url = reverse('admin-bookings')
-        print(resolve(url))
         self.assertEqual(resolve(url).func.view_class, AdminListView)
 
     def test_admin_today_view_url_resolves(self):
         ''' tests the admin today filter url resolves '''
         url = reverse('admin-bookings-today')
-        print(resolve(url))
         self.assertEqual(resolve(url).func.view_class, AdminListTodayView)
 
     def test_admin_next_seven_day_url_resolves(self):
         ''' tests the admin next seven days filter url resolves '''
         url = reverse('admin-bookings-next-7')
-        print(resolve(url))
         self.assertEqual(
             resolve(url).func.view_class,
             AdminListNextSevenDaysView
@@ -219,7 +201,6 @@ class TestUrls(TestCase):
     def test_admin_past_seven_day_url_resolves(self):
         ''' tests the admin past seven days filter url resolves '''
         url = reverse('admin-bookings-past-7')
-        print(resolve(url))
         self.assertEqual(
             resolve(url).func.view_class,
             AdminListPastSevenDaysView
@@ -228,35 +209,30 @@ class TestUrls(TestCase):
     def test_admin_this_month_url_resolves(self):
         ''' tests the admin this month filter url resolves '''
         url = reverse('admin-bookings-this-month')
-        print(resolve(url))
         self.assertEqual(resolve(url).func.view_class, AdminListThisMonthView)
 
     def test_admin_this_year_url_resolves(self):
         ''' tests the admin this year filter url resolves '''
         url = reverse('admin-bookings-this-year')
-        print(resolve(url))
         self.assertEqual(resolve(url).func.view_class, AdminListThisYearView)
 
     def test_admin_add_booking_url_resolves(self):
         ''' tests the admin add booking url resolves '''
         url = reverse('admin-booking')
-        print(resolve(url))
         self.assertEqual(resolve(url).func.view_class, AdminAddBookingView)
 
     def test_admin_edit_booking_url_resolves(self):
         ''' tests the admin edit booking url resolves '''
         url = reverse('admin-booking-edit', args=['2'])
-        print(resolve(url))
         self.assertEqual(resolve(url).func.view_class, AdminEditBookingView)
 
     def test_admin_cancel_booking_url_resolves(self):
         ''' tests the admin cancel booking url resolves '''
         url = reverse('admin-booking-cancel', args=['2'])
-        print(resolve(url))
         self.assertEqual(resolve(url).func.view_class, AdminCancelBookingView)
 
     def test_admin_delete_booking_url_resolves(self):
         ''' tests the admin delete booking url resolves '''
         url = reverse('admin-booking-delete', args=['2'])
-        print(resolve(url))
+        # print(resolve(url))
         self.assertEqual(resolve(url).func.view_class, AdminDeleteBookingView)
