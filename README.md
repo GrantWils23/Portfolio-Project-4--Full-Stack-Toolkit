@@ -295,6 +295,12 @@ HTML Validation Image... Below are the results of the Validations of the code th
 
 ### HTML Validation
 <p>My HTML Code was directly inputted into the validator and </p>
+
+### Home HTML Validation
+![image](https://user-images.githubusercontent.com/72948843/182034324-3abbc2aa-0830-4b3e-812f-6e223fda9938.png)
+### Services HTML Validation
+![image](https://user-images.githubusercontent.com/72948843/182034225-47c9cd6b-8033-4651-bc9f-fe628a44f92c.png)
+### Prices HTML Validation
 <!--  -->
 
 [Back to Top](<#contents>)
