@@ -1,5 +1,6 @@
 {% load static %}
 
+{% for treatment in treatments %}
 <!-- Modal -->
 <div class="modal fade" id="treatmentModal{{treatment.pk}}" tabindex="-1" aria-labelledby="treatmentModal{{treatment.pk}}Label" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -65,3 +66,6 @@
             </div>
         </div>
     </div>
+</div>
+
+{% endfor %}
