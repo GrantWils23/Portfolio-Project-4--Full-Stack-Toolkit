@@ -301,7 +301,11 @@ HTML Validation Image... Below are the results of the Validations of the code th
 ### Services HTML Validation
 ![image](https://user-images.githubusercontent.com/72948843/182034225-47c9cd6b-8033-4651-bc9f-fe628a44f92c.png)
 ### Prices HTML Validation
-<!--  -->
+![image](https://user-images.githubusercontent.com/72948843/182034718-6a0a3822-6d9b-45fd-b23d-c49528c2aac7.png)
+### Gallery HTML Validation
+![image](https://user-images.githubusercontent.com/72948843/182034748-f06c65f7-200a-4145-b50d-88a0e1df7027.png)
+### Contact HTML Validation
+
 
 [Back to Top](<#contents>)
 <br>
