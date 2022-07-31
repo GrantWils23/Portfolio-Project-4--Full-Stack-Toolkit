@@ -294,7 +294,7 @@ To test my project, I have manually tested the project by doing the following:
 HTML Validation Image... Below are the results of the Validations of the code that i passed through the validator.</P>
 
 ### HTML Validation
-<p>My HTML Code was directly inputted into the validator and </p>
+<p>My HTML Code was directly inputted into the validator from the URI and the results have been recorded below</p>
 
 ### Home HTML Validation
 ![image](https://user-images.githubusercontent.com/72948843/182034324-3abbc2aa-0830-4b3e-812f-6e223fda9938.png)
@@ -305,6 +305,25 @@ HTML Validation Image... Below are the results of the Validations of the code th
 ### Gallery HTML Validation
 ![image](https://user-images.githubusercontent.com/72948843/182034748-f06c65f7-200a-4145-b50d-88a0e1df7027.png)
 ### Contact HTML Validation
+![image](https://user-images.githubusercontent.com/72948843/182035842-b81a6808-35bb-4c5c-83a9-4452741fa703.png)
+### Sign Up HTML Validation
+![image](https://user-images.githubusercontent.com/72948843/182035885-dea4abb4-2895-4131-abb9-3c86ed4a4396.png)
+### Sign In HTML Validation
+![image](https://user-images.githubusercontent.com/72948843/182035925-041b3f8b-7f3b-44a0-9580-f2719f88e4d9.png)
+### Sign Out HTML Validation
+![image](https://user-images.githubusercontent.com/72948843/182035962-836443bb-2fa0-411a-861b-d9debd639359.png)
+### Admin-Planner HTML Validation
+![image](https://user-images.githubusercontent.com/72948843/182036693-1d7c57c8-a70d-4a32-927d-664f089aa2e9.png)
+### Admin Add Booking HTML Validation
+![image](https://user-images.githubusercontent.com/72948843/182036772-98c7e989-0cd8-40ac-9edb-e6f6ba90ac12.png)
+### Admin Edit Booking HTML Validation
+![image](https://user-images.githubusercontent.com/72948843/182036825-57430b5b-b528-49a9-a8d2-16a7d70c0203.png)
+### Admin Cancel Booking HTML Validation
+![image](https://user-images.githubusercontent.com/72948843/182036874-e0fab90a-a873-497f-bf35-e1c61983cd59.png)
+### Admin Delete Booking HTML Validation
+![image](https://user-images.githubusercontent.com/72948843/182036893-f2890048-2df0-4ce9-82e5-059420d2afca.png)
+### Booking Form HTML Validation
+![image](https://user-images.githubusercontent.com/72948843/182037150-7973ec56-94e5-4e3b-af1e-b78f95d95237.png)
 
 
 [Back to Top](<#contents>)
