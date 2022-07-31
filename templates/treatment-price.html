@@ -56,9 +56,9 @@
                 </div>
                 <div class="modal-footer">
                     {% if user.is_staff %}
-                    <a type="button" class="no-text-dec pag-page-btn" href="{% url 'admin-booking' %}">Book Now</a>
+                    <a class="no-text-dec pag-page-btn" href="{% url 'admin-booking' %}">Book Now</a>
                     {% else %}
-                    <a type="button" class="no-text-dec pag-page-btn" href="{% url 'booking' %}">Book Now</a>
+                    <a class="no-text-dec pag-page-btn" href="{% url 'booking' %}">Book Now</a>
                     {% endif %}
                     <button type="button" class="custom-site-btn btn-remove-blue edit-but hvr" data-bs-dismiss="modal">Close</button>
                 </div>

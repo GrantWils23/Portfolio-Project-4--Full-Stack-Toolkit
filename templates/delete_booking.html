@@ -34,9 +34,9 @@
                 </div>
                 <div class="container d-inline-flex justify-content-center delete-box-bottom-margin">
                     {% if user.username and user.is_staff %}
-                    <a type="button" class="custom-site-btn line-height-setter btn-remove-blue nul-but nul-hvr" href="{% url 'admin-bookings' %}">Cancel</a>
+                    <a class="custom-site-btn line-height-setter btn-remove-blue nul-but nul-hvr" href="{% url 'admin-bookings' %}">Cancel</a>
                     {% else %}
-                    <a type="button" class="custom-site-btn line-height-setter btn-remove-blue nul-but nul-hvr" href="{% url 'view-booking' booking.pk %}">Cancel</a>
+                    <a class="custom-site-btn line-height-setter btn-remove-blue nul-but nul-hvr" href="{% url 'view-booking' booking.pk %}">Cancel</a>
                     {% endif %}
                     <form method="POST" class="delete-booking-form">
                         {% csrf_token %}

@@ -120,22 +120,22 @@
                 {% if not user.is_staff %}
                 {% if booking.cancelled == False %}
                 {% if user.last_login.date < booking.appointment_date %}
-                <a class="custom-site-btn btn-remove-blue edit-but" type="button" href="{% url 'edit-booking' booking.pk %}">Edit</a>
-                <a class="custom-site-btn btn-remove-blue del-but" type="button" href="{% url 'cancel-booking' booking.pk %}">Cancel</a>
+                <a class="custom-site-btn btn-remove-blue edit-but" href="{% url 'edit-booking' booking.pk %}">Edit</a>
+                <a class="custom-site-btn btn-remove-blue del-but" href="{% url 'cancel-booking' booking.pk %}">Cancel</a>
                 {% elif user.last_login.date == booking.appointment_date %}
-                <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Edit</s></a>
-                <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Delete</s></a>
+                <a class="custom-site-btn btn-remove-blue nul-but"><s>Edit</s></a>
+                <a class="custom-site-btn btn-remove-blue nul-but"><s>Delete</s></a>
                 {% else %}
-                <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Edit</s></a>
-                <a class="custom-site-btn btn-remove-blue del-but" type="button" href="{% url 'delete-booking' booking.pk %}">Delete</a>
+                <a class="custom-site-btn btn-remove-blue nul-but"><s>Edit</s></a>
+                <a class="custom-site-btn btn-remove-blue del-but" href="{% url 'delete-booking' booking.pk %}">Delete</a>
                 {% endif %}
                 {% else %}
                 {% if user.last_login.date < booking.appointment_date %}
-                <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Edit</s></a>
-                <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Cancelled</s></a>
+                <a class="custom-site-btn btn-remove-blue nul-but"><s>Edit</s></a>
+                <a class="custom-site-btn btn-remove-blue nul-but"><s>Cancelled</s></a>
                 {% else %}
-                <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Edit</s></a>
-                <a class="custom-site-btn btn-remove-blue del-but" type="button" href="{% url 'delete-booking' booking.pk %}">Delete</a>
+                <a class="custom-site-btn btn-remove-blue nul-but"><s>Edit</s></a>
+                <a class="custom-site-btn btn-remove-blue del-but" href="{% url 'delete-booking' booking.pk %}">Delete</a>
                 {% endif %}
                 {% endif %}
                 {% endif %}
@@ -150,8 +150,7 @@
     <div class="row g-0">
         <div class="col-sm-12 text-center">
             {% if user.is_staff %}
-            <!--CHECK-->
-            <a class="custom-site-btn btn-remove-blue del-but" type="button" href="{% url 'admin-bookings' %}">Return</a>
+            <a class="custom-site-btn btn-remove-blue del-but" href="{% url 'admin-bookings' %}">Return</a>
             {% else %}
             <a class="btn-lg text-center light sub-custom-btn btn-remove-blue hvr-pulse" href="{% url 'bookings' %}">Back to Bookings</a>
             {% endif %}

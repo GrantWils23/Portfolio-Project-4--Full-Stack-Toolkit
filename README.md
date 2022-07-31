@@ -309,8 +309,9 @@ HTML Validation Image... Below are the results of the Validations of the code th
 <br>
 
 ### JS Validation
-<p>My JS Code was directly inputted into the validator and </p>
-<!--  -->
+<p>The JS Code in my program is attached directly into the HTML as the code sample is so small, I condisdered it to not be worth putting it directly in an assets folder". My JS Code was directly inputted into the validator and returned all clear. The result of the test is recoreded below:</p>
+
+![image](https://user-images.githubusercontent.com/72948843/182032469-c206f3c8-5da3-40fd-b249-2f21a02e4e3b.png)
 
 [Back to Top](<#contents>)
 <br>

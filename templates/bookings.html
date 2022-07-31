@@ -28,14 +28,14 @@
                     </div>
                     <div class="col-sm-3 g-0">
                         {% if user.last_login.date < booking.appointment_date %}
-                        <a class="custom-site-btn btn-remove-blue edit-but" type="button" href="{% url 'edit-booking' booking.pk %}">Edit</a>
-                        <a class="custom-site-btn btn-remove-blue del-but" type="button" href="{% url 'cancel-booking' booking.pk %}">Cancel</a>
+                        <a class="custom-site-btn btn-remove-blue edit-but" href="{% url 'edit-booking' booking.pk %}">Edit</a>
+                        <a class="custom-site-btn btn-remove-blue del-but" href="{% url 'cancel-booking' booking.pk %}">Cancel</a>
                         {% elif user.last_login.date == booking.appointment_date %}
-                        <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Edit</s></a>
-                        <a class="custom-site-btn btn-remove-blue today-but" type="button" href="{% url 'view-booking' booking.pk %}">Today</a>
+                        <a class="custom-site-btn btn-remove-blue nul-but"><s>Edit</s></a>
+                        <a class="custom-site-btn btn-remove-blue today-but" href="{% url 'view-booking' booking.pk %}">Today</a>
                         {% else %}
-                        <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Edit</s></a>
-                        <a class="custom-site-btn btn-remove-blue fin-but" type="button" href="{% url 'view-booking' booking.pk %}">Completed</a>
+                        <a class="custom-site-btn btn-remove-blue nul-but"><s>Edit</s></a>
+                        <a class="custom-site-btn btn-remove-blue fin-but" href="{% url 'view-booking' booking.pk %}">Completed</a>
                         </a>
                         {% endif %}
                     </div>
@@ -57,11 +57,11 @@
                     </div>
                     <div class="col-sm-3">
                         {% if user.last_login.date < booking.appointment_date %}
-                        <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Edit</s></a>
-                        <a class="custom-site-btn btn-remove-blue nul-but nul-hvr" type="button" href="{% url 'view-booking' booking.pk %}">Cancelled</a>
+                        <a class="custom-site-btn btn-remove-blue nul-but"><s>Edit</s></a>
+                        <a class="custom-site-btn btn-remove-blue nul-but nul-hvr" href="{% url 'view-booking' booking.pk %}">Cancelled</a>
                         {% else %}
-                        <a class="custom-site-btn btn-remove-blue nul-but" type="button"><s>Edit</s></a>
-                        <a class="custom-site-btn btn-remove-blue nul-but nul-hvr" type="button" href="{% url 'view-booking' booking.pk %}">Cancelled</a>
+                        <a class="custom-site-btn btn-remove-blue nul-but"><s>Edit</s></a>
+                        <a class="custom-site-btn btn-remove-blue nul-but nul-hvr" href="{% url 'view-booking' booking.pk %}">Cancelled</a>
                         {% endif %}
                     </div>
                 </div>
@@ -91,14 +91,14 @@
 {% if user.is_staff %}
 <div class="container_fluid">
     <div class="justify-content-center text-center ">
-        <a type="button" class="btn-lg light sub-custom-btn btn-remove-blue hvr-pulse" href="{% url 'admin-booking' %}">Create
+        <a class="btn-lg light sub-custom-btn btn-remove-blue hvr-pulse" href="{% url 'admin-booking' %}">Create
             a new booking</a>
     </div>
 </div>
 {% else %}
 <div class="container_fluid">
     <div class="justify-content-center text-center ">
-        <a type="button" class="btn-lg light sub-custom-btn btn-remove-blue hvr-pulse" href="{% url 'booking' %}">Create
+        <a class="btn-lg light sub-custom-btn btn-remove-blue hvr-pulse" href="{% url 'booking' %}">Create
             a new booking</a>
     </div>
 </div>
