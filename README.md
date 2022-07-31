@@ -286,16 +286,83 @@ To test my project, I have manually tested the project by doing the following:
         Tested in the local terminal and the Code institute Heroku Terminal.
     </li>
 </ul>
+<!--  -->
 
 ## Code Validation
 
-BeBeauty has been validated by using online validation tools W3C HTML Validator, W3C CSS Validator, JSHint JavaScript Validator and the PEP8 Online Validator.
-HTML Validation Image
+<p>BeBeauty has been validated by using online validation tools W3C HTML Validator, W3C CSS Validator, JSHint JavaScript Validator and the PEP8 Online Validator.
+HTML Validation Image... Below are the results of the Validations of the code that i passed through the validator.</P>
 
+### HTML Validation
+<p>My HTML Code was directly inputted into the validator and </p>
+<!--  -->
+
+[Back to Top](<#contents>)
+<br>
+
+### CSS Validation
+<p>My CSS Code was directly inputted into the validator and passed with 0 errors.</p>
+
+![image](https://user-images.githubusercontent.com/72948843/182002563-5666610b-5862-496d-97ff-4e43759cc50d.png)
+
+[Back to Top](<#contents>)
+<br>
+
+### JS Validation
+<p>My JS Code was directly inputted into the validator and </p>
+<!--  -->
+
+[Back to Top](<#contents>)
+<br>
+
+### Python Validation
+<p>My Python Code was directly inputted into the validator and checked for errors. The results of the python validations are inputted below:</p>
+
+### PEP* Validator (bebeauty/urls.py)
+![image](https://user-images.githubusercontent.com/72948843/182028023-0e2a53bb-713a-447e-acd6-15c3cf93e23f.png)
+
+### PEP8 Validator (booking/admin.py)
+![image](https://user-images.githubusercontent.com/72948843/182024181-12402a6d-fdd6-4c14-8b7d-235b4e1457a5.png)
+
+### PEP8 Validator (booking/app.py)
+![image](https://user-images.githubusercontent.com/72948843/182024441-d9cfdc1e-a01e-4ad8-91d2-1c8bf5b08544.png)
+
+### PEP8 Validator (booking/filters.py)
+![image](https://user-images.githubusercontent.com/72948843/182024529-7d18b539-56d3-4490-8a14-3bb9320727d6.png)
+
+### PEP8 Validator (booking/forms.py)
+![image](https://user-images.githubusercontent.com/72948843/182027783-a6b856b7-9547-4427-80ec-aa0b8e347a13.png)
+
+### PEP8 Validator (booking/models.py)
+![image](https://user-images.githubusercontent.com/72948843/182029799-eab2029d-023a-4ddf-9604-3abaaafad1dd.png)
+
+### PEP8 Validator (booking/tests.py)
+![image](https://user-images.githubusercontent.com/72948843/182031319-b7b1dfa7-ff64-467b-b05f-1a5053f9295a.png)
+
+### PEP8 Validator (booking/views.py)
+![image](https://user-images.githubusercontent.com/72948843/182029726-bc9d50c8-f3b2-4663-9128-935b1430dee7.png)
+
+### PEP8 Validator (treatment/admin.py)
+![image](https://user-images.githubusercontent.com/72948843/182031408-f4f677e8-8511-44dd-9b57-09d12ee61b6a.png)
+
+### PEP8 Validator (treatment/apps.py)
+![image](https://user-images.githubusercontent.com/72948843/182031472-651e7e3d-d6fd-47c8-b1d9-b6d097ddf3a7.png)
+
+### PEP8 Validator (treatment/models.py)
+![image](https://user-images.githubusercontent.com/72948843/182031594-50750d42-a116-47dd-9ca8-1d9e13c19f57.png)
+
+### PEP8 Validator (treatment/tests.py)
+![image](https://user-images.githubusercontent.com/72948843/182031639-9d816990-a1d3-4a29-85f2-326539a8054c.png)
+
+### PEP8 Validator (treatment/views.py)
+![image](https://user-images.githubusercontent.com/72948843/182031697-e8fe192b-758e-4cbd-a074-f87b15017984.png)
+
+[Back to Top](<#contents>)
+<br>
 
 ## Lighthouse Testing
 
-<p>To check the production levels against its performance, I used the Lighthouse testing facilities in the chrome development tools.</p>
+<p>To check the production levels against its performance, I used the Lighthouse testing facilities in the chrome development tools. Below are the results on how the pages performed in both Desktop and a responsive view.</p>
 <ul>
 <li>Home page BeBeauty url - PC view</li>
 
@@ -420,66 +487,127 @@ HTML Validation Image
 
 <li>Admin planner page BeBeauty url - PC view</li>
 
-
+![image](https://user-images.githubusercontent.com/72948843/181996930-3ab6c197-9dd2-47a6-95cf-1da7eb6d6202.png)
 
 <li>Admin planer page BeBeauty url - responsive view</li>
 
-
+![image](https://user-images.githubusercontent.com/72948843/181996978-b52ba0df-e7e5-445e-8e97-764509589530.png)
 
 <!--  -->
 
 <li>Admin planner filter/today page BeBeauty url - PC view</li>
 
-
+![image](https://user-images.githubusercontent.com/72948843/181997008-8b035c87-ae05-44ca-abd9-8680144ad056.png)
 
 <li>Admin planner filter/today page BeBeauty url - responsive view</li>
 
-
+![image](https://user-images.githubusercontent.com/72948843/181997034-862d28ca-cbcf-4403-a4f9-e83973df0d0a.png)
 
 <!--  -->
 
 <li>Admin planner filter next 7 days page BeBeauty url - PC view</li>
 
+![image](https://user-images.githubusercontent.com/72948843/181997104-70af8427-37fe-4d20-a48f-3f62df1d4637.png)
 
 
 <li>Admin planner filter next 7 days page BeBeauty url - responsive view</li>
 
-
+![image](https://user-images.githubusercontent.com/72948843/181997289-9138408a-1da4-417d-a333-a7b2a3119516.png)
 
 <!--  -->
 
 <li>Admin planner filter last 7 days page BeBeauty url - PC view</li>
 
-
+![image](https://user-images.githubusercontent.com/72948843/181997057-20561585-bad8-43d1-9435-d8dd10235f98.png)
 
 <li>Admin planner filter last 7 days page BeBeauty url - responsive view</li>
 
-
+![image](https://user-images.githubusercontent.com/72948843/181997072-e5ef3515-3767-4851-9407-76fc5f97f811.png)
 
 <!--  -->
 
 <li>Admin planner filter this month page BeBeauty url - PC view</li>
 
-
+![image](https://user-images.githubusercontent.com/72948843/182001110-323577a6-8dd8-4db2-a011-fd2f1b0498c1.png)
 
 <li>Admin planner filter this month page BeBeauty url - responsive view</li>
 
-
+![image](https://user-images.githubusercontent.com/72948843/182001654-b2e1b5e4-3cb5-4cb4-af7a-7ce6e48055f4.png)
 
 <!--  -->
 
 <li>Admin planner filter this year page BeBeauty url - PC view</li>
 
-
+![image](https://user-images.githubusercontent.com/72948843/182001674-8510ef69-b0b2-46c6-ad3f-ff1c4e78051c.png)
 
 <li>Admin planner filter this year page BeBeauty url - responsive view</li>
 
-
+![image](https://user-images.githubusercontent.com/72948843/182001703-809f33b7-c1fa-40dd-ae69-6d870915f0d4.png)
 
 <!--  -->
 
-</ul>
+<li>Add Booking BeBeauty url - PC view</li>
 
+![image](https://user-images.githubusercontent.com/72948843/182001770-cef5a625-64c3-4dee-8fe0-da88512c25e1.png)
+
+<li>Add Booking BeBeauty url - responsive view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/182001789-8e5d6119-75f9-4fbe-94b9-f5bc54ee7c6e.png)
+
+<!--  -->
+
+<li>Edit Booking BeBeauty url - PC view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/182001858-43eab3fa-f3fe-4dc6-a22a-6abc14be468f.png)
+
+<li>Edit Booking BeBeauty url - responsive view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/182001876-1638fef0-c37c-4c71-a277-f2d726e1eff7.png)
+
+<!--  -->
+
+<li>Cancel Booking BeBeauty url - PC view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/182001901-703f0c64-aaa9-43c7-84a3-3a3d26ac6df0.png)
+
+<li>Cancel Booking BeBeauty url - responsive view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/182001924-9aa5f227-5736-448d-9e0a-85c5f98e7b1a.png)
+
+<!--  -->
+
+<li>Delete Booking BeBeauty url - PC view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/182001946-cedb9cc2-f0f6-4ec8-aeb0-66ad23625282.png)
+
+<li>Delete Booking BeBeauty url - responsive view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/182001978-315af9db-5a1b-4305-95e6-a6e7c9ef82f7.png)
+
+<!--  -->
+
+<li>Bookings List BeBeauty url - PC view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/182001998-537c56c6-0cce-4b63-b6d0-a0dffa73dcfc.png)
+
+<li>Bookings List BeBeauty url - responsive view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/182002013-1977feed-254c-4a0c-a7d5-62d184d0bdd1.png)
+
+<!--  -->
+
+<li>Booking Details BeBeauty url - PC view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/182002035-9cc5f429-e0f0-4161-ab07-583078f3a19e.png)
+
+<li>Booking Details BeBeauty url - responsive view</li>
+
+![image](https://user-images.githubusercontent.com/72948843/182002065-f4d5e5f8-1bd0-4a52-9cf3-ab06b0220962.png)
+
+</ul>
+<br>
+<p>The results were very positive and successful. There was a few orange flags in the performance checks of the lighthouse coverage which related to the responsive views in mobile for the urls of the admin filter. On a whole the tests have been successful in the desktop view and responsive view. This is a really good return on my the test that show the website is working correctly and behaving as is expected.</p>
+<br>
 
 ## User Story Tests
 
@@ -536,6 +664,20 @@ HTML Validation Image
 [Back to Top](<#contents>)
 <br>
 
+## Manual Testing
+
+<!--  -->
+[Back to Top](<#contents>)
+<br>
+
+
+
+## Automated Testing
+<!--  -->
+
+[Back to Top](<#contents>)
+<br>
+
 ## Bugs
 
 ### Solved Bugs
@@ -562,6 +704,8 @@ HTML Validation Image
 
 <li><a href="https://github.com/" target="_blank">GitHub</a> - The site was used to edit and host the website.</li>
 <li><a href="https://gitpod.io/projects" target="_blank">GitPod</a> - Used in the deployment and creating the website.</li>
+<li><a href="https://git-scm.com/" target="_blank">GitBash</a> - Used for committing and pushing files to github in the terminal through version control.</li>
+GitBash - Terminal used to push changes to the GitHub repository.
 <li><a href="https://www.python.org/" target="_blank">Python</a> - This was used in the production to get the game running as it is required for the app to run.</li>
 <li><a href="https://www.djangoproject.com/" target="_blank">Django</a> - The Django web Framework was used to create the app and maintain it.</li>
 <li><a href="https://psycopg.com" target="_blank">Psycopg</a> - The database with which the app runs is PostrgeSQL.</li>
@@ -579,6 +723,14 @@ HTML Validation Image
 <li><a href="https://www.pexels.com/" target="_blank"> Pexels </a> - An online stock of photos that are royalty free to use</li>
 <li><a href="https://docs.djangoproject.com/en/4.0/topics/email/" target="_blank"> Django Email </a> - Django Email is a very useful and powerful tool that allowed the clients to recieve emails regarding their booking. It is a really useful tool that provides real time functionality with great results.</li>
 <li><a href="https://compressor.io/" target="_blank"> Compressor </a> - An online compressing tool, great for compressing stock images down to a user freindly size, and it is completely free to use.</li>
+<li><a href="http://pep8online.com/" target="_blank"> PEP8 Validator </a> - An online website used to validate my Python code</li>
+<li><a href="https://jshint.com/" target="_blank"> JSHint Valdiator </a> - An online website used to validate my JavaScript code</li>
+<li><a href="https://validator.w3.org/nu/" target="_blank"> HTML Validator </a> - An online website used to validate my HTML code.</li>
+<li><a href="https://jigsaw.w3.org/css-validator/" target="_blank"> CSS Validator </a> - An online website used to validate my CSS code.</li>
+<li><a href="https://developer.chrome.com/docs/devtools/" target="_blank"> Google Chrome DevTools </a> - An online resource that lays within Google Chrome used to debug the website during development.</li>
+<li><a href="https://drawsql.app/" target="_blank"> DrawSQL </a> - An online app used to create the database schema..</li>
+
+
 
 
 <br>

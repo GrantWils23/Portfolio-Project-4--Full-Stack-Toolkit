@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from booking.views import Home, Gallery, Contact, ListBookings, AddBookingView, ViewBooking, EditBookingView, DeleteBookingView, CancelBookingView
-from booking.views import AdminListView, AdminListTodayView, AdminListPastSevenDaysView, AdminListNextSevenDaysView, AdminListThisMonthView, AdminListThisYearView
-from booking.views import AdminAddBookingView, AdminEditBookingView, AdminCancelBookingView, AdminDeleteBookingView
+from booking.views import Home, Gallery, Contact, ListBookings, AddBookingView
+from booking.views import ViewBooking, EditBookingView, DeleteBookingView
+from booking.views import CancelBookingView, AdminListView, AdminListTodayView
+from booking.views import AdminListPastSevenDaysView, AdminListThisYearView
+from booking.views import AdminListThisMonthView, AdminListNextSevenDaysView
+from booking.views import AdminAddBookingView, AdminEditBookingView
+from booking.views import AdminCancelBookingView, AdminDeleteBookingView
 from treatment.views import TreatmentListView, ServicesListView
 
 
@@ -36,19 +40,45 @@ urlpatterns = [
     path('price-list', TreatmentListView.as_view(), name='price-list'),
     path('bookings', ListBookings.as_view(), name='bookings'),
     path('booking', AddBookingView.as_view(), name='booking'),
-    path('booking/<int:pk>', ViewBooking.as_view(), name='view-booking'),
-    path('booking/<int:pk>/edit', EditBookingView.as_view(), name='edit-booking'),
-    path('booking/<int:pk>/cancel', CancelBookingView.as_view(), name='cancel-booking'),
-    path('booking/<int:pk>/delete', DeleteBookingView.as_view(), name='delete-booking'),
+    path('booking/<int:pk>',
+         ViewBooking.as_view(),
+         name='view-booking'),
+    path('booking/<int:pk>/edit',
+         EditBookingView.as_view(),
+         name='edit-booking'),
+    path('booking/<int:pk>/cancel',
+         CancelBookingView.as_view(),
+         name='cancel-booking'),
+    path('booking/<int:pk>/delete',
+         DeleteBookingView.as_view(),
+         name='delete-booking'),
     path('accounts/', include('allauth.urls')),
     path('admin-bookings', AdminListView.as_view(), name='admin-bookings'),
-    path('admin-bookings/today', AdminListTodayView.as_view(), name='admin-bookings-today'),
-    path('admin-bookings/past_7_days', AdminListPastSevenDaysView.as_view(), name='admin-bookings-past-7'),
-    path('admin-bookings/next_7_days', AdminListNextSevenDaysView.as_view(), name='admin-bookings-next-7'),
-    path('admin-bookings/this-month', AdminListThisMonthView.as_view(), name='admin-bookings-this-month'),
-    path('admin-bookings/this-year', AdminListThisYearView.as_view(), name='admin-bookings-this-year'),
-    path('booking-admin', AdminAddBookingView.as_view(), name='admin-booking'),
-    path('booking-admin/<int:pk>/edit', AdminEditBookingView.as_view(), name='admin-booking-edit'),
-    path('booking-admin/<int:pk>/cancel', AdminCancelBookingView.as_view(), name='admin-booking-cancel'),
-    path('booking-admin/<int:pk>/delete', AdminDeleteBookingView.as_view(), name='admin-booking-delete'),
+    path('admin-bookings/today',
+         AdminListTodayView.as_view(),
+         name='admin-bookings-today'),
+    path('admin-bookings/past_7_days',
+         AdminListPastSevenDaysView.as_view(),
+         name='admin-bookings-past-7'),
+    path('admin-bookings/next_7_days',
+         AdminListNextSevenDaysView.as_view(),
+         name='admin-bookings-next-7'),
+    path('admin-bookings/this-month',
+         AdminListThisMonthView.as_view(),
+         name='admin-bookings-this-month'),
+    path('admin-bookings/this-year',
+         AdminListThisYearView.as_view(),
+         name='admin-bookings-this-year'),
+    path('booking-admin',
+         AdminAddBookingView.as_view(),
+         name='admin-booking'),
+    path('booking-admin/<int:pk>/edit',
+         AdminEditBookingView.as_view(),
+         name='admin-booking-edit'),
+    path('booking-admin/<int:pk>/cancel',
+         AdminCancelBookingView.as_view(),
+         name='admin-booking-cancel'),
+    path('booking-admin/<int:pk>/delete',
+         AdminDeleteBookingView.as_view(),
+         name='admin-booking-delete'),
 ]

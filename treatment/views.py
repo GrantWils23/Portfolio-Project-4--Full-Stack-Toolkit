@@ -1,11 +1,10 @@
-from django.shortcuts import render, get_object_or_404, reverse
-from django.views import generic, View
+''' The treatment app view file '''
 from django.views.generic import ListView
-from django.http import request
 from .models import Treatment
 
 
 class TreatmentListView(ListView):
+    ''' the treatment list view  '''
     model = Treatment
     template_name = "price_list.html"
     queryset = Treatment.objects.all().order_by('treatment_type')
@@ -13,6 +12,7 @@ class TreatmentListView(ListView):
 
 
 class ServicesListView(ListView):
+    ''' the services list view '''
     template_name = 'services.html'
     queryset = Treatment.objects.all()
     context_object_name = "treatments"

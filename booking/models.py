@@ -1,3 +1,4 @@
+''' the model file for the Booking app '''
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
@@ -12,10 +13,15 @@ APPOINTMENT_STATUS = ((0, 'OK'), (1, 'CANCELLED'))
 class Booking(models.Model):
     ''' The booking Model for clients '''
     booking_id = models.BigAutoField(primary_key=True, unique=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="User")
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE,
+        related_name="User")
     contact_no = PhoneNumberField(region="GB", null=False, blank=False)
     email = models.EmailField()
-    treatment = models.ForeignKey(Treatment, on_delete=models.CASCADE, related_name="Treatment_Name")
+    treatment = models.ForeignKey(
+        Treatment, on_delete=models.CASCADE,
+        related_name="Treatment_Name"
+        )
     booking_time = models.DateField(auto_now=True)
     appointment_date = models.DateField()
     appointment_slot = models.IntegerField(choices=TIMESLOTS)
@@ -28,9 +34,12 @@ class Booking(models.Model):
     cancelled = models.IntegerField(choices=APPOINTMENT_STATUS, default=0)
 
     class Meta:
+        ''' the meta data for the Booking model '''
         ordering = ['appointment_date', 'appointment_slot']
         constraints = [
-            models.UniqueConstraint(fields=['appointment_date', 'appointment_slot'], name='unique_booking')
+            models.UniqueConstraint(
+                fields=['appointment_date', 'appointment_slot'],
+                name='unique_booking')
         ]
 
     def __str__(self):
