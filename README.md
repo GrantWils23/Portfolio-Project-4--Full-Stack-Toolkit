@@ -25,14 +25,26 @@ click here to go to the deployed website: <a href="https://bebeauty-app.herokuap
     * [Future Features](<#future-features>)
 * [**Data Model**](<#data-model>)
 * [**Testing**](<#testing>)
+    * [Code Validation](<#code-validation>)
+    * [HTML Validation](<#html-validation>)
+    * [CSS Validation](<#css-validation>)
+    * [JS Validation](<#js-validation>)
+    * [Python Validation](<#python-validation>)
+    * [Lighthouse Testing](<#lighthouse-testing>)
+    * [Accessability Testing](<#accessability-testing>)
+    * [Responsive Testing](<#responsive-testing>)
     * [User Story Tests](<#user-story-tests>)
+    * [Manual Testing](<#manual-testing>)
+    * [Automated Testing](<#automated-testing>)
     * [Bugs](<#bugs>)
     * [Solved Bugs](<#solved-bugs>)
     * [Validation Testing](<#validation-testing>)
+    * [Browser Compatibiity](<#browser-compatibility>)    
 * [**Technologies Used**](<#technologies-used>)
 * [**Deployment**](<#deployment>)
     * [Deployment of the project](<#deployment-of-the-project>)
     * [Cloning of the project](<#cloning-of-the-project>)
+    * [Setting the email service](<#setting-the-email-service>)
 * [**Credits**](<#credits>)
 * [**Acknowledgements**](<#acknowledgements>)
 
@@ -726,6 +738,24 @@ HTML Validation Image... Below are the results of the Validations of the code th
 [Back to Top](<#contents>)
 <br>
 
+## Input Validation and checking
+
+Validation of the form is implemented by checking  before the document is submitted is valid to submit. This is acheived by multiple methods
+
+<ul>
+    <li>To validate the phonenumber being entered into the form, django-phonenumber-field was used. It checks the input to see if it is a valid phonenumber and returns an error message if it is not valid upon submission</li>
+    <li>To validate the date of which a booking can be made, within the form.py is code to check that the date of which the form is greater than the date the booking is being made. If the booking is in today or before, The form is not valid and is returned to be resubmitted.</li>
+</ul>
+
+![image](https://user-images.githubusercontent.com/72948843/178716912-c029e08e-f0ac-465c-b7a8-6b1ff8a945ff.png)
+
+<ul>
+    <li>Validation of the Bookings that cannot coexist was implemented by making a constraint within the database and when such appointment already exists with the parameters of appointment_date and appointment_slot are met, then the code throws an error and addresses the user to pick another day or time for the appointment. (This was a bug I solved)</li>
+</ul>
+
+![image](https://user-images.githubusercontent.com/72948843/178721734-56da133c-8ff3-4175-8040-db75e741501f.png)
+
+[Back to Top](<#contents>)
 
 
 ## Automated Testing
@@ -850,71 +880,331 @@ GitBash - Terminal used to push changes to the GitHub repository.
 
 ## Deployment
 
-### Deployment of the project
+## Deployment of the project
 <!-- DEPLOYMENT INSTRUCTIONS -->
 
-<p>To deploy the site is a labour intensive process. To start we need copy(clone) or fork the repository. Then when ready, go into your working environment and from the terminal we need pip to install all the necessary pyhton packages for the app to run. Using pip, install the requirements.txt file. this is achived with the command line code of " .... ".</p>
+### Deployment to Heroku
+<p>To deploy the site is a labour intensive process. follow the steps below for a stress free deployment:</p>
 
-<p>once you have installled all the necessary packages, you will need to configure your settings.py file to contain the appropriate environmental variables for the site to operate. </p>
+ #### 1. Create a new Github repository from the CI template.
+ The First step is we need to create a new GitHub repository. Follow this <a href="https://github.com/GrantWils23/Portfolio-Project-4--Full-Stack-Toolkit" target="_blank">link</a> to use this template for your own repoisitory.
+ ![image](https://user-images.githubusercontent.com/72948843/182208124-b3cb2368-b018-4085-998b-21a3b9ce77cf.png)
 
-<p>sensative data that doesn't want to be exposed on the internet, should be added into a env.py file with all the sensative data is stored away and not exposed in github, making it vulnerable to attacks. the env.py file has then to be added to the .gitignore file to prevent git uploading the sensative data to the internet.</p>
+Fill in the Repository name and if you wish description and then click "Create repository from template".
+![image](https://user-images.githubusercontent.com/72948843/182210852-1d79f102-d3ef-4ac8-a238-b678e1fc3e5d.png)
 
-<!--  -->
-<p> I deployed this site using Heroku which is a container based cloud platform where you can deploy, manage and scale applications. To deploy this project I used the following steps in Heroku:</p>
-<li>Fork or clone a copy of this repository.</li>
-<li>Log in or create an account in heroku.</li>
+Click on the code button and then copy the repository using either the HTTPS or SSH link. I used the HTTPS.
+![image](https://user-images.githubusercontent.com/72948843/182212285-ee6bee3b-eb9c-4bf0-aaf8-c20599a32b9e.png)
 
-![image]("")
+Once the link has been copied, you then need to go to the Command Prompt and navigate to where you wish to store yout project and then type the following commands:
+1. ```"git clone HTTPS or SSH link``` - This will clone the project to your computer
+2. ```cd name of project``` - This will cd (change directoy) into your project<
+3. ```code .``` - This will launch your project in VSCode
 
-<li>click on the button in the right corner to create a new app.</li>
+![image](https://user-images.githubusercontent.com/72948843/182214413-67e4864e-b3de-465d-90d4-18332925f6b1.png)
 
-![image]()
+Now you need to setup and initialize a virtual environment for the project. follow the steps below to setup a virtual environment if you haven't done so before.
 
-<li>inside the app page, go to setting page (underlined in green) and set the buildpacks to "Python" and "Nodejs" in that order (like in the picture below).</li>
+```$ pip install virtualenv```
 
-![image]()
+(Step.1) Test your installation was successful:
 
-<li>Link the heroku app to the repository.</li>
-<li>Go back to the deploy page (underlined in yellow) and you can either choose to manually deploy the site or automatically.</li>
-<li>Once it has deployed, it may take a fww minutes to load and you can play the game.</li>
+```$ python3 -m virtualenv -- version```
+
+![image](https://user-images.githubusercontent.com/72948843/182220104-90279963-0222-411a-92ce-8962d42c5327.png)
+
+(Step.2) Then create the virtual environment using virtualenv
+
+```$ python3 -m virtualenv myenv```
+
+![image](https://user-images.githubusercontent.com/72948843/182246883-8257d0d4-7135-4b8a-826f-bfaba2812f73.png)
+
+(Step.3) After creating the virtual environment, you need to activate. <b><i>We need to activate the virtual environment every time you will work on the project!</i></b>. This can be achieved by using the following command:
+
+* ``` $ source virtualenv_name/bin/activate ``` - [For Mac] 
+* ``` $ source virtualenv_name/Scripts/activate ``` - [For Windows]  (as in my example below):
+
+![image](https://user-images.githubusercontent.com/72948843/182246558-43914962-13d9-4c71-9fb0-dd930de64c2a.png)
+
+<b>Don't forget to addd the env to your .gitignore file</b> if added correctly the file and its content's font shall be shaded a darker gray.
+
+![image](https://user-images.githubusercontent.com/72948843/182247207-519f709c-3d24-4d24-95e7-566078107651.png)
+
+Once you are in the virtual environment, the terminal will have it appear in brackets next to the command line as in the image below:
+
+![image](https://user-images.githubusercontent.com/72948843/182247831-f78b23d3-f467-4e65-9fd7-c903f915b8fe.png)
+
+To deactivate the virtual environment just type ```deactivate``` into the terminal (like in the image below).
+
+![image](https://user-images.githubusercontent.com/72948843/182248086-3062ba06-498a-417f-8188-9faaeee5bff0.png)
 
 <br>
-<p>The link to the site can be found here - <a href=" link here " target="_blank">LINK HERE!!!!</a></p>
 
+#### 2. Installing Django and their supporting libaries:
+
+We need to now install Django and all it's supporting libaries. In the terminal, type the following three commands:
+
+* ```pip3 install 'django<3.2' gunincorn ```
+* ```pip3 install dj-database_url pyscopg2```
+* ```pip3 install dj3-cloudinary-storage```
+
+ To next step after successfully installing the above is for Django to freeze a copy of these requirements to a text file. run the following command below into the terminal.
+
+ ```pip3 freeze -- local > requirements.txt```
+
+ This creates a requirements.txt file like the example below:
+ 
+ ![image](https://user-images.githubusercontent.com/72948843/182251103-740fcc6c-cfac-42d1-977d-7b4a2e329384.png)
+
+Now that is complete, we have to create our Django project and its apps:
+
+* ```django-admin startproject 'PROJECT-NAME'```
+* ```django-admin startapp 'APP_NAME'```
+
+You know need to add the app(s) that you have just created to the INSTALLED_APPS section in the settings.py file. In the example below is the apps I created 'booking' and 'treatment'
+
+![image](https://user-images.githubusercontent.com/72948843/182251937-d2567d82-070b-4605-8f25-b723130ad2b2.png)
+
+Once you have done that, the next thing to do is the terminal is to run the following commands:
+
+* ```python3 manage.py migrate```
+* ```python3 manage.py runserver```
+
+With these checks complete, the next step is to deploy it to Heroku
+
+#### 3. Deploying the app to Heroku:
+
+First and foremost, if you are not a user of Heroku, sign up to its services, once you are logged in, in the top right corner there is a button "New". Click on the button and then click on "create new app".
+
+![image](https://user-images.githubusercontent.com/72948843/182254035-7a6d430b-10bb-4adb-acda-fe21e2a2cd8e.png)
+
+Once the page loads, it asks you to put in an app name and your prefered region. I choose Europe as it is my current region.
+
+![image](https://user-images.githubusercontent.com/72948843/182254260-b3818089-7b60-4702-9ff3-4ef25acfc727.png)
+
+Once inside the generated app, click on "resources" abd then search for 'Heroku Postgres'. Attach this to your project. You have to submit the order form. once added it will appear attached as a permenant to 'Add-ons' column.
+
+![image](https://user-images.githubusercontent.com/72948843/182254632-aa6ba5ac-802f-469b-b5b2-c9ff98798b52.png)
+
+If you click on the Heroku Postgres link, it will redirect you to a new page with the information about your Heroku Postgres Database with all the credentials. Click on 'Settings' and then click 'View Credentials' and it will show you your database credentials. below is the image of my credentials.
+
+![image](https://user-images.githubusercontent.com/72948843/182255490-5e325002-cf77-45b0-893d-e491ba0f09ab.png)
+
+From the credentials you will want to look at the URI. We will copy this over and add this into our Config Vars:
+
+Return back to the Heroku app page and click on 'settings'. Once inside settings, scroll down to the project settings and click 'Reveal Config Vars'. Add the following config vars to the project:
 <br>
 
-!!!! REMOVE DEBUG FROM TRUE TO FALSE BEFORE SUBMISSION !!!
+NOTE: Before deployment we will need to remove the ```DISABLE_COLLECTSTATIC = 1``` var. This is currently in place for the development stage. When you delpoy the app make sure you remove this.
+<br>
+
+![image](https://user-images.githubusercontent.com/72948843/182256504-079ad16f-cffc-4494-9bae-7d95a85d8f95.png)
+
+Now go back to VSCode and create a new file called <b><i>env.py</i></b> if it has not already been created. <b>Make sure you add it to your '.gitignore' file</b>. copy the code below. This is nothing new, its just the same config vars from the heroku app and we need them inside our env.py file. make sure to add <b>your</b> config var values inside.
+
+![image](https://user-images.githubusercontent.com/72948843/182257529-09ce9e5d-9ba7-410c-a745-25c86e6506aa.png)
+
+Inside settings.py, search for the line that says <b>"from pathlib import Path"</b> and then insert the code below:
+
+![image](https://user-images.githubusercontent.com/72948843/182257894-26c2518f-2fbf-401a-b26c-6a845945ecf0.png)
+
+Replace the default random security key that Django provides you with your SECRET_KEY variable that you created in your env.py file.
+
+![image](https://user-images.githubusercontent.com/72948843/182258087-fd940b53-a297-49fa-8445-dcd45aba6892.png)
+
+Set <b>DEBUG = 'DEVELOPMENT' in os.environ</b> This allows you to have Debug set to True when developing locally. However DEBUG will be set to False when deployed to Heroku.
+
+![image](https://user-images.githubusercontent.com/72948843/182258392-dcce5dac-62ea-48fc-a9d0-35e9b5a7d956.png)
+
+Whilst working in development, we want to keep the PostgreSQL for deployment. so running the code below allows us to have two databases. SQLite for local development and the PostgreSQL database for tge deployed application.
+
+![image](https://user-images.githubusercontent.com/72948843/182259041-4743cadc-e401-44ab-a440-4d64c40305b3.png)
+
+Next we need to add cloudinary application to the INSTALL_APPS in settings.py: <b>The order of the  apps in this list is important, copy as below.</b>
+
+![image](https://user-images.githubusercontent.com/72948843/182259381-0c8589cd-e570-4679-982d-b6c7dfef087f.png)
+
+Then we need to go to STATIC_URL = '/static/' in the settings file and copy the code below... this tells django to use Cloudinary to store media and static files
+
+![image](https://user-images.githubusercontent.com/72948843/182259693-72cd2070-895d-4473-8576-26819495480c.png)
+
+After that we can add the code for the Templates into the settings.py copy the code below:
+
+![image](https://user-images.githubusercontent.com/72948843/182259902-c01aef57-3de8-4d13-a3e2-0fed1f491249.png)
+
+Next add your allowed hosts to ALLOWED_HOSTS. You will need to add ```'127.0.0.1'``` to your local host list to allow you to open it locally, as well as ```'localhost'``` and ```'bebeauty-deployment-process.herokuapp.com'```
+
+![image](https://user-images.githubusercontent.com/72948843/182463546-97ee9b7e-072b-41ac-bbc4-81557fe9dd5f.png)
+
+Now inside the top level directory we need to two new folders and one new file:
+
+#### STATIC
+
+<li>Add a static file that will hold your images, and css folders and anything else. i.e. js files and/or favicons.</li>
+
+#### TEMPLATES
+
+<li>Next add the templates folder where the project will keep all the HTML files that will will be used to build the webiste.</li>
+
+#### PROCFILE
+
+Once those files are completed, we need to add a Procfile for the website to work. So again, from the top level directory, we need to add a Procfile and within the file write the command... ``` web: gunicorn 'APP_NAME'.wsgi ``` within the file. This allows the file to run your in Heroku.
+
+(My Example from BeBeauty)
+![image](https://user-images.githubusercontent.com/72948843/182356833-bbfa158f-942b-4538-b78c-0b72edfcc6a1.png)
+
+
+If you are unsure what your app name is, you can find it and the resources page of your heroku app page, just look at the exmaple below if you are not sure...
+
+![image](https://user-images.githubusercontent.com/72948843/182356444-15549040-be85-465d-bb7d-da5616823a00.png)
+
+Once completed, make sure you save all the files and then type the following lines:
+
+* ```git add .```
+* ```git commit -m "deployment commit"```
+* ```git push```
+
+Then the final step is to deploy your application, if you wish to deploy using the Heroku CLI follow the lines of code below:
+
+* ```heroku login```
+* ```heroku git:remote -a APP_NAME```
+* ```git push heroku main```
+
+Alternatively, if you wish to do it from within the Heroku website and through github, follow the steps below:
+
+1) Within your Heroku app, click on the deploy tag.
+2) On the deployment section in the middle, select GitHub.
+3) Once you log in to github through Heroku, you should get a search menu appear.
+4) Search for the repository within your Github account for the app you will create and then hit the "Connect" button.
+
+![image](https://user-images.githubusercontent.com/72948843/182438506-65c4d13a-29dd-492c-a710-452fa1fe8110.png)
+
+5) Once connected, you will be presented with two methods to deploy the website, Automatic and Manual Deployment. Choose whichever one is more conventient for you.
+
+![image](https://user-images.githubusercontent.com/72948843/182439770-36dba819-d629-477a-a8f0-dd1a61eeb2c0.png)
 
 [Back to Top](<#contents>)
+
+<!--   -->
+
+!!!! REMOVE DEBUG FROM TRUE TO FALSE BEFORE SUBMISSION !!!
 
 <!-- how to set up env.py, what steps we take, install requirements.txt, set up the database -->
 
 <br>
 
-### Cloning of the Project
+### Cloning and setting up of this project
 <hr>
 <p>To create a local clone of the project, follow the steps below:</p>
-<ol>
-    <li>In the GitHub repository, under the repository name there is a code tab., click on the <b>code</b> tab.</li>
-    <li>In the clone tab, click the HTTPS tab. Within this section, click on the clipboard icon and copy the URL supplied for the repository.</li>
-    <li>Open an IDE of your choosing and run Git Bash.</li>
-    <li>Change the current working directory to the location of which you wish to place the cloned repository.</li>
-    <li>In the terminal, write <b>Git Clone</b> and then paste in the URL supplied via GitHub from step 2.</li>
-    <li>Press enter and your new cloned repository will be created within the desired location.</li>
-</ol>
+
+* In the GitHub repository, under the repository name there is a code tab., click on the 'code' tab. and select either HTTPS or CSS link to copy the code. I will use HTTPS:
+![image](https://user-images.githubusercontent.com/72948843/182441657-b4116d59-ee58-4a4d-9826-2119bd34d7a8.png)
+* In the clone tab, click the HTTPS tab. Within this section, click on the clipboard icon and copy the URL supplied for the repository.
+
+* Once the link has been copied, open an IDE (Command Prompt) of your choosing, navigate to where you wish to store the project and run the following terminal commands:
+
+1. ```"git clone HTTPS or SSH link``` - This will clone the project to your computer
+2. ```cd name of project``` - This will cd (change directoy) into your project<
+3. ```code .``` - This will launch your project in VSCode
+
+![image](https://user-images.githubusercontent.com/72948843/182444495-9a5f9b21-e7e2-4a99-b055-937a7232470e.png)
+
+Now you need to setup and initialize a virtual environment for the project. follow the steps below to setup a virtual environment if you haven't done so before.
+
+```$ pip install virtualenv```
+
+(Step.1) Test your installation was successful:
+
+```$ python3 -m virtualenv -- version```
+
+
+(Step.2) Then create the virtual environment using virtualenv
+
+```$ python3 -m virtualenv myenv```
+
+![image](https://user-images.githubusercontent.com/72948843/182444824-9bafb75a-cae4-4cef-b00b-d22d9a619336.png)
+
+(Step.3) After creating the virtual environment, you need to activate. <b><i>We need to activate the virtual environment every time you will work on the project!</i></b>. This can be achieved by using the following command:
+
+* ``` $ source virtualenv_name/bin/activate ``` - [For Mac] 
+* ``` $ source virtualenv_name/Scripts/activate ``` - [For Windows]  (as in my example below):
+
+!![image](https://user-images.githubusercontent.com/72948843/182445439-bca1e977-081b-46ea-85c3-312b04543870.png))
+
+<b>Don't forget to addd the env to your .gitignore file</b> if added correctly the file and its content's font shall be shaded a darker gray.
+
+![image](https://user-images.githubusercontent.com/72948843/182445548-45a57c2b-d86a-491e-bd25-3b03f93d0892.png)
+
+Once you are in the virtual environment, the terminal will have it appear in brackets next to the command line as in the image below:
+
+![image](https://user-images.githubusercontent.com/72948843/182445662-f576728c-a54e-48de-92a3-98439108785b.png)
+
+NOTE: To deactivate the virtual environment just type ```deactivate``` into the terminal (like in the image below).
+
+![image](https://user-images.githubusercontent.com/72948843/182445800-b322a679-751f-4ad3-af36-416b91451d23.png)
 <br>
+<hr>
+Now within the virtual environment, we now need to install the project requirements to run the project. in the virtual environment terminal, type in the following command:
+
+```pip3 install -r requirements.txt```
+
+What this will do is download all the app's dependencies stated in the requirements.txt file which will get the project to work.
+
+![image](https://user-images.githubusercontent.com/72948843/182447722-1b86059c-319a-4ef1-9db5-7900de0b4374.png)
+
+With that now complete, We now need to create our env.py file, which tells the app what variables to use. These variables are usually hidden for security reasons as they contain sensative data that we don't want leaked and can be dangerous if shared publicly they can be vulnerable to attacks. So what we must do is first create the env.py file and immediately add it to our .gitignore file.
+
+Any variables you declared in your settings.py file must be added to this file. (Apart from ["DEVELOPMENT"]) to your config vars when you deploy in Heroku.
+
+![image](https://user-images.githubusercontent.com/72948843/182455915-2e6da191-999a-4ffd-8fe4-0494d232e6a0.png)
+
+Now when we run the command ```python3 manage.py runserver``` if the terminal will respond with unapplied migrations which is to be expected as we haven't made any migrations into the database. If this is the case, run the migrations command in the terminal... ```python3 manage.py migrate```.
+
+Once it has finished applying the migrations, you will need to run the command ```python3 manage.py runserver```
+
+![image](https://user-images.githubusercontent.com/72948843/182458479-9d27b5ac-542c-40e4-a11e-2ed937375e73.png)
+
+This will now launch the project locally, successfully and ready for development.
+
+<br>
+
+### Setting the email service
+
+There is one part of the project that hasn't been explained in the above. I have set up the app to send emails and to do this I created at the bottom of settings.py. What we have here are two two config vars that we need to add to your env.py file. The ```['EMAIL_HOST_USER']``` and ```['EMAIL_HOST_PASSWORD']```. 
+
+![image](https://user-images.githubusercontent.com/72948843/182465595-522b767e-28eb-4ee0-92a4-67b2ba65c843.png)
+
+
+ I found a really useful tutorial by "Toumi Abderrahmane" on how to set up googlemail sync up to send emails with django in deployment. please click on this link below.
+
+<a href="https://dev.to/abderrahmanemustapha/how-to-send-email-with-django-and-gmail-in-production-the-right-way-24ab" target="_blank">how to send email with django and gmail</a>
+<br>
+
+Within the env.py file, at the bottom two lines, you have to insert you email address and password, just look below:
+
+![image](https://user-images.githubusercontent.com/72948843/182467606-e6d25616-caf0-4b54-8bcf-abf559771028.png)
+
+Now with this done, you can now send emails in development and deployment.
+ (Note there is a code at the bottom of the Development Django Email Settings, run this in the command line to check your emails send.)
 
 [Back to Top](<#contents>)
 
 ## Credits
 
-<p>I would like to say a small thanks to the Code institute for the first bit of help on how to setup the game and create objects models that have real value and functionality from their introduction video as it gave a good starting point on how to logically approach designing the game.</p>
+<p>Building the website was a very hard process but very rewarding. I would like to mention below some credits to my project:</p>
+<ul>
+    <li>I used Bootstrap a lot when building this website. I mentioned a link to the website in the above technologies used section.</li>
+    <li>Django documentation was used a lot during the build of the website to make sense of how to build the MVT. The documention is very thorough and explains a lot of things clearly. When I had a problem, I could read their docs with a large degree of success</li>
+    <li>I also used <a href="https://stackoverflow.com/" target="_blank">Stacker Overflow</a> to help me when I had problems as there was a lot of times people had the same problems as I and I could lean on some of these questions for help.</li>
+</ul>
 <br>
 
 [Back to Top](<#contents>)
 
 ## Acknowledgements
 
-<p>This project is my 4t Portfolio Project for the Full Stack Software Developer (e-Commerce) Diploma course provided by the <a href="https://codeinstitute.net/" target="_blank">Code Institute</a>. </p>
+<p>This project is my 4th Portfolio Project, as part of <a href="https://codeinstitute.net/" target="_blank">Code Institute's</a> Full Stack Software Developer (e-Commerce) Diploma.</p> A Big thank you to Precious Ijege (my mentor) for his help and expertise pushing me to right better code. Another thank you to the Slack community as well and Daniel_C_5p_lead (Daniel Callaghan) for his help as he always found the time to reply anytime I had a problem, he always tried to help. Also thank you to the tutors at Code Institute Alex and Oisin who helped me when I lost my way. There experience and help really got my through the tough patches.
+
+Grant Wilsmore, 2022
 
 [Back to Top](<#contents>)
