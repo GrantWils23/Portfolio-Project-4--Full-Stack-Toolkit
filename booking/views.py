@@ -1,5 +1,7 @@
 ''' the views to the booking app '''
 
+import os
+
 from datetime import date, timedelta
 from django.shortcuts import render
 from django.urls import reverse_lazy
@@ -13,6 +15,8 @@ from django.http import request
 from .models import Booking
 from .forms import BookingForm, CancelForm, AdminBookingForm
 from .filters import AdminFilter
+
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 
 
 class Home(TemplateView):
@@ -86,7 +90,7 @@ class AddBookingView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
             f"BeBeauty Booking Confirmation {form.instance.booking_id}",
             body,
             "info@BeBeauty.co.uk",
-            [form.instance.email, "grantwils.23@googlemail.com"],
+            [form.instance.email, EMAIL_HOST_USER],
         )
         email.send(fail_silently=False)
         return super().form_valid(form)
@@ -126,7 +130,7 @@ class EditBookingView(SuccessMessageMixin, UpdateView):
             f"BeBeauty Booking Confirmation {bookid}",
             body,
             "info@BeBeauty.co.uk",
-            [form.instance.email, "grantwils.23@googlemail.com"],
+            [form.instance.email, EMAIL_HOST_USER],
         )
         email.send(fail_silently=False)
         return super().form_valid(form)
@@ -156,7 +160,7 @@ class CancelBookingView(SuccessMessageMixin, UpdateView):
             f"BeBeauty Booking Confirmation {form.instance.booking_id}",
             body,
             "info@BeBeauty.co.uk",
-            [form.instance.email, "grantwils.23@googlemail.com"],
+            [form.instance.email, EMAIL_HOST_USER],
         )
         email.send(fail_silently=False)
         return super().form_valid(form)
@@ -342,7 +346,7 @@ class AdminAddBookingView(LoginRequiredMixin, SuccessMessageMixin, CreateView,
             f"BeBeauty Booking Confirmation {form.instance.booking_id}",
             body,
             "info@BeBeauty.co.uk",
-            [form.instance.email, "grantwils.23@googlemail.com"],
+            [form.instance.email, EMAIL_HOST_USER],
         )
         email.send(fail_silently=False)
         return super().form_valid(form)
@@ -382,7 +386,7 @@ class AdminEditBookingView(SuccessMessageMixin, UpdateView,
             f"BeBeauty Booking Confirmation {form.instance.booking_id}",
             body,
             "info@BeBeauty.co.uk",
-            [form.instance.email, "grantwils.23@googlemail.com"],
+            [form.instance.email, EMAIL_HOST_USER],
         )
         email.send(fail_silently=False)
         return super().form_valid(form)
@@ -412,7 +416,7 @@ class AdminCancelBookingView(SuccessMessageMixin, UpdateView,
             f"BeBeauty Booking Confirmation {form.instance.booking_id}",
             body,
             "info@BeBeauty.co.uk",
-            [form.instance.email, "grantwils.23@googlemail.com"],
+            [form.instance.email, EMAIL_HOST_USER],
         )
         email.send(fail_silently=False)
         return super().form_valid(form)
