@@ -1,7 +1,7 @@
+<!-- This is the Treatment Price Modal HTML template -->
 {% load static %}
 
 {% for treatment in treatments %}
-<!-- Modal -->
 <div class="modal fade" id="treatmentModal{{treatment.pk}}" tabindex="-1" aria-labelledby="treatmentModal{{treatment.pk}}Label" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -9,6 +9,7 @@
                 <h3 class="modal-title" id="treatmentModal{{treatment.pk}}Label">{{ treatment.treatment_name }}</h3>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <!-- Treatment Body -->
             <div class="modal-body">
                 <div class="container">
                     <div class="row">

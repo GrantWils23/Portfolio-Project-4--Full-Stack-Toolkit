@@ -1,18 +1,28 @@
 # Testing
 
-To test my project, I have manually tested the project by doing the following:
-<ul>
-    <li>
-        Testing the programs code in <a href="http://pep8online.com/" target="_blank">pep8online</a> and confirmed that there were no errors with the code.
-    </li>
-    <li>
-        Tested the validations to prove the program is working correctly by entering invalid inputs and checking that all error types are accounted for (outside size of board parameters, same input cannot be inputted twice and strings are not excepted).
-    </li>
-    <li>
-        Tested in the local terminal and the Code institute Heroku Terminal.
-    </li>
-</ul>
-<!--  -->
+To test my project, I have completed a number of test procedures and from a wide array of different tests. It is important to test as much of the code as possible. So please scroll down and read the various testing procedures and how I solved some problems with bugs in my code.
+
+### Contents
+
+* [**Testing**](<#testing>)
+    * [Code Validation](<#code-validation>)
+    * [HTML Validation](<#html-validation>)
+    * [CSS Validation](<#css-validation>)
+    * [JS Validation](<#js-validation>)
+    * [Python Validation](<#python-validation>)
+    * [Lighthouse Testing](<#lighthouse-testing>)
+    * [Accessability Testing](<#accessability-testing>)
+    * [Responsive Testing](<#responsive-testing>)
+    * [User Story Tests](<#user-story-tests>)
+    * [Manual Testing](<#manual-testing>)
+    * [Validation Testing](<#validation-testing>)
+    * [Automated Testing](<#automated-testing>)
+    * [Browser Compatibiity](<#browser-compatibility>)
+* [**Bugs**](<#bugs>)
+    * [Solved Bugs](<#solved-bugs>)
+    * [Unsloved BUgs](<#unsolved-bugs>)
+
+<hr>
 
 ## Code Validation
 
@@ -59,6 +69,7 @@ HTML Validation Image... Below are the results of the Validations of the code th
 <p>My CSS Code was directly inputted into the validator and passed with 0 errors.</p>
 
 ![image](https://user-images.githubusercontent.com/72948843/182002563-5666610b-5862-496d-97ff-4e43759cc50d.png)
+
 
 [Back to Top](<#contents>)
 <br>
@@ -398,6 +409,31 @@ HTML Validation Image... Below are the results of the Validations of the code th
    <li>The site user and admin when signed in both have different views of the nav bar, the user can view their bookings in the My bookings link, while the admin has access to an admin planner view.</li> 
    <li>The na bar sits at the top of the site and is the same throughout the whole website making it easy for the user to get familiar with the website</li> 
 
+<h3>As Site Admin I can Create a new booking on behalf of a guest or registered user manually so that a booking is stored on the database.</h3>
+   <li>The Admin has to be logged in to be able to create the booking</li>
+   <li>The Admin has the ability to add a booking from within all the same places that there is a booking button on the website. When clicked, it redirects you to the bookling form.</li>
+   <li>The Admin has their own page which is the admin planner, In there at the bottom of the page there is another booking button which when clicked redirects you to the booking form.</li>
+   <li>An email is sent upon completion regarding the status of the booking.</li>
+
+<h3>As Site Admin I can Read the all the bookings stored on the database so that i can manage and plan my day and workload.</h3>
+   <li>The Admin has the view the booking by going to the admin planner. In there is a list of all the bookings displayed in a table.</li>
+   <li>To the left in this table is a booking number link, which opens up a booking modal related to the booking where you have a detailed view of the booking.</li>
+   <li>This modal has buttons placed at the bottom to the functions, edit, cancel and delete booking.</li>
+
+<h3>As Site Admin I can Edit a booking on behalf of a guest or registered user manually so that the edited booking is stored on the database.</h3>
+   <li>Once within the admin planner, you can find the booking you wish to look for by using the filter and searching for it.</li>
+   <li>Click on the booking you are interested in and you are redirected to a modal where there is a button to edit the booking.</li>
+   <li>This button will redirect you to the booking form with the data of the existing booking, the user then can change the data to whatever is required, (form permitting) and the data is saved to the database.</li>
+   <li>An email is sent upon completion regarding the changes of the booking.</li>
+
+<h3>As Site Admin I can Delete a new booking on behalf of a guest or a registered user manually so that the booking is removed from the database.</h3>
+   <li>Once within the admin planner, you can find the booking you wish to look for by using the filter and searching for it.</li>
+   <li>Click on the booking you are interested in and you are redirected to a modal where there is a button to cancel the booking.</li>
+   <li>This button redirects you to the booking cancel form where it will ask you are you sure you wish to cancel the booking.</li>
+   <li>Click 'Cancel' to cancel the booking or return to not go through with the cancelation.</li>
+   <li>Upon cancelling the booking, the status of the appointment is moved from ok to cancelled and the booking is no longer to be completed.</li>
+   <li>Upon successfully cancelling the booking an email is sent to the client to inform them of the cancelation of the booking.</li>
+
 <h3>As Site Admin I can Create, Read, Edit, and Delete bookings so that I can manage my work schedule</h3>
    <li>The Admin has access to the admin planner which contains a booking button for the user to create a new booking for someone.</li> 
    <li>Within the admin planner view, the user can edit, cancel and delete bookings, this is acheived by clicking on the booking reference within the populated list view.</li> 
@@ -418,9 +454,19 @@ HTML Validation Image... Below are the results of the Validations of the code th
    <li>The button takes you to a cancel booking view were the booking is cancelled upon request. The user is asked the question if they are sure they wish to cancel the booking.</li> 
    <li>Once the booking is cancelled the booking then becomes a uneditable object, which only the admin has overriding access to delete the booking.</li> 
 
-<h3>As a Site User I can see notifcations that my actions were successful so that is aware of any changes to their appointment, from creation, edit, and deletion of appointments</h3>
+<!---->
+<h3>As a Site User I get confirmation upon successfully creating a new booking.</h3>
    <li>Upon any submission of data to the database, there will be a notice informing you of the success of the users actions</li>
    <li>This makes the user aware that whatever data was requested was successful</li>
+
+<h3>As a Site User I get confirmation of my booking being edited was successful, and deletion of appointments.</h3>
+   <li>Upon any submission of data to the database, there will be a notice informing you of the success of the users actions</li>
+   <li>This makes the user aware that whatever data was requested was successful</li>
+
+<h3>As a Site User I get confirmation that when I request my booking to be cancelled, it was successful.</h3>
+   <li>Upon any submission of data to the database, there will be a notice informing you of the success of the users actions</li>
+   <li>This makes the user aware that whatever data was requested was successful</li>
+<!---->
 
 <h3>As a Site User I can Register an Account so that I can view all my bookings</h3>
    <li>The User has to Sign up to create a booking, this is acheieved by createing an account. aSign up at the top in the nav bar, and upon signing up, the user then can click on the 'My Bookings' link.</li> 
@@ -481,6 +527,34 @@ Validation of the form is implemented by checking  before the document is submit
 ![image](https://user-images.githubusercontent.com/72948843/182039899-bcd7aac5-8b76-4c8e-a0f9-63cb5ad4719f.png)
 
 
+
+[Back to Top](<#contents>)
+<br>
+
+## Bugs
+
+### Solved Bugs
+<ul>
+    <li>I had found a bug whereby if I booked an appointment on the same day as someone else has already done with the same time slot, I would get multiple bookings that match and it would not be possible for the Beautician to attend both and would require manual checking.
+    To get over this problem, I put a constraint into the database stating that a booking cannot be placed if the booking requested with these parameters already exists. </li>
+    <li> A bug was found in the admin booking view which was when the submit button was hit, a 500 error handler popped up. I resolved the issue by changing the form to take in a new form model and template which gave the admin greater control of the booking.</li>
+</ul>
+
+[Back to Top](<#contents>)
+<br>
+
+### Unsolved Bugs
+<p>There are no unfixed bugs found on the project.</p>
+
+[Back to Top](<#contents>)
+<br>
+
+### Browser Compatability
+<p>The Website was manually tested in different browsers to check the responsive nature of the website and no errors were found during these tests.</p>
+<li>Google Chrome</li>
+<li>Microsoft Edge</li>
+<li>Safari</li>
+<li>Samsung Internet<li>
 
 [Back to Top](<#contents>)
 <br>

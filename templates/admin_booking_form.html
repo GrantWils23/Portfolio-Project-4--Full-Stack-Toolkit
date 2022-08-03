@@ -1,3 +1,5 @@
+<!-- This is the admin booking form page HTML template -->
+
 {% extends "base.html" %}
 
 {% load static %}
@@ -6,8 +8,10 @@
 
 {% block content %}
 
+<!--code to determine if viewer is staff to have accesss to this form and not just a normal user-->
 {% if user.is_authenticated and user.is_staff %}
 
+<!--Page Title-->
 <br>
 <div class="container">
     <div class="box-wrap">
@@ -15,12 +19,14 @@
     </div>
 </div>
 <br>
+<!--Booking Form Box-->
 <div class="container booking-box">
     <br>
     <div class="container booking-form-font-size">
         <div class="row">
             <div class="col-sm-1 col-md-2"></div>
             <div class="col-lg-8">
+                <!--Admin Booking Form-->
                 <form method="POST">
                     {{ admin_booking_form | crispy }}
                     <div class="text-center">
@@ -40,6 +46,7 @@
 </div>
 <br>
 <br>
+<!--Return to Admin Planner Button-->
 <div class="container g-0">
     <div class="text-center">
         <a class="custom-site-btn btn-remove-blue edit-but" href="{% url 'admin-bookings' %}">Return to Admin</a>

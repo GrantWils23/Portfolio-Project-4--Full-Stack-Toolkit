@@ -25,22 +25,8 @@ click here to go to the deployed website: <a href="https://bebeauty-app.herokuap
     * [Future Features](<#future-features>)
 * [**Data Model**](<#data-model>)
 * [**Testing**](<#testing>)
-    * [Code Validation](<#code-validation>)
-    * [HTML Validation](<#html-validation>)
-    * [CSS Validation](<#css-validation>)
-    * [JS Validation](<#js-validation>)
-    * [Python Validation](<#python-validation>)
-    * [Lighthouse Testing](<#lighthouse-testing>)
-    * [Accessability Testing](<#accessability-testing>)
-    * [Responsive Testing](<#responsive-testing>)
-    * [User Story Tests](<#user-story-tests>)
-    * [Manual Testing](<#manual-testing>)
-    * [Automated Testing](<#automated-testing>)
-    * [Bugs](<#bugs>)
-    * [Solved Bugs](<#solved-bugs>)
-    * [Validation Testing](<#validation-testing>)
-    * [Browser Compatibiity](<#browser-compatibility>)    
 * [**Technologies Used**](<#technologies-used>)
+* [**Libaries**](<#libaries>)
 * [**Deployment**](<#deployment>)
     * [Deployment of the project](<#deployment-of-the-project>)
     * [Cloning of the project](<#cloning-of-the-project>)
@@ -57,11 +43,16 @@ Provide a user stories table here or list of the general user stories
 <ul>
     <li>As a Site User I can Navigate to the Gallery to see previous work so that I can make an informed decision on whether I like the beautician's work or not.</li>
     <li>As a Site User I can browse the front page so that I can select different parts of the website I wish to view.</li>
-    <li>As Site Admin I can Create, Read, Edit, and Delete bookings so that I can manage my work schedule.</li>
+    <li>As Site Admin I can Create a new booking on behalf of a guest or registered user manually so that a booking is stored on the database.</li>
+    <li>As Site Admin I can Read the all the bookings stored on the database so that i can manage and plan my day and workload.</li>
+    <li>As Site Admin I can Edit a booking on behalf of a guest or registered user manually so that the edited booking is stored on the database.</li>
+    <li>As Site Admin I can Delete a new booking on behalf of a guest or a registered user manually so that the booking is removed from the database.</li>
     <li>As a Site User I can make an appointment with the beautician so that I will have a make-up session on the date I Choose.</li>
     <li>As a Site User I can edit my bookings so that they change to a better time/date that suits me.</li>
     <li>As a Site User I can cancel a booking so that I no longer have to go to the appointment that is not required.</li>
-    <li>As a Site User I can see notifcations that my actions were successful so that is aware of any changes to their appointment, from creation, edit, and deletion of appointments</li>
+    <li>As a Site User I get confirmation upon successfully creating a new booking.</li>
+    <li>As a Site User I get confirmation of my booking being edited was successful, and deletion of appointments.</li>
+    <li>As a Site User I get confirmation that when I request my booking to be cancelled, it was successful.</li>
     <li>As a Site User I can Register an Account so that I can create and view all my bookings</li>
     <li>As a Admin/User I can receive emails regarding bookings made, alter and cancel so that I can manage all my bookings.</li>
     <li>As a User I can contact the company with any queries i may have so that my concerns are answered.</li>
@@ -123,10 +114,17 @@ The Desktop version of the site is very spacous but when the user drops down to 
 
 ## Colour Scheme
 the colour scheme chosen for this website is sutble and chicque, requested by the client that it will have light tones to exert a professional look that is not overpowering to the views and that it is to be inviting to anyone who visits the site.
-  - The blue tone colour settled upon is aliceblue which is a nice colour that gives some personaliry to website other than a standard white background (colour code  rgb(239, 255, 255)/  #efffff).
-  - The pink tone colour settled upon is mistyrose which is a beautiful light pink (rgb(255, 228, 225)/ #ffe4e1) that really compliments the background colour.
-  - The pink tones also come with some shadowing to give a bit more flair and dynamics to the buttons and icons.
-  - Functional buttons within the booking pages hold a simple colour scheme of green, yellow, red, blue. The scheme is designed to draw attention appropriately with the nesessary information regarding a booking.
+  - The blue tone colour settled upon is aliceblue which is a nice colour that gives some personaliry to website other than a standard white background (#efffff).
+  - The pink tone colour settled upon is mistyrose which is a beautiful light pink (#ffe4e1) that really compliments the background colour.
+  - The pink tones also come with some shadowing to give a bit more flair and dynamics to the buttons and icons. the text shadow to the media buttons contains a darker pink colour (#ffc0cb)
+  - Functional buttons within the booking pages hold a simple colour scheme of:
+    * Booking Buttons - Pink(#ffe4e1)
+    * Completed Buttons - Green(#b3ecb3) 
+    * Today Buttons - Yellow(#f9f092)
+    * Cancel/Delete Buttons - Red(#f08080)
+    * Edit Buttons - Blue(#add8e6)
+    * Nul Buttons - Grey(#acabab). 
+    This scheme is designed to draw attention appropriately with the nesessary information regarding a booking.
 
 ![image](https://user-images.githubusercontent.com/72948843/178701361-701495cf-f505-44f6-83e2-bd32ac33fa17.png)
 
@@ -244,7 +242,7 @@ The pop up messages are intergrated into the websites UX to provide the user wit
 
 ## Input Validation and checking
 
-Validation of the form is implemented by checking  before the document is submitted is valid to submit. This is acheived by multiple methods
+Validation of the form is implemented by checking before the document is submitted is valid to submit. This is acheived by multiple methods
 
 <ul>
     <li>To validate the phonenumber being entered into the form, django-phonenumber-field was used. It checks the input to see if it is a valid phonenumber and returns an error message if it is not valid upon submission</li>
@@ -286,34 +284,7 @@ This can be a list of unfinished or future new user stories on how to improve th
 
 # Testing
 
-<p>To find out more about the tests related to the project. please follow this <a href="">link</a> to the testing page.</p>
-
-[Back to Top](<#contents>)
-<br>
-
-## Bugs
-
-### Solved Bugs
-<ul>
-    <li>I had found a bug whereby if I booked an appointment on the same day as someone else has already done with the same time slot, I would get multiple bookings that match and it would not be possible for the Beautician to attend both and would require manual checking.
-    To get over this problem, I put a constraint into the database stating that a booking cannot be placed if the booking requested with these parameters already exists. </li>
-    <li> A bug was found in the admin booking view which was when the submit button was hit, a 500 error handler popped up. I resolved the issue by changing the form to take in a new form model and template which gave the admin greater control of the booking.</li>
-</ul>
-
-
-[Back to Top](<#contents>)
-<br>
-
-### Unsolved Bugs
-<p>There are no unfixed bugs found on the project.</p>
-<br>
-
-### Browser Compatability
-<p>The Website was manually tested in different browsers to check the responsive nature of the website and no errors were found during these tests.</p>
-<li>Google Chrome</li>
-<li>Microsoft Edge</li>
-<li>Safari</li>
-<li>Samsung Internet<li>
+<p>To find out more about the tests related to the project. please follow this <a href="https://github.com/GrantWils23/Portfolio-Project-4--Full-Stack-Toolkit/blob/main/tests/TESTS.md">link</a> to the testing page.</p>
 
 [Back to Top](<#contents>)
 <br>
@@ -348,10 +319,6 @@ GitBash - Terminal used to push changes to the GitHub repository.
 <li><a href="https://developer.chrome.com/docs/devtools/" target="_blank"> Google Chrome DevTools </a> - An online resource that lays within Google Chrome used to debug the website during development.</li>
 <li><a href="https://drawsql.app/" target="_blank"> DrawSQL </a> - An online app used to create the database schema.</li>
 <li><a href="https://color.a11y.com/" target="_blank">A11y</a> - An online accessability validator that checks the colour of the background against the text. </li>
-
-
-
-
 
 <br>
 
@@ -405,94 +372,6 @@ GitBash - Terminal used to push changes to the GitHub repository.
 
 ### Deployment to Heroku
 <p>To deploy the site is a labour intensive process. follow the steps below for a stress free deployment:</p>
-
- #### 1. Create a new Github repository from the CI template.
- The First step is we need to create a new GitHub repository. Follow this <a href="https://github.com/GrantWils23/Portfolio-Project-4--Full-Stack-Toolkit" target="_blank">link</a> to use this template for your own repoisitory.
- ![image](https://user-images.githubusercontent.com/72948843/182208124-b3cb2368-b018-4085-998b-21a3b9ce77cf.png)
-
-Fill in the Repository name and if you wish description and then click "Create repository from template".
-![image](https://user-images.githubusercontent.com/72948843/182210852-1d79f102-d3ef-4ac8-a238-b678e1fc3e5d.png)
-
-Click on the code button and then copy the repository using either the HTTPS or SSH link. I used the HTTPS.
-![image](https://user-images.githubusercontent.com/72948843/182212285-ee6bee3b-eb9c-4bf0-aaf8-c20599a32b9e.png)
-
-Once the link has been copied, you then need to go to the Command Prompt and navigate to where you wish to store yout project and then type the following commands:
-1. ```"git clone HTTPS or SSH link``` - This will clone the project to your computer
-2. ```cd name of project``` - This will cd (change directoy) into your project<
-3. ```code .``` - This will launch your project in VSCode
-
-![image](https://user-images.githubusercontent.com/72948843/182214413-67e4864e-b3de-465d-90d4-18332925f6b1.png)
-
-Now you need to setup and initialize a virtual environment for the project. follow the steps below to setup a virtual environment if you haven't done so before.
-
-```$ pip install virtualenv```
-
-(Step.1) Test your installation was successful:
-
-```$ python3 -m virtualenv -- version```
-
-![image](https://user-images.githubusercontent.com/72948843/182220104-90279963-0222-411a-92ce-8962d42c5327.png)
-
-(Step.2) Then create the virtual environment using virtualenv
-
-```$ python3 -m virtualenv myenv```
-
-![image](https://user-images.githubusercontent.com/72948843/182246883-8257d0d4-7135-4b8a-826f-bfaba2812f73.png)
-
-(Step.3) After creating the virtual environment, you need to activate. <b><i>We need to activate the virtual environment every time you will work on the project!</i></b>. This can be achieved by using the following command:
-
-* ``` $ source virtualenv_name/bin/activate ``` - [For Mac] 
-* ``` $ source virtualenv_name/Scripts/activate ``` - [For Windows]  (as in my example below):
-
-![image](https://user-images.githubusercontent.com/72948843/182246558-43914962-13d9-4c71-9fb0-dd930de64c2a.png)
-
-<b>Don't forget to addd the env to your .gitignore file</b> if added correctly the file and its content's font shall be shaded a darker gray.
-
-![image](https://user-images.githubusercontent.com/72948843/182247207-519f709c-3d24-4d24-95e7-566078107651.png)
-
-Once you are in the virtual environment, the terminal will have it appear in brackets next to the command line as in the image below:
-
-![image](https://user-images.githubusercontent.com/72948843/182247831-f78b23d3-f467-4e65-9fd7-c903f915b8fe.png)
-
-To deactivate the virtual environment just type ```deactivate``` into the terminal (like in the image below).
-
-![image](https://user-images.githubusercontent.com/72948843/182248086-3062ba06-498a-417f-8188-9faaeee5bff0.png)
-
-<br>
-
-#### 2. Installing Django and their supporting libaries:
-
-We need to now install Django and all it's supporting libaries. In the terminal, type the following three commands:
-
-* ```pip3 install 'django<3.2' gunincorn ```
-* ```pip3 install dj-database_url pyscopg2```
-* ```pip3 install dj3-cloudinary-storage```
-
- To next step after successfully installing the above is for Django to freeze a copy of these requirements to a text file. run the following command below into the terminal.
-
- ```pip3 freeze -- local > requirements.txt```
-
- This creates a requirements.txt file like the example below:
- 
- ![image](https://user-images.githubusercontent.com/72948843/182251103-740fcc6c-cfac-42d1-977d-7b4a2e329384.png)
-
-Now that is complete, we have to create our Django project and its apps:
-
-* ```django-admin startproject 'PROJECT-NAME'```
-* ```django-admin startapp 'APP_NAME'```
-
-You know need to add the app(s) that you have just created to the INSTALLED_APPS section in the settings.py file. In the example below is the apps I created 'booking' and 'treatment'
-
-![image](https://user-images.githubusercontent.com/72948843/182251937-d2567d82-070b-4605-8f25-b723130ad2b2.png)
-
-Once you have done that, the next thing to do is the terminal is to run the following commands:
-
-* ```python3 manage.py migrate```
-* ```python3 manage.py runserver```
-
-With these checks complete, the next step is to deploy it to Heroku
-
-#### 3. Deploying the app to Heroku:
 
 First and foremost, if you are not a user of Heroku, sign up to its services, once you are logged in, in the top right corner there is a button "New". Click on the button and then click on "create new app".
 
@@ -605,11 +484,8 @@ Alternatively, if you wish to do it from within the Heroku website and through g
 
 [Back to Top](<#contents>)
 
-<!--   -->
 
 !!!! REMOVE DEBUG FROM TRUE TO FALSE BEFORE SUBMISSION !!!
-
-<!-- how to set up env.py, what steps we take, install requirements.txt, set up the database -->
 
 <br>
 
@@ -686,14 +562,23 @@ Once it has finished applying the migrations, you will need to run the command `
 
 This will now launch the project locally, successfully and ready for development.
 
+The test files that exist in the project can be run with the simple command ```python3 manage.py test```. 
+
+If you wish to test a particular app you can run the command ```python3 manage.py test "APP_NAME"```
+
+(for example, the specific APP_NAME's from BeBeauty are 'booking' or 'treatment')
+
+This command will only work if you use your local database within the deployment. if for any reason you run this command using the Heroku database, the test will fail. please refer to the <a href="https://github.com/GrantWils23/Portfolio-Project-4--Full-Stack-Toolkit/blob/main/tests/TESTS.md">testing</a> file to see how the tests perform.
+
+This project has installed inside it a python package called [*Coverage*]. This app is useful as it gives you comprehensive reports on how much of your project has been tested. To get a coverage report, run the following command in the terminal: ```coverage report``` and this will output a tabled list of the results from the report. The report gives you an idea of what areas perhaps require more testing and gives you a score on how your tests perform.
+
 <br>
 
 ### Setting the email service
 
 There is one part of the project that hasn't been explained in the above. I have set up the app to send emails and to do this I created at the bottom of settings.py. What we have here are two two config vars that we need to add to your env.py file. The ```['EMAIL_HOST_USER']``` and ```['EMAIL_HOST_PASSWORD']```. 
 
-![image](https://user-images.githubusercontent.com/72948843/182465595-522b767e-28eb-4ee0-92a4-67b2ba65c843.png)
-
+![image](https://user-images.githubusercontent.com/72948843/182680072-b77a00e2-2c0b-4c93-a2bf-1a7f24f56a12.png)
 
  I found a really useful tutorial by "Toumi Abderrahmane" on how to set up googlemail sync up to send emails with django in deployment. please click on this link below.
 

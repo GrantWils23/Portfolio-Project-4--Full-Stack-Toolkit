@@ -1,3 +1,5 @@
+<!-- This is the booking details page HTML template -->
+
 {% extends 'base.html' %}
 
 {% load static %}
@@ -6,7 +8,7 @@
 
 {% if user.is_authenticated %}
 
-
+<!--Page Title-->
 <div class="container">
     <div class="box-wrap">
         <h1 class="center-text title-font sub-title">Booking Details</h1>
@@ -15,6 +17,7 @@
 <br>
 <div class="col-md-3 col-sm-2 d-inline-block"></div>
 <div class="container col-md-6 col-sm-8 booking-box d-inline-block">
+    <!--APPOINTMENT STATUS DISPLAY with logic for display-->
     {% if booking.cancelled == True %}
     <br>
     <section class="text-center dead-btn">
@@ -32,6 +35,7 @@
         <button class="today-box">Appointment Today</button>
     </section>
     {% endif %}
+    <!--Booking details-->
     <br>
     <section>
         <section class="row">
@@ -117,6 +121,7 @@
         <br>
         <section class="row g-0">
             <div class="text-center justify-center-content">
+                <!--Booking Buttons display logic-->
                 {% if not user.is_staff %}
                 {% if booking.cancelled == False %}
                 {% if user.last_login.date < booking.appointment_date %}
@@ -146,6 +151,7 @@
 <div class="col-md-3 col-sm-2 d-inline-block"></div>
 <br>
 <br>
+<!--return to bookings button-->
 <div class="container">
     <div class="row g-0">
         <div class="col-sm-12 text-center">

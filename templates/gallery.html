@@ -1,9 +1,11 @@
+<!-- This is the gallery page HTML template -->
 {% extends "base.html" %}
 
 {% load static %}
 
 {% block content %}
 
+<!-- Page Title -->
 <div class="container">
     <div class="box-wrap">
         <h1 class="center-text title-font sub-title">Gallery</h1>
@@ -13,6 +15,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-2"></div>
+            <!-- Gallery page body -->
             <div class="col-sm-8 text-center">
                 <br>
                 <p>Welcome to our online gallery, here you can see photos of our happy customers looking absouloutely
@@ -28,21 +31,25 @@
         <div class="col-2"></div>
         <div class="col-sm-8 photos">
             <div class="relative-tag">
+                <!--image-->
                 <img src="{% static 'images/IMG_9907.jpg' %}" alt="Wedding hair and make-up">
                 <div class="bottomright"><span>"Wedding make-up and Hair"</span></div>
             </div>
             <hr>
             <div class="relative-tag">
+                <!--image-->
                 <img src="{% static 'images/dreamstimefree_1709974.jpg' %}" alt="lady in black dress with make-up">
                 <div class="bottomright"><span>"1709974 © Laura Bulau | Dreamstime.com"</span></div>
             </div>
             <hr>
             <div class="relative-tag">
+                <!--image-->
                 <img src="{% static 'images/dreamstimefree_2255973.jpg' %}" alt="lady looking into mirror doing her make-up">
                 <div class="bottomright"><span>"2255973 © Evan Haveman | Dreamstime.com"</span></div>
             </div>
             <hr>
             <div class="relative-tag">
+                <!--image-->
                 <img src="{% static 'images/dreamstimefree_18055371.jpg' %}" alt="blue nails and make-up photo">
                 <div class="bottomright"><span>"18055371 © Elena1110 | Dreamstime.com"</span></div>
             </div>
@@ -52,6 +59,7 @@
     </div>
 </div>
 <br>
+<!-- Booking Button -->
 {% if user.is_staff %}
 <div class="container_fluid">
     <div class="justify-content-center text-center ">
@@ -67,6 +75,7 @@
 {% endif %}
 <br>
 <br>
+<!-- Return Button -->
 <div class="container g-0">
     <div class="text-center">
         <a class="custom-site-btn btn-remove-blue edit-but" href="#">Return to top</a>

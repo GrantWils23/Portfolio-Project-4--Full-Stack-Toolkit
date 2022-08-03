@@ -1,12 +1,14 @@
+<!-- This is the delete booking page HTML template -->
+
 {% extends "base.html" %}
 
 {% load static %}
 
 {% block content %}
 
+<!-- Code to determine user is authenticated -->
 {% if user.is_authenticated or user.is_authenticated and user.is_staff %}
-
-
+<!--Page Title-->
 <div class="screen-container">
     <div class="container">
         <div class="box-wrap">
@@ -19,6 +21,7 @@
     </div>
     <br>
     <div class="col-sm-3"></div>
+    <!-- Delete Booking Box -->
     <div class="container col-sm-6 booking-box">
         <div class="row g-0">
             <div class="text-center">
@@ -33,6 +36,7 @@
                     <p>Are you sure you wish to delete booking# {{ booking.booking_id }} from your booking history?</p>
                 </div>
                 <div class="container d-inline-flex justify-content-center delete-box-bottom-margin">
+                    <!-- Buttons displayed determined by user -->
                     {% if user.username and user.is_staff %}
                     <a class="custom-site-btn line-height-setter btn-remove-blue nul-but nul-hvr" href="{% url 'admin-bookings' %}">Cancel</a>
                     {% else %}

@@ -1,21 +1,24 @@
 {% load static %}
 
-<!-- Modal -->
+<!-- Admin Booking Modal  HTML Template-->
 <div class="modal fade" id="bookingModal{{booking.pk}}" tabindex="-1" aria-labelledby="bookingModal{{booking.pk}}Label" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title col-sm-5" id="bookingModal{{booking.pk}}" class="d-inline">Booking ref: <b>{{ booking.booking_id }}</b>
                 </h3>
+                <!-- Booking status-->
                 {% if booking.cancelled == 1 %}
                 <h3 class="col-sm-6" style="font-size:1.8em; color:crimson"><b> Cancelled</b></h3>
                 {% endif %}
+                <!--Close modal button-->
                 <button type=" button" class="btn-close col-sm-1" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body admin-modal">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-1"></div>
+                        <!--Booking details display-->
                         <div class="col-sm-5">
                             <h5>
                                 <b>
@@ -90,6 +93,7 @@
                         <div class="text-center">
                             <br>
                             <br>
+                            <!--Admin Buttons for Editing, Cancel and Delete-->
                             <a class="admin-btn custom-site-btn btn-remove-blue edit-but" href="{% url 'admin-booking-edit' booking.pk %}">Edit</a>
                             <a class="admin-btn custom-site-btn btn-remove-blue del-but" href="{% url 'admin-booking-cancel' booking.pk %}">Cancel</a>
                             <a class="admin-btn custom-site-btn btn-remove-blue nul-but" href="{% url 'admin-booking-delete' booking.pk %}">Delete</a>
@@ -98,6 +102,7 @@
                         </div>
                     </div>
                 </div>
+                <!--Close modal button-->
                 <div class="modal-footer">
                     <button type="button" class="custom-site-btn btn-remove-blue edit-but hvr" data-bs-dismiss="modal">Close</button>
                 </div>

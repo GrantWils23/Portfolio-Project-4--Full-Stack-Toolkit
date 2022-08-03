@@ -1,3 +1,5 @@
+<!-- This is the Bookings page HTML template -->
+
 {% extends "base.html" %}
 
 {% load static %}
@@ -6,6 +8,7 @@
 
 {% if user.is_authenticated %}
 
+<!--Page Title-->
 <div class="container">
     <div class="box-wrap">
         <h1 class="col center-text title-font sub-title">My Bookings</h1>
@@ -14,6 +17,7 @@
 <br>
 <div class="container booking-box">
     <br>
+    <!-- Geenerate the booking details-->
     {% for booking in bookings %}
     {% if booking.cancelled == False %}
     <div class="container">
@@ -27,6 +31,7 @@
                         {{ booking.appointment_date }} | Time: {{ booking.get_appointment_slot_display }}
                     </div>
                     <div class="col-sm-3 g-0">
+                        <!--logic for displaying the buttons correctly-->
                         {% if user.last_login.date < booking.appointment_date %}
                         <a class="custom-site-btn btn-remove-blue edit-but" href="{% url 'edit-booking' booking.pk %}">Edit</a>
                         <a class="custom-site-btn btn-remove-blue del-but" href="{% url 'cancel-booking' booking.pk %}">Cancel</a>
@@ -74,7 +79,7 @@
 </div>
 
 <br>
-
+<!--Pagination code-->
 {% if is_paginated %}
 <div aria-label="Page navigation">
     <ul class="pagination justify-content-center">
@@ -88,6 +93,7 @@
 </div>
 {% endif %}
 <br>
+<!--Booking buttons-->
 {% if user.is_staff %}
 <div class="container_fluid">
     <div class="justify-content-center text-center ">

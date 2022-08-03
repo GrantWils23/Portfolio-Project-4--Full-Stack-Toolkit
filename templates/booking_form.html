@@ -1,3 +1,4 @@
+<!-- This is the booking form page HTML template -->
 {% extends "base.html" %}
 
 {% load static %}
@@ -9,6 +10,7 @@
 {% if user.is_authenticated %}
 
 <br>
+<!--Page Title-->
 <div class="container">
     <div class="box-wrap">
         <h1 class="center-text title-font smaller-sub-title">Book an Appointment</h1>
@@ -21,6 +23,7 @@
         <div class="row">
             <div class="col-sm-1 col-md-2"></div>
             <div class="col-lg-8">
+                <!--Booking Form -->
                 <form method="POST">
                     {{ booking_form | crispy }}
                     <div class="text-center">
@@ -46,6 +49,7 @@
 </div>
 <br>
 <br>
+<!--Return to home Button-->
 <div class="container g-0">
     <div class="text-center">
         <a class="custom-site-btn btn-remove-blue edit-but" href="{% url 'home' %}">Return to Home</a>
@@ -53,7 +57,6 @@
 </div>
 <br>
 <br>
-<!---------------------------------------------------------------------------------------------------------------->
 
 {% endif %}
 

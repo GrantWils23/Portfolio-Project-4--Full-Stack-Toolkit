@@ -33,7 +33,7 @@ nav {
 }
 
 .above-nav {
-    background-color: mistyrose;
+    background-color: #ffe4e1;
     font-family: 'Zilla Slab', serif;
 }
 
@@ -43,8 +43,8 @@ footer {
 
 footer .fab {
     font-size: 8vmin;
-    color: mistyrose;
-    text-shadow: 2px 2px pink;
+    color: #ffe4e1;
+    text-shadow: 2px 2px #ffc0cb;
 }
 
 .font-small {
@@ -91,7 +91,7 @@ nav li a {
     font-family: 'Playfair Display';
     font-style: italic;
     font-size: 1.6rem;
-    color: black;
+    color: #000000;
 }
 
 /* Table fixes */
@@ -123,16 +123,16 @@ td {
 
 /* button styles */
 .custom-btn {
-    background-color: mistyrose;
+    background-color: #ffe4e1;
     font-weight: 600;
     border-radius: 40px;
     font-size: 3.5vmin;
-    border: 4px mistyrose solid;
-    text-shadow: 2px 2px pink;
+    border: 4px #ffe4e1 solid;
+    text-shadow: 2px 2px #ffc0cb;
 }
 
 .custom-btn:hover {
-    border: 4px pink solid;
+    border: 4px #ffc0cb solid;
 }
 
 .btn-remove-blue {
@@ -149,80 +149,80 @@ td {
 }
 
 .sub-custom-btn {
-    background-color: mistyrose;
+    background-color: #ffe4e1;
     font-weight: 500;
     border-radius: 40px;
-    border: 4px mistyrose solid;
-    text-shadow: 2px 2px pink;
-    border: 4px mistyrose solid;
+    border: 4px #ffe4e1 solid;
+    text-shadow: 2px 2px #ffc0cb;
+    border: 4px #ffe4e1 solid;
     font-size: 1.3rem;
 }
 
 .sub-custom-btn:hover {
-    border: 4px pink solid;
+    border: 4px #ffc0cb solid;
 }
 
 .custom-site-btn {
     border-radius: 5px;
     line-height: 1;
-    border: 4px pink solid;
+    border: 4px #ffc0cb solid;
     margin-top: 3px;
 }
 
 .edit-but {
-    background-color: lightblue;
-    border: 4px lightblue solid;
+    background-color: #add8e6;
+    border: 4px #add8e6 solid;
     padding: 3px 8px;
 }
 
 .edit-but:hover {
-    border: 4px rgb(163, 189, 236) solid;
+    border: 4px #a3bdec solid;
 }
 
 .del-but {
-    background-color: lightcoral;
-    border: 4px lightcoral solid;
+    background-color: #f08080;
+    border: 4px #f08080 solid;
     padding: 3px 8px;
 }
 
 .nul-but {
-    background-color: rgb(172, 171, 171);
-    border: 4px rgb(172, 171, 171) solid;
+    background-color: #acabab;
+    border: 4px #acabab solid;
     padding: 3px 8px;
 }
 
 .nul-hvr:hover {
-    border: 4px lightgray solid;
+    border: 4px #d3d3d3 solid;
 }
 
 .fin-but {
-    background-color: rgb(179, 236, 179);
-    border: 4px rgb(179, 236, 179) solid;
+    background-color: #b3ecb3;
+    border: 4px #b3ecb3 solid;
     padding: 3px 8px;
 }
 
 .fin-but:hover {
-    border: 4px rgb(140, 214, 140) solid;
+    border: 4px #8cd68c solid;
 }
 
 .today-but {
-    background-color: rgb(249, 240, 146);
-    border: 4px rgb(249, 240, 146) solid;
+    background-color: #f9f092;
+    border: 4px #f9f092 solid;
     padding: 3px 8px;
 }
 
 .today-but:hover {
-    border: 4px rgb(254, 243, 125) solid
+    border: 4px #fef37d solid
 }
 
 .del-but:hover {
-    border: 4px rgb(216, 84, 84) solid;
+    border: 4px #d85454 solid;
 }
 
 .pag-page-btn {
-    background-color: mistyrose;
+    background-color: #ffe4e1;
     border-radius: 4px;
-    border: 4px mistyrose solid;
+    border: 4px #ffe4e1 solid;
     color: #2b1f21;
     font-family: 'Zilla Slab', serif;
     font-size: 1.3rem;
@@ -230,8 +230,8 @@ td {
 }
 
 .pag-page-btn:hover {
-    background-color: mistyrose;
-    border: 4px pink solid;
+    background-color: #ffe4e1;
+    border: 4px #ffc0cb solid;
     color: #2b1f21;
 }
 
@@ -257,13 +257,13 @@ td {
 }
 
 .filter-text-col {
-    color: Black;
+    color: #000000;
 }
 
 /* index Photo tag styles */
 .text-center img {
     width: 100%;
-    border: 8px mistyrose solid;
+    border: 8px #ffe4e1 solid;
     border-radius: 8px;
 }
 
@@ -301,7 +301,7 @@ td {
 
 .photos img {
     width: 100%;
-    border: 8px mistyrose solid;
+    border: 8px #ffe4e1 solid;
     border-radius: 8px;
 }
 
@@ -315,7 +315,7 @@ td {
 }
 
 .booking-box {
-    border: 3px mistyrose solid;
+    border: 3px #ffe4e1 solid;
     border-radius: 5px;
 }
 
@@ -336,11 +336,11 @@ td {
 }
 
 .cancel-box {
-    background-color: indianred;
+    background-color: #cd5c5c;
     width: max-content;
     padding: 6px 10px;
     font-weight: 600;
-    border: 4px indianred solid;
+    border: 4px #cd5c5c solid;
     border-radius: 4px;
     font-size: 3vmax;
 }
@@ -376,8 +376,8 @@ td {
 }
 
 .modal-content {
-    background-color: aliceblue;
-    border: 6px pink solid;
+    background-color: #f0f8ff;
+    border: 6px #ffc0cb solid;
 }
 
 .delete-booking-form {
