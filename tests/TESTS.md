@@ -1,6 +1,6 @@
 # Testing
 
-To test my project, I have completed a number of test procedures and from a wide array of different tests. It is important to test as much of the code as possible. So please scroll down and read the various testing procedures and how I solved some problems with bugs in my code.
+To test my project, I have completed several test procedures and from a wide array of different tests. It is important to test as much of the code as possible. So please scroll down and read the various testing procedures and how I solved some problems with bugs in my code.
 
 ### Contents
 
@@ -11,26 +11,26 @@ To test my project, I have completed a number of test procedures and from a wide
     * [JS Validation](<#js-validation>)
     * [Python Validation](<#python-validation>)
     * [Lighthouse Testing](<#lighthouse-testing>)
-    * [Accessability Testing](<#accessability-testing>)
+    * [Accessibility Testing](<#accessability-testing>)
     * [Responsive Testing](<#responsive-testing>)
     * [User Story Tests](<#user-story-tests>)
     * [Manual Testing](<#manual-testing>)
     * [Validation Testing](<#validation-testing>)
     * [Automated Testing](<#automated-testing>)
-    * [Browser Compatibiity](<#browser-compatibility>)
+    * [Browser Compatibility](<#browser-compatibility>)
 * [**Bugs**](<#bugs>)
     * [Solved Bugs](<#solved-bugs>)
-    * [Unsloved BUgs](<#unsolved-bugs>)
+    * [Unsolved Bugs](<#unsolved-bugs>)
 
 <hr>
 
 ## Code Validation
 
 <p>BeBeauty has been validated by using online validation tools W3C HTML Validator, W3C CSS Validator, JSHint JavaScript Validator and the PEP8 Online Validator.
-HTML Validation Image... Below are the results of the Validations of the code that i passed through the validator.</P>
+HTML Validation Image... Below are the results of the Validation of the code that I passed through the validator. </p>
 
 ### HTML Validation
-<p>My HTML Code was directly inputted into the validator from the URI and the results have been recorded below</p>
+<p>My HTML Code was directly inputted into the validator from the URI and the results have been recorded below. </p>
 
 ### Home HTML Validation
 ![image](https://user-images.githubusercontent.com/72948843/182034324-3abbc2aa-0830-4b3e-812f-6e223fda9938.png)
@@ -61,21 +61,19 @@ HTML Validation Image... Below are the results of the Validations of the code th
 ### Booking Form HTML Validation
 ![image](https://user-images.githubusercontent.com/72948843/182037150-7973ec56-94e5-4e3b-af1e-b78f95d95237.png)
 
-
 [Back to Top](<#contents>)
 <br>
 
 ### CSS Validation
-<p>My CSS Code was directly inputted into the validator and passed with 0 errors.</p>
+<p>My CSS Code was directly inputted into the validator and passed with 0 errors. </p>
 
 ![image](https://user-images.githubusercontent.com/72948843/182002563-5666610b-5862-496d-97ff-4e43759cc50d.png)
-
 
 [Back to Top](<#contents>)
 <br>
 
 ### JS Validation
-<p>The JS Code in my program is attached directly into the HTML as the code sample is so small, I condisdered it to not be worth putting it directly in an assets folder". My JS Code was directly inputted into the validator and returned all clear. The result of the test is recoreded below:</p>
+<p>The JS Code in my program is attached directly into the HTML as the code sample is so small, I considered it to not be worth putting it directly in an assets folder". My JS Code was directly inputted into the validator and returned all clear. The result of the test is recorded below:</p>
 
 ![image](https://user-images.githubusercontent.com/72948843/182032469-c206f3c8-5da3-40fd-b249-2f21a02e4e3b.png)
 
@@ -215,7 +213,6 @@ HTML Validation Image... Below are the results of the Validations of the code th
 
 ![image](https://user-images.githubusercontent.com/72948843/181993584-7603e985-356c-47c8-9f8e-ecdbc0a0298a.png)
 
-
 <li>Admin Booking page BeBeauty url - responsive view</li>
 
 ![image](https://user-images.githubusercontent.com/72948843/181994335-203621aa-d5cc-43d0-af53-0212947b51f2.png)
@@ -275,7 +272,6 @@ HTML Validation Image... Below are the results of the Validations of the code th
 <li>Admin planner filter next 7 days page BeBeauty url - PC view</li>
 
 ![image](https://user-images.githubusercontent.com/72948843/181997104-70af8427-37fe-4d20-a48f-3f62df1d4637.png)
-
 
 <li>Admin planner filter next 7 days page BeBeauty url - responsive view</li>
 
@@ -373,14 +369,14 @@ HTML Validation Image... Below are the results of the Validations of the code th
 
 </ul>
 <br>
-<p>The results were very positive and successful. There was a few orange flags in the performance checks of the lighthouse coverage which related to the responsive views in mobile for the urls of the admin filter. On a whole the tests have been successful in the desktop view and responsive view. This is a really good return on my the test that show the website is working correctly and behaving as is expected.</p>
+<p>The results were very positive and successful. There were a few orange flags in the performance checks of the lighthouse coverage which related to the responsive views in mobile for the urls of the admin filter. On the whole the tests have been successful in the desktop view and responsive view. This is a really good return on my the test that show the website is working correctly and behaving as is expected.</p>
 <br>
 
 [Back to Top](<#contents>)
 <br>
 
-## Accessability Testing
-<p>I used a website called <a href="https://color.a11y.com/" target="_blank">A11y</a> which is an accessability validator to check the colour of the font against the background. The website passed the test, the colours passed the validations.</p>
+## Accessibility Testing
+<p>I used a website called <a href="https://color.a11y.com/" target="_blank">A11y</a> which is an accessibility validator to check the colour of the font against the background. The website passed the test, the colours passed the validations. </p>
 
 ![image](https://user-images.githubusercontent.com/72948843/182040435-6931739e-ef4d-4504-be24-564813dbaea9.png)
 <br>
@@ -389,7 +385,7 @@ HTML Validation Image... Below are the results of the Validations of the code th
 <br>
 
 ## Responsive Testing
-<p>I used a website called <a href="https://responsivedesignchecker.com/" target="_blank">responsive design checker</a> to check the responsive nature of the website and it passed in all  screen aspect aspect ratios</p>
+<p>I used a website called <a href="https://responsivedesignchecker.com/" target="_blank">responsive design checker</a> to check the responsive nature of the website and it passed in all screen aspect ratios</p>
 
 ![image](https://user-images.githubusercontent.com/72948843/182042392-7e49e776-7f57-4695-847d-965f06390a87.png)
 <br>
@@ -401,94 +397,93 @@ HTML Validation Image... Below are the results of the Validations of the code th
 
 <h3>As a Site User I can Navigate to the gallery to see previous work so that I can make an informed decision on whether I like the beautician's work or not</h3>
    <li>while navigating the website, the user can click on the nav bar and then click on the gallery link, to view the work of the beautician's</li> 
-   <li>within the gallery, the user can has a button at the bottom of the page to prompt the user into making a booking and a return to the top.</li> 
+   <li>within the gallery, the user can have a button at the bottom of the page to prompt the user into making a booking and a return to the top. </li> 
    <li>...</li>
 
 <h3>As a Site User I can browse the front page so that I can select different parts of the website I wish to view</h3>
-   <li>At the top of the webpage, the nav bar has a interactive nav menu. It contains links for the price listing of the treatments, a contact details page, view the services details page, the gallery and Sign In and Sign Up.</li> 
-   <li>The site user and admin when signed in both have different views of the nav bar, the user can view their bookings in the My bookings link, while the admin has access to an admin planner view.</li> 
-   <li>The na bar sits at the top of the site and is the same throughout the whole website making it easy for the user to get familiar with the website</li> 
+   <li>At the top of the webpage, the nav bar has an interactive nav menu. It contains links for the price listing of the treatments, a contact details page, view the services details page, the gallery and Sign in and Sign up.  </li> 
+   <li>The site user and admin when signed in both have different views of the nav bar, the user can view their bookings in the My bookings link, while the admin has access to an admin planner view. </li> 
+   <li>The nav-bar sits at the top of the site and is the same throughout the whole website making it easy for the user to get familiar with the website</li> 
 
-<h3>As Site Admin I can Create a new booking on behalf of a guest or registered user manually so that a booking is stored on the database.</h3>
-   <li>The Admin has to be logged in to be able to create the booking</li>
-   <li>The Admin has the ability to add a booking from within all the same places that there is a booking button on the website. When clicked, it redirects you to the bookling form.</li>
-   <li>The Admin has their own page which is the admin planner, In there at the bottom of the page there is another booking button which when clicked redirects you to the booking form.</li>
-   <li>An email is sent upon completion regarding the status of the booking.</li>
+<h3>As Site Admin I can Create a new booking on behalf of a guest or registered user manually so that a booking is stored on the database</h3>
+   <li>The Admin has to be logged in to be able to create the booking. </li>
+   <li>The Admin can add a booking from within all the same places that there is a booking button on the website. When clicked, it redirects you to the booking form. </li>
+   <li>The Admin has their own page, which is the admin planner, in there at the bottom of the page there is another booking button which when clicked redirects you to the booking form. </li>
+   <li>An email is sent upon completion regarding the status of the booking. </li>
 
-<h3>As Site Admin I can Read the all the bookings stored on the database so that i can manage and plan my day and workload.</h3>
-   <li>The Admin has the view the booking by going to the admin planner. In there is a list of all the bookings displayed in a table.</li>
-   <li>To the left in this table is a booking number link, which opens up a booking modal related to the booking where you have a detailed view of the booking.</li>
-   <li>This modal has buttons placed at the bottom to the functions, edit, cancel and delete booking.</li>
+<h3>As Site Admin I can Read all the bookings stored on the database so that I can manage and plan my day and workload</h3>
+   <li>The Admin has the view the booking by going to the admin planner. In there is a list of all the bookings displayed on a table. </li>
+   <li>To the left in this table is a booking number link, which opens a booking modal related to the booking where you have a detailed view of the booking. </li>
+   <li>This modal has buttons placed at the bottom to the functions, edit, cancel, and delete the booking. </li>
 
-<h3>As Site Admin I can Edit a booking on behalf of a guest or registered user manually so that the edited booking is stored on the database.</h3>
-   <li>Once within the admin planner, you can find the booking you wish to look for by using the filter and searching for it.</li>
-   <li>Click on the booking you are interested in and you are redirected to a modal where there is a button to edit the booking.</li>
-   <li>This button will redirect you to the booking form with the data of the existing booking, the user then can change the data to whatever is required, (form permitting) and the data is saved to the database.</li>
-   <li>An email is sent upon completion regarding the changes of the booking.</li>
+<h3>As Site Admin I can Edit a booking on behalf of a guest or registered user manually so that the edited booking is stored in the database</h3>
+   <li>Once within the admin planner, you can find the booking you wish to look for by using the filter and searching for it. </li>
+   <li>Click on the booking you are interested in, and you are redirected to a modal where there is a button to edit the booking. </li>
+   <li>This button will redirect you to the booking form with the data of the existing booking, the user then can change the data to whatever is required, (form permitting) and the data is saved to the database. </li>
+   <li>An email is sent upon completion regarding the changes to the booking. </li>
 
-<h3>As Site Admin I can Delete a new booking on behalf of a guest or a registered user manually so that the booking is removed from the database.</h3>
-   <li>Once within the admin planner, you can find the booking you wish to look for by using the filter and searching for it.</li>
-   <li>Click on the booking you are interested in and you are redirected to a modal where there is a button to cancel the booking.</li>
-   <li>This button redirects you to the booking cancel form where it will ask you are you sure you wish to cancel the booking.</li>
-   <li>Click 'Cancel' to cancel the booking or return to not go through with the cancelation.</li>
-   <li>Upon cancelling the booking, the status of the appointment is moved from ok to cancelled and the booking is no longer to be completed.</li>
-   <li>Upon successfully cancelling the booking an email is sent to the client to inform them of the cancelation of the booking.</li>
+<h3>As Site Admin I can Delete a new booking on behalf of a guest or a registered user manually so that the booking is removed from the database</h3>
+   <li>Once within the admin planner, you can find the booking you wish to look for by using the filter and searching for it. </li>
+   <li>Click on the booking you are interested in, and you are redirected to a modal where there is a button to cancel the booking. </li>
+   <li>This button redirects you to the booking cancel form where it will ask you if are you sure you wish to cancel the booking. </li>
+   <li>Click 'Cancel' to cancel the booking or return to not go through with the cancellation. </li>
+   <li>Upon cancelling the booking, the status of the appointment is moved from ok to cancelled and the booking is no longer to be completed. </li>
+   <li>Upon successfully cancelling the booking an email is sent to the client to inform them of the cancellation of the booking. </li>
 
 <h3>As Site Admin I can Create, Read, Edit, and Delete bookings so that I can manage my work schedule</h3>
-   <li>The Admin has access to the admin planner which contains a booking button for the user to create a new booking for someone.</li> 
-   <li>Within the admin planner view, the user can edit, cancel and delete bookings, this is acheived by clicking on the booking reference within the populated list view.</li> 
+   <li>The Admin has access to the admin planner which contains a booking button for the user to create a new booking for someone. </li> 
+   <li>Within the admin planner view, the user can edit, cancel and delete bookings, this is achieved by clicking on the booking reference within the populated list view. </li> 
 
 <h3>As a Site User I can make an appointment with the beautician so that I will have a make-up session on the date I Choose</h3>
    <li>On all pages apart form the contact page, the user has a button featured at the bottom of each page and can click on it to make a booking.</li> 
-   <li>This button will take you to a booking form, where the user can make a booking for an appointment that suits them.</li> 
-   <li>Once the form is submitted, if any errors are detected whilst entering the form, the form is returned back to the user to alter the alerted fields before submiting the form.</li>
+   <li>This button will take you to a booking form, where the user can make a booking for an appointment that suits them. </li> 
+   <li>Once the form is submitted, if any errors are detected whilst entering the form, the form is returned back to the user to alter the alerted fields before submitting the form.</li>
    <li>once the booking is made, it returns to the booking details view and alerts the user with a confirmation message that appears and disappears</li>
 
 <h3>As a Site User I can edit my bookings so that they change to a better time/date that suits me</h3>
    <li>Within the users my booking view, the user has access to a button directly attached to list of bookings on the right or directly within the booking details page itself at the bottom of the box</li>
-   <li>The button takes you back to the booking form with the existing details, where you can see the current details. After altering the fields to what the user wishes, the user can submit the form, providing the details entered are correct. If any errors are detected whilst entering the form, the form is returned back to the user to alter the alerted fields before submiting the form. </li>
+   <li>The button takes you back to the booking form with the existing details, where you can see the current details. After altering the fields to what the user wishes, the user can submit the form, providing the details entered are correct. If any errors are detected whilst entering the form, the form is returned to the user to alter the alerted fields before submitting the form. </li>
    <li>once the booking is made, it returns to the booking details view and alerts the user with a confirmation message that appears and disappears</li>
 
-<h3>As a Site User I can cancel a booking so that I no longer have to go to the appointment that is not required</h3>
+<h3>As a Site User I can cancel a booking so that I no longer must go to the appointment that is not required</h3>
     <li>Within the users my booking view, the user has access to a button directly attached to list of bookings on the right or directly within the booking details page itself at the bottom of the box</li>
-   <li>The button takes you to a cancel booking view were the booking is cancelled upon request. The user is asked the question if they are sure they wish to cancel the booking.</li> 
-   <li>Once the booking is cancelled the booking then becomes a uneditable object, which only the admin has overriding access to delete the booking.</li> 
+   <li>The button takes you to a cancel booking view where the booking is cancelled upon request. The user is asked the question if they are sure they wish to cancel the booking</li> 
+   <li>Once the booking is cancelled the booking then becomes an un-editable object, which only the admin has overriding access to delete the booking. </li> 
 
 <!---->
 <h3>As a Site User I get confirmation upon successfully creating a new booking.</h3>
-   <li>Upon any submission of data to the database, there will be a notice informing you of the success of the users actions</li>
+   <li>Upon any submission of data to the database, there will be a notice informing you of the success of the users’ actions</li>
    <li>This makes the user aware that whatever data was requested was successful</li>
 
-<h3>As a Site User I get confirmation of my booking being edited was successful, and deletion of appointments.</h3>
-   <li>Upon any submission of data to the database, there will be a notice informing you of the success of the users actions</li>
-   <li>This makes the user aware that whatever data was requested was successful</li>
+<h3>As a Site User I get confirmation of my booking being edited was successful, and deletion of appointments</h3>
+   <li>Upon any submission of data to the database, there will be a notice informing you of the success of the users’ actions. </li>
+   <li>This makes the user aware that whatever data was requested was successful. </li>
 
-<h3>As a Site User I get confirmation that when I request my booking to be cancelled, it was successful.</h3>
-   <li>Upon any submission of data to the database, there will be a notice informing you of the success of the users actions</li>
+<h3>As a Site User I get confirmation that when I request my booking to be cancelled, it was successful. </h3>
+   <li>Upon any submission of data to the database, there will be a notice informing you of the success of the users’ actions</li>
    <li>This makes the user aware that whatever data was requested was successful</li>
 <!---->
 
 <h3>As a Site User I can Register an Account so that I can view all my bookings</h3>
-   <li>The User has to Sign up to create a booking, this is acheieved by createing an account. aSign up at the top in the nav bar, and upon signing up, the user then can click on the 'My Bookings' link.</li> 
+   <li>The User has to Sign up to create a booking, this is achieved by creating an account. A Sign up at the top in the nav bar, and upon signing up, the user then can click on the 'My Bookings' link. </li> 
    <li>The user who is logged in has their name generated next to the top of the 'My Bookings' page to alert the user that they are signed in, next to the sign out link</li> 
 
 <h3>As a Admin/User I can receive emails regarding bookings made, alter and cancel so that I can manage all my bookings</h3>
-   <li>When a user makes a booking, or alters ut by any means. The user is sent an email upon the submission of the booking, the client recieves a confimation email stating the details of the booking.</li>
-   <li>A copy of any is also forwarded to the admin user, so that they can monitor the status of the bookings in real time without having to sign in to the app and search what are the status of the bookings day by day</li> 
+   <li>When a user makes a booking or alters it by any means. The user is sent an email upon the submission of the booking, the client receives a confirmation email stating the details of the booking. </li>
+   <li>A copy of any is also forwarded to the admin user, so that they can monitor the status of the bookings in real time without having to sign into the app and search what are the status of the booking’s day by day</li> 
 
-<h3>As a User I can contact the company with any queries i may have so that my concerns are answered</h3>
+<h3>As a User I can contact the company with any queries I may have so that my concerns are answered</h3>
     <li>The user has two options within the website to contact the company</li>
     <li>Within the nav bar, at the very top in the middle is a telephone number in which to call the company</li>
     <li>Next to the telephone number is the email address which is another quick way to get into contact with the staff</li>
-    <li>There is a contact page within the nav bar which directs you to a page with a larger array of details of how to get into contact with the company.</li>
-    <li>Alternative means to contact include a fax number and a link to the companies social accounts where you can contact via facebook, Instagram and Twitter. (educational purposes only - no real links to bebeauty exist)</li>
-
+    <li>There is a contact page within the nav bar which directs you to a page with a larger array of details of how to get into contact with the company. </li>
+    <li>Alternative means to contact include a fax number and a link to the company’s social accounts where you can contact via Facebook, Instagram, and Twitter. (Educational purposes only - no real links to bebeauty exist) </li>
 
 [Back to Top](<#contents>)
 <br>
 
 ## Manual Testing
-<p>following the above User Story Tests, those tests coincide with the manual testing procedures of the website. A lot of the features above where check through manual testing to ensure a great user experience. Below is a list of the some of the features manually tested.</p>
+<p>following the above User Story Tests, those tests coincide with the manual testing procedures of the website. A lot of the features above where check through manual testing to ensure a great user experience. Below is a list of the some of the features manually tested. </p>
 
 ![image](https://user-images.githubusercontent.com/72948843/182045459-f03705c8-8c91-4199-ae7d-56b8e90963c5.png)
 ![image](https://user-images.githubusercontent.com/72948843/182045518-21d8f059-d60c-4a84-9728-d35f75a5b568.png)
@@ -500,32 +495,30 @@ HTML Validation Image... Below are the results of the Validations of the code th
 
 ## Input Validation and checking
 
-Validation of the form is implemented by checking  before the document is submitted is valid to submit. This is acheived by multiple methods
+Validation of the form is implemented by checking before the document is submitted is valid to submit. This is achieved by multiple methods
 
 <ul>
     <li>To validate the phonenumber being entered into the form, django-phonenumber-field was used. It checks the input to see if it is a valid phonenumber and returns an error message if it is not valid upon submission</li>
-    <li>To validate the date of which a booking can be made, within the form.py is code to check that the date of which the form is greater than the date the booking is being made. If the booking is in today or before, The form is not valid and is returned to be resubmitted.</li>
+    <li>To validate the date of which a booking can be made, within the form.py is code to check that the date of which the form is greater than the date the booking is being made. If the booking is in today or before, the form is not valid and is returned to be resubmitted. </li>
 </ul>
 
 ![image](https://user-images.githubusercontent.com/72948843/178716912-c029e08e-f0ac-465c-b7a8-6b1ff8a945ff.png)
 
 <ul>
-    <li>Validation of the Bookings that cannot coexist was implemented by making a constraint within the database and when such appointment already exists with the parameters of appointment_date and appointment_slot are met, then the code throws an error and addresses the user to pick another day or time for the appointment. (This was a bug I solved)</li>
+    <li>Validation of the Bookings that cannot coexist was implemented by making a constraint within the database and when such appointment already exists with the parameters of appointment_date and appointment_slot is met, then the code throws an error and addresses the user to pick another day or time for the appointment. (This was a bug I solved)</li>
 </ul>
 
 ![image](https://user-images.githubusercontent.com/72948843/178721734-56da133c-8ff3-4175-8040-db75e741501f.png)
 
 [Back to Top](<#contents>)
 
-
 ## Automated Testing
-<p>To check the code, I ran <a href="https://pypi.org/project/coverage/" target="_blank">Coverage</a> (A Third party pacakge) to check how well my Automated tests performed. The report came back with a 73% coverage, the biggest areas that would require more comprehensive tests are the booking/views.py and the booking/forms.py. On a whole, The tests I have writen have performed well but ideally greater coverage would be preferential.</p>
+<p>To check the code, I ran <a href="https://pypi.org/project/coverage/" target="_blank">Coverage</a> (A Third party package) to check how well my Automated tests performed. The report came back with a 73% coverage, the biggest areas that would require more comprehensive tests are the booking/views.py and the booking/forms.py. On a whole, The tests I have written have performed well but ideally greater coverage would be preferential.</p>
 <li>I ran 27 tests with a 73% coverage.</li>
 <li>To run these tests, you need to run the command <i>"python3 manage.py test"</i> in the terminal.</li>
 
 ![image](https://user-images.githubusercontent.com/72948843/182039419-792b0105-9a87-4a81-b8ad-8a29db2e70e3.png)
 ![image](https://user-images.githubusercontent.com/72948843/182039899-bcd7aac5-8b76-4c8e-a0f9-63cb5ad4719f.png)
-
 
 
 [Back to Top](<#contents>)
@@ -549,7 +542,7 @@ Validation of the form is implemented by checking  before the document is submit
 [Back to Top](<#contents>)
 <br>
 
-### Browser Compatability
+### Browser Compatibility
 <p>The Website was manually tested in different browsers to check the responsive nature of the website and no errors were found during these tests.</p>
 <li>Google Chrome</li>
 <li>Microsoft Edge</li>
@@ -558,3 +551,5 @@ Validation of the form is implemented by checking  before the document is submit
 
 [Back to Top](<#contents>)
 <br>
+
+
